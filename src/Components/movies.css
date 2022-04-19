@@ -1,0 +1,80 @@
+
+@media (min-width: 100px) {
+    .cardContainer div{
+        grid-template-columns: repeat(5, 1fr);
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+div.dogInfo {
+    font-size: calc(5px + 2vmin);
+    background: transparent;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 1vw;
+    grid-gap: 0.5em;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+    border-radius: 15px;
+    width: 100%;
+    height: 5em;
+    font-size: calc(5px + 2vmin);
+}
+
+.dogInfo:hover{
+    transform: scale(1.5, 1.5);
+    background-color: white;
+    color: black;
+}
+
+.profpic {
+    border-radius: 30%;
+    filter: drop-shadow(8px 8px 10px black);  
+    }
+    
+
+    .profpic1 {
+        border-radius: 10%;
+        border: 6px solid #d9dfee;
+        padding: 20px 20px;
+        background-color: transparent;
+        filter: drop-shadow(8px 8px 10px black);  
+        }
+
+        .profpic1:hover{
+            transform: scale(2, 2);
+        }
+    
+        .dogBox {
+            display: flex;
+            flex-direction: row;
+            font-size: calc(5px + 2vmin);
+            background: transparent;
+            color: whitesmoke;
+            margin-left: 1vw;
+            margin-right: 1vw;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            padding: 90px 30px;
+        }
+
+        
+
+.doggieCard {
+    border-radius: 1em;
+    font-size: calc(5px + 2vmin);
+    background: transparent;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    border-radius: 15px;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    padding: 20px 30px;
+}
+
+
+   

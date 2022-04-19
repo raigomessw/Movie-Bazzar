@@ -1,0 +1,86 @@
+
+  .welcomeScreen {
+    background-color: #0b52ec;
+    min-height: 100vh;
+    display: inline-block;
+    margin-right: 1vw;
+    padding: 10px 10px;
+  }
+  
+  .buttons{
+      font-size: calc(5px + 2vmin);
+      background: transparent;
+      color: whitesmoke;
+      border: 1px solid whitesmoke;
+      border-radius: 15px;
+      text-align: center;
+      margin-left: 2vw;
+      padding: 0.5em;
+      transition: transform 2s;
+    }
+
+    .par{
+      border: 1px solid whitesmoke;
+      border-radius: 15px;
+      text-decoration: none;
+      color: #eff2f8;
+      padding: 10px;
+      background-color: transparent;
+      width: 99%;
+    }
+
+
+    .wel{
+      margin-top: 2px;
+      padding: 1px;
+      width: 100%;
+    }
+
+    .buttons:hover {
+      background: #f7f7f3;
+      color: rgb(25, 10, 241);
+      left: 20%;
+      transform: scale(1.5, 1.5) rotate(15deg);
+      }
+
+  .logo {
+    height: 30vmin;
+    pointer-events: none;
+    padding: 20px  20px;
+    }
+  
+    
+ 
+      .box {
+        height: 10vmin; 
+       position: relative;
+       left: 0px;
+       background: transparent;
+       border: 0ch;
+       transition: left 3s ease-in-out;
+       
+        }
+
+        .box1 {
+          height: 10vmin;
+         position: relative;
+         right: 0px;
+         background: transparent;
+         border: 0ch;
+         transition: right 3s ease-in-out;
+          }
+    
+      .boo:hover .box {
+      left: 50%;
+      transform: scale(2, 2);
+      }
+
+      .boo1:hover .box1 {
+        right: 50%;
+        transform: scale(2, 2);
+        }
+      
+        .boxxx {
+         display: flex;
+         flex-direction: row-reverse;
+          }

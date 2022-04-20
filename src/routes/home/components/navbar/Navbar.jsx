@@ -3,7 +3,7 @@ import './NavbarStyles.css'
 import { Link } from 'react-scroll/'
 import { HiOutlineMenuAlt4 } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
-import { Link as Element } from "react-router-dom";
+
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
 
@@ -27,11 +27,12 @@ function Navbar() {
 
     window.addEventListener(`scroll`, changeColor)
 
-    return (
-
+  return (
+    <div className="">
+     <div className={color ? "navbar navbar-bg" : "navbar"}>
         <div name="home" className={nav ? "navbar navbar-bg" : "navbar"}>
             <div className={nav ? "logo dark" : "logo"}>
-                <h2 className="logo">MOVIE BAZAR</h2>
+                <h2 className="logo">MOVIE BAZZAR</h2>
             </div>
             <ul className="nav-menu">
                 <Link to="home" className="link-homee" smooth="true" duration={500}><li>Home</li></Link>
@@ -52,9 +53,11 @@ function Navbar() {
                 </ul>
                 <div className="mobile-menu-botton">
                     <div className="menu-icons">
-                        <Link  >
-                            <button>Filmes</button>
-                        </Link>
+                        <Link>
+                          <div >
+                          <AiOutlineShoppingCart className="icon" />
+                          </div>
+                       </Link>
                     </div>
                     <div className="social-icons">
                         <FaFacebook className="icon" />
@@ -64,8 +67,9 @@ function Navbar() {
 
                 </div>
             </div>
-
-        </div>
+      </div>
+      </div>
+    </div>
 
     )
 }

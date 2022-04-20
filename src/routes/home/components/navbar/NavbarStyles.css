@@ -23,19 +23,19 @@
 .link-homee,
 .link-gallery,
 .link-info {
-    color: rgba(1, 30, 94, 0.979);
+    color: rgba(0, 0, 0, 0.979);
 }
 
 .link-homee:hover {
-    color: rgb(0, 0, 0);
+    color: rgb(136, 6, 6);
 }
 
 .link-gallery:hover {
-    color: rgb(0, 0, 0);
+    color: rgb(146, 5, 5);
 }
 
 .link-info:hover {
-    color: rgb(0, 0, 0);
+    color: rgb(151, 0, 0);
 }
 
 .link-gallery:visited {
@@ -62,6 +62,12 @@ li {
 
 .mobile-menu {
     display: none;
+}
+
+.nav-icons {
+    padding: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .icon {

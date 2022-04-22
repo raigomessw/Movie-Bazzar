@@ -12,14 +12,14 @@ function App() {
 
 
 
-const url = 'https://api.themoviedb.org/3'
-const apiKey = 'api_key=25dcea31f980ad3c4032d87bbaa6778a' 
+/*const url = 'https://api.themoviedb.org/3'
+const apiKey = 'api_key=25dcea31f980ad3c4032d87bbaa6778a'
 
 // Show top popular movies. Useful form home
 const popularMoviesHome = '/discover/movie?sort_by=popularity.desc&'
 
 // Search throught API
-const searchMovie = '/search/movie?'
+const searchMovie = '/search/movie?'*/
 
   return (
     <main>

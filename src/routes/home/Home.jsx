@@ -1,6 +1,7 @@
+import React from 'react';
+import { Link } from 'react-scroll/';
+import HeroBody from './components/herobody/Herobody';
 import Navbar from './components/navbar/Navbar';
-import { Link } from 'react-scroll/'
-import HeroBody from './components/herobody/Herobody'
 
 
 

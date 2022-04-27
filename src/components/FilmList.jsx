@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { actions, STATUS } from "../features/filmList";
+import {Link } from "react-router-dom";
 import './FilmListStyles.css';
 
 const FilmList = () => {
@@ -21,11 +22,16 @@ const FilmList = () => {
   }else if (status === STATUS.SUCCESS) {
     content = list.map((films) => {
       return(
-        <div className="movie-app">
+        <Link key={films.original_title} to={`/filmsinfo/${films.original_title}`}>
+          <div className="movie-app">
           <div className='image-container d-flex justify-content-start m-3'>
            <img src={`${apipath}/w200/${films.poster_path}`}alt={films.title}/>
           </div>
-         </div>
+           {/*<div className="movie-title">
+             <h3>{films.title}</h3>
+             </div> title blir konstig*/}
+          </div>
+         </Link>
       )
     });
 
@@ -40,12 +46,12 @@ const FilmList = () => {
     }, [dispatch])
 
   return(
-
       <div className='wrapper'>
         <div className='media-scroller container-fluid row'>
          {content}
         </div>
       </div>
+
 
   )
 

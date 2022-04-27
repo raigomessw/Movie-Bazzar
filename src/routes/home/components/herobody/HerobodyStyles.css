@@ -1,14 +1,14 @@
 .herobody {
     width: 100%;
     height: 100vh;
+    display: fixed;
     color: rgb(0, 0, 0);
-    position: relative;
     background-image: url("../assets/backgrund.png");
 }
 
-.herobody .content {
+.title-h1 {
     position: absolute;
-    top: -10rem;
+    top: -15rem;
     height: 100%;
     display: flex;
     justify-content: center;

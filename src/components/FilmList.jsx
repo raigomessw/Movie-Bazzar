@@ -42,7 +42,7 @@ const FilmList = () => {
   return(
 
       <div className='wrapper'>
-        <div className='media-scroller'>
+        <div className='media-scroller container-fluid row'>
          {content}
         </div>
       </div>

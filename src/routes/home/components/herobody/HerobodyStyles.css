@@ -4,6 +4,8 @@
     display: fixed;
     color: rgb(0, 0, 0);
     background-image: url("../assets/backgrund.png");
+    overflow-x: hidden;
+
 }
 
 .title-h1 {
@@ -17,4 +19,5 @@
     width: 100%;
     margin: 0 auto;
     padding: 1rem;
+
 }

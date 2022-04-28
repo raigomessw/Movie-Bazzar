@@ -11,6 +11,11 @@ const FilmList = () => {
   const list = listObject.list;
   const apipath = 'https://image.tmdb.org/t/p/';
 
+
+
+
+
+
   const dispatch = useDispatch();
    let content = null;
 
@@ -23,14 +28,12 @@ const FilmList = () => {
   }else if (status === STATUS.SUCCESS) {
     content = list.map((films) => {
       return(
-        <Link key={films.original_title} to={`/filmsinfo/${films.original_title}`}>
+        <Link key={films.original_title} film={films} to={`/filmsinfo/${films.original_title}` }>
           <div className="movie-app">
           <div className='image-container d-flex justify-content-start m-3'>
            <img src={`${apipath}/w200/${films.poster_path}`}alt={films.title}/>
           </div>
-           {/*<div className="movie-title">
-             <h3>{films.title}</h3>
-             </div> title blir konstig*/}
+          
           </div>
          </Link>
       )
@@ -47,8 +50,30 @@ const FilmList = () => {
     }, [dispatch])
 
   return(
+    
       <div className='wrapper'>
+         <p>
+                <button  onClick={() => fetchList(dispatch , 28, 1)} >Action</button>
+           
+                <button  onClick={() => fetchList(dispatch , 35 , 1)}>Comdey</button>
+            
+                <button onClick={() => fetchList(dispatch , 18 , 1)}>Drama</button>
+
+                <button onClick={() => fetchList(dispatch , 14 ,1 )}>Fantasy</button>
+           
+           <button onClick={() => fetchList(dispatch , 27 , 1)}>Horror</button>
+       
+           <button onClick={() => fetchList(dispatch , 10749 , 1)}>Romance</button>
+
+           <button onClick={() => fetchList(dispatch , 9648 , 1)}>Mystery</button>
+           
+           <button onClick={() => fetchList(dispatch , 53 , 1)}>Thriller</button>
+       
+           <button onClick={() => fetchList(dispatch , 12 , 1)}>Adventure</button>
+            </p>
+
         <div className='media-scroller container-fluid row'>
+       
          {content}
         </div>
       </div>
@@ -58,7 +83,7 @@ const FilmList = () => {
 
 }
 
-async function fetchList(dispatch) {
+async function fetchList(dispatch , gen )  {
 
   dispatch(actions.isFetching());
 
@@ -66,7 +91,10 @@ async function fetchList(dispatch) {
 
  //const url = 'https://imdb-api.com/en/API/Top250Movies/k_09fl5jeb'; API begränsat till 100 portar per dag.
  // const url = 'https://api.themoviedb.org/3/movie/popular?api_key=298722d66314704d61c48e8fe9330363';
- const url = 'https://api.themoviedb.org/3/trending/all/week?api_key=298722d66314704d61c48e8fe9330363';
+ const url = `https://api.themoviedb.org/3/discover/movie?api_key=298722d66314704d61c48e8fe9330363&with_genres=${gen}`;
+
+  
+ 
  try {
    let response = await fetch(url)
    let json = await response.json();

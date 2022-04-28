@@ -12,10 +12,6 @@ const FilmList = () => {
   const apipath = 'https://image.tmdb.org/t/p/';
 
 
-
-
-
-
   const dispatch = useDispatch();
    let content = null;
 

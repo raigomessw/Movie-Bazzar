@@ -24,7 +24,7 @@ const FilmList = () => {
   }else if (status === STATUS.SUCCESS) {
     content = list.map((films) => {
       return(
-        <Link key={films.original_title} to={`/filmsinfo/${films.original_title}` }>
+        <Link key={films.original_title} to={`/filmsinfo/${films.id}` }>
           <div className="movie-app">
           <div className='image-container d-flex justify-content-start m-3'>
            <img src={`${apipath}/w200/${films.poster_path}`}alt={films.title}/>
@@ -95,7 +95,6 @@ async function fetchList(dispatch , gen )  {
    let response = await fetch(url)
    let json = await response.json();
    let list = json.results;
-   console.log('Got lista:',list)
    dispatch(actions.success(list))
 
 

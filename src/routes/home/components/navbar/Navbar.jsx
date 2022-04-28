@@ -3,6 +3,7 @@ import './NavbarStyles.css'
 import { Link } from 'react-scroll/'
 import { HiOutlineMenuAlt4 } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
+
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
 

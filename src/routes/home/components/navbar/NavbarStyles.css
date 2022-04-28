@@ -13,7 +13,6 @@
 .navbar-bg {
     background-color: rgba(0, 0, 0, 0.562);
     transition: .5s;
-    cursor: pointer;
 }
 
 .dark {
@@ -25,7 +24,6 @@
 .link-gallery,
 .link-info {
     color: rgba(0, 0, 0, 0.979);
-    cursor: pointer;
 }
 
 .link-homee:hover {

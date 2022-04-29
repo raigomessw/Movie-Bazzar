@@ -40,8 +40,8 @@
     text-decoration: none;
 }
 
-.navbar-bg {
-    background-color: #ffffff;
+.navbar-bg-home {
+    background-color: #020101fd;
 }
 
 .nav-menu {
@@ -71,7 +71,7 @@ li {
 .icon {
     font-size: 1.5rem;
     cursor: pointer;
-    color: #ffffff;
+    color: #fff;
 }
 .iconSocial{
   font-size: 1.5rem;

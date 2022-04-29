@@ -29,7 +29,7 @@ function Navbar() {
   return (
     <div className="">
      <div className={color ? "navbar-home navbar-bg-home" : "navbar-home"}>
-        <div name="home" className={nav ? "navbar navbar-bg-home" : "navbar"}>
+        <div name="home" className={nav ? "navbar-home navbar-bg-home" : "navbar-home"}>
             <div className={nav ? "logo-home darkk" : "logo-home"}>
                 <h2 className="logo-home">MOVIE BAZZAR</h2>
             </div>
@@ -71,6 +71,7 @@ function Navbar() {
     </div>
 
     )
+    
 }
 
 export default Navbar

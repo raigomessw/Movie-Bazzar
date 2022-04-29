@@ -22,7 +22,7 @@
 
 .logo,
 .link-homee,
-.link-gallery,
+.link-filmss,
 .link-info {
     color: rgba(0, 0, 0, 0.979);
     cursor: pointer;
@@ -32,7 +32,7 @@
     color: rgb(136, 6, 6);
 }
 
-.link-gallery:hover {
+.link-filmss:hover {
     color: rgb(146, 5, 5);
 }
 

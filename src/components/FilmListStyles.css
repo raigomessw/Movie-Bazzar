@@ -1,40 +1,47 @@
 
-.wrapper {
+.container-fluid {
   position: relative;
-  white-space:nowrap;
-  width: 100%;
-  margin: 0 auto;
-  border: 2px solid #000000;
-  height: fit-content;
-  top: 18rem;
+  /*border: 1px solid #050404;*/
+  top: 15rem;
+  /*scroll-behavior: auto;*/
 }
 /*.movie-title h3{
   color: aliceblue;
   text-align: center;
 }*/
 
-.category{
- position: relative;
- display:flex;
- top: 18rem;
- justify-content: space-around;
-
-
+button {
+  background-color: rgba(0, 0, 0, 0.103);
+  border: 1px solid rgba(255, 255, 255, 0.171);
+  box-shadow: 3px 3px 10px rgb(255, 255, 255);
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  padding: .7rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
 }
 
-.media-scroller{
+.button-category {
+  top: 15rem;
+  position:relative;
+  display: auto;
+  justify-content:space-around;
+}
+.button-category button {
+  margin: 3rem;
+  justify-content:center;
+
+}
+.movie-app > .row{
+  overflow-x: auto;
+  flex-wrap: nowrap;
   display: flex;
-  grid-auto-columns:8%;
-  overflow-x: hidden;
-  overscroll-behavior-inline: contain;
-  white-space:nowrap;
-  object-position: column;
-  overflow: auto;
-
 }
+
 
 .image-container {
-  box-shadow: 3px 3px 10px rgb(255, 0, 0);
+  box-shadow: 3px 3px 10px rgb(255, 255, 255);
   margin: 2rem;
   cursor: pointer;
   height: fit-content;
@@ -44,22 +51,15 @@
 	transition: transform 0.2s;
   display: flex;
   flex-wrap: nowrap;
-
 }
 
-.image-container img{
-  height: 100%;
-  display: inline-block;
-  vertical-align:top; /*to remove unwanted whitespace */
-  position: relative;
-}
 .image-container :hover{
   cursor: pointer;
 	transform: scale(1.1);
 }
 
 @media screen and (max-width: 940px) {
-  .wrapper {
+  .container-fluid {
     position: relative;
     white-space:nowrap;
     width: 100%;
@@ -68,17 +68,6 @@
     height: fit-content;
     top: 18rem;
   }
-  .media-scroller{
-    display: flex;
-    grid-auto-columns: 8%;
-    overflow-x: hidden;
-    overscroll-behavior-inline: contain;
-    white-space:nowrap;
-    object-position: column;
-    overflow: auto;
-
-  }
-
   .image-container {
     box-shadow: 2px 2px 10px rgb(255, 255, 255);
     margin: 0.75rem;
@@ -102,6 +91,17 @@
     cursor: pointer;
     transform: scale(1.1);
   }
+  .button-category {
+    display: auto;
+    position: auto;
+  }
+  .button-category button {
+    margin: .8rem;
+    justify-content:center;
+  }
+
+
+
 }
 
 

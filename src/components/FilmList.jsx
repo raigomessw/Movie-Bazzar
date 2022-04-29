@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { actions, STATUS } from "../features/filmList";
-import {Link } from "react-router-dom";
 import './FilmListStyles.css';
 
 
@@ -10,6 +10,7 @@ const FilmList = () => {
   const status = listObject.status;
   const list = listObject.list;
   const apipath = 'https://image.tmdb.org/t/p/';
+
 
 
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ const FilmList = () => {
     content = list.map((films) => {
       return(
         <Link key={films.original_title} to={`/filmsinfo/${films.original_title}` }>
-          <div className="movie-app">
+          <div className="">
           <div className='image-container d-flex justify-content-start m-3'>
            <img src={`${apipath}/w200/${films.poster_path}`}alt={films.title}/>
           </div>
@@ -46,8 +47,9 @@ const FilmList = () => {
     }, [dispatch])
 
   return(
-    <div className="category-container">
-      <div className="category">
+    <div className="">
+      <div className="">
+         <div className="button-category">
             <button  onClick={() => fetchList(dispatch , 28, 1)} >Action</button>
 
             <button  onClick={() => fetchList(dispatch , 35 , 1)}>Comdey</button>
@@ -65,12 +67,13 @@ const FilmList = () => {
            <button onClick={() => fetchList(dispatch , 53 , 1)}>Thriller</button>
 
            <button onClick={() => fetchList(dispatch , 12 , 1)}>Adventure</button>
-         </div>
-       <div className='wrapper'>
-          <div className='media-scroller container-fluid row'>
-         {content}
           </div>
-         </div>
+        </div>
+         <div className='container-fluid movie-app'>
+          <div className='row'>
+            {content}
+          </div>
+        </div>
     </div>
 
 

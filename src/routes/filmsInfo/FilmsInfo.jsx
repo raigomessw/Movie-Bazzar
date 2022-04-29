@@ -41,7 +41,7 @@ import { STATUS } from '../../features/filmList';
             </button>
             </Link>
              <button className='buy-button'>
-              
+               Buy              
              </button>
       </div>  
 

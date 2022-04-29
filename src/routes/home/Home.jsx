@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll/';
-import HeroBody from './components/herobody/Herobody';
+import HerobodyHome from './components/herobody/HerobodyHome';
 import Navbar from './components/navbar/Navbar';
 
 
@@ -12,7 +12,7 @@ const Home = () => {
         <Link to='/' className="home">
             <div>
                 <Navbar/>
-                <HeroBody />
+                <HerobodyHome />
             </div>
         </Link>
     )

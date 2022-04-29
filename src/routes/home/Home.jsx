@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll/';
 import HerobodyHome from './components/herobody/HerobodyHome';
-import Navbar from './components/navbar/Navbar';
+import Navbar from './components/herobody/navbar/Navbar';
 
 
 

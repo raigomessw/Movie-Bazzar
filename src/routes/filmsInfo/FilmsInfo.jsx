@@ -7,48 +7,45 @@ import { STATUS } from '../../features/filmList';
  const FilmsInfo = () => {
 
    const listObject = useSelector(state => state.filmList);
-   const status = listObject.status;
+   
    const list = listObject.list;
 
    //ID working
    const params = useParams();
-   console.log(params);
+   const imagePath = 'https://image.tmdb.org/t/p/';
    
-   list.map(movie => {
-      console.log(movie.id);
-   });
-   
+   const movieSelected = list.find(movie => movie.id == params.id)
+   console.log(movieSelected)
+   //
 
-
-
-   let movieContent = null;
-   let selectedMovie = null;
-   //const dispatch = useDispatch()
-
-
-   if (status === STATUS.FETCHING) {
-      movieContent = 'Loading...';
-   } else if (status === STATUS.SUCCESS) {
-      movieContent = "Det funkar";
-   } else {
-      movieContent = "Failure";
-   }
-
-
-   
   return (
-     <div>
+     <div className='movie-container'>
+        <Navbar/>
+        <h1>{movieSelected.original_title}</h1>
+         <div className='image-container'>
+         <img src={`${imagePath}/w500/${movieSelected.poster_path}`} alt="" />
+         </div>
+         <h3 className='movie-release'>Release date : {movieSelected.release_date}</h3>
+         <h4 className='movie-language'>Orignal language : {movieSelected.original_language}</h4>
+         <p>Vote average : {movieSelected.vote_average}</p>
+         <p>Total votes : {movieSelected.vote_count}</p>
+
+        
+        <br />
+        <p>{movieSelected.overview}</p>
+
+      <div className='movie-buttons'>
       <Link to="/">
-         <div>
-            <Navbar/>
-         </div>
-      </Link>
-      <div className='movie-content'>
-         <div className='syanpsis'>
-             <p>Hejsan</p>
-         </div>
+            <button className='home-button'>
+               Home
+            </button>
+            </Link>
+             <button className='buy-button'>
+              
+             </button>
+      </div>  
+
       </div>
-   </div>
   )
 }
 

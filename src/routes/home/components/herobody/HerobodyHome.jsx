@@ -1,12 +1,12 @@
 import React from 'react'
 import FilmList from '../../../../components/FilmList'
-import './HerobodyStyles.css'
+import './HerobodyHomeStyles.css'
 
 const Herobody = () => {
     return (
       <div className="herobody">
-        <div className="title-h1">
-          <h2>Films</h2>
+        <div className="logo">
+
         </div>
         <div className="filmList-container">
           <FilmList/>

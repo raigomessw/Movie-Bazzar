@@ -11,7 +11,7 @@
 }
 
 .navbar-bg-home {
-    background-color: rgb(27, 25, 25);
+    background-color: rgb(0, 0, 0);
     transition: .5s;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .navbar-bg-home {
-    background-color: #020101fd;
+    background-color: #000000fd;
 }
 
 .nav-menu {
@@ -78,7 +78,6 @@ li {
   cursor: pointer;
 
 }
-
 
 @media screen and (max-width: 940px) {
     .mobile-menu-1 {

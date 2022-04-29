@@ -27,7 +27,6 @@ function Navbar() {
     window.addEventListener(`scroll`, changeColor)
 
   return (
-    <div className="">
      <div className={color ? "navbar-home navbar-bg-home" : "navbar-home"}>
         <div name="home" className={nav ? "navbar-home navbar-bg-home" : "navbar-home"}>
             <div className={nav ? "logo-home darkk" : "logo-home"}>
@@ -68,10 +67,10 @@ function Navbar() {
             </div>
         </div>
       </div>
-    </div>
+
 
     )
-    
+
 }
 
 export default Navbar

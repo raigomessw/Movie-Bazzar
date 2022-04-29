@@ -20,7 +20,6 @@ import { STATUS } from '../../features/filmList';
 
   return (
      <div className='movie-container'>
-        <Navbar/>
         <h1>{movieSelected.original_title}</h1>
          <div className='image-container'>
          <img src={`${imagePath}/w500/${movieSelected.poster_path}`} alt="" />

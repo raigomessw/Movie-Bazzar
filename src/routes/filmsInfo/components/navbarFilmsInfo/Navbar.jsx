@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './NavbarStyles.css'
+import './NavbarFilmsInfoStyles.css'
 import { Link } from 'react-scroll/';
 import { HiOutlineMenuAlt4 } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
@@ -31,7 +31,7 @@ function Navbar() {
             </div>
             <ul className="nav-menu">
                 <Link to="/" className="link-homee" smooth="true" duration={500}><li>Home</li></Link>
-                <Link to="/filmsInfo" className="link-films" smooth="true" duration={500}><li>Films</li></Link>
+                <Link to="/filmsInfo" className="link-filmss" smooth="true" duration={500}><li>Films</li></Link>
             </ul>
             <div className="nav-icons">
                 <AiOutlineShoppingCart className="icon" />

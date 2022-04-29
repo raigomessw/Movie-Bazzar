@@ -14,6 +14,7 @@
 
 body {
     font-family: "Poppins", sans-serif;
+    background-color: #000000;
 }
 
 ul {
@@ -38,16 +39,16 @@ h2 {
     padding: 0 1rem;
 }
 
-button {
-    background-color: rgba(255, 255, 255, 0.205);
-    border: 1px solid black;
+/*button {
+    background-color: rgba(10, 25, 165, 0.658);
+    border: 1px solid rgb(177, 0, 0);
     cursor: pointer;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     padding: .7rem 1.5rem;
     border-radius: 8px;
     cursor: pointer;
     font-family: "Poppins", sans-serif;
-}
+}*/
 
 @media screen and (max-width: 940px) {
     h1 {

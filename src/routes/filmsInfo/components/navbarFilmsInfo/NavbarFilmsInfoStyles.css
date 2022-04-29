@@ -7,11 +7,11 @@
     padding: 0 1rem;
     z-index: 10;
     position: fixed;
-    color: rgb(4, 3, 8);
+    color: rgb(255, 255, 255);
 }
 
 .navbar-bg {
-    background-color: rgba(0, 0, 0, 0.562);
+    background-color: rgba(255, 253, 253, 0.562);
     transition: .5s;
     cursor: pointer;
 }
@@ -22,9 +22,9 @@
 
 .logo,
 .link-homee,
-.link-gallery,
+.link-filmss,
 .link-info {
-    color: rgba(0, 0, 0, 0.979);
+    color: rgba(248, 248, 248, 0.979);
     cursor: pointer;
 }
 
@@ -32,7 +32,7 @@
     color: rgb(136, 6, 6);
 }
 
-.link-gallery:hover {
+.link-filmss:hover {
     color: rgb(146, 5, 5);
 }
 
@@ -46,7 +46,7 @@
 }
 
 .navbar-bg {
-    background-color: #ffffff;
+    background-color: #862323a9;
 }
 
 .nav-menu {

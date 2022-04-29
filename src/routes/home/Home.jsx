@@ -7,6 +7,7 @@ import Navbar from './components/herobody/navbar/Navbar';
 
 
 
+
 const Home = () => {
     return (
         <Link to='/' className="home">

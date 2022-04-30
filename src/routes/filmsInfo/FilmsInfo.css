@@ -1,0 +1,129 @@
+/* Not added yet : 
+Need to add flex wrap for different displays.*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.movie-body{
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        background-color: black;
+        color: #ffe7c8;
+        font-size: 0.95rem;
+        padding: 5rem;
+}
+
+.card {
+    width: clamp( 100rem, 95vw, 900px);
+    display: flex;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.img-1 {
+    width: 350px;
+    height: 550px;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.top {
+    display: flex;
+    width: 95%;
+}
+
+.movie-info-container {
+    width: 50%;
+    
+}
+
+.general-info {
+    font-size: 1.3rem;
+    margin-left: 2rem;
+    flex: 1;
+}
+
+.movie-language {
+    text-transform: uppercase;
+}
+
+.buy {
+    font-size: 1rem;
+    box-shadow: 0 0 0.5rem white;
+}
+
+.buy:hover{
+    background: #ff3939;
+    transition-duration: 0.5s;
+    transform: scale(0.99);
+}
+
+.wish {
+    font-size: 1rem;
+    box-shadow: 0 0 0.5rem white;
+}
+
+.wish:hover{
+    background: #f87000;
+    transition-duration: 0.5s;
+    transform: scale(0.99);
+}
+
+.general-info h2 {
+    margin-bottom: 1rem;
+}
+
+.movie-info {
+    margin-top: 1rem;
+    width: 90%;
+    
+}
+
+.general-info div {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-2 {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    opacity: .6;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 30%;
+    width: 10%;
+    height: 100%;
+    background-image: linear-gradient(to right, black, transparent);
+    z-index: 1;
+}
+
+.card:first-child,
+.card:first-child .img-1 {
+    box-shadow: 0 0 0.5rem white;    
+}
+
+.card:first-child .general-info div span:last-of-type {
+    font-weight: 900;
+    color: #ff3939;
+}

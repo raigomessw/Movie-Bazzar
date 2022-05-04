@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './NavbarHomeStyles.css'
+import Logotipo from '../../assets/logotipo.gif'
 import { Link } from 'react-scroll/'
 import { HiOutlineMenuAlt4 } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
@@ -30,7 +31,8 @@ function Navbar() {
      <div className={color ? "navbar-home navbar-bg-home" : "navbar-home"}>
         <div name="home" className={nav ? "navbar-home navbar-bg-home" : "navbar-home"}>
             <div className={nav ? "logo-home darkk" : "logo-home"}>
-                <h2 className="logo-home">MOVIE BAZZAR</h2>
+               <img src={Logotipo} alt="" width="20" height="20"/>
+             {/* <h2 className="logo-home">MOVIE BAZZAR</h2> */}
             </div>
             <ul className="nav-menu">
                 <Link to="home" className="link-home" smooth="true" duration={500}><li>Home</li></Link>

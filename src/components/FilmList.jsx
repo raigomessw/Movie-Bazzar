@@ -25,14 +25,12 @@ const FilmList = () => {
   }else if (status === STATUS.SUCCESS) {
     content = list.map((films) => {
       return(
-   
+
         <Link key={films.original_title} to={`/filmsinfo/${films.id}` }>
           <div className="movie-app">
-     
           <div className='image-container d-flex justify-content-start m-3'>
            <img src={`${apipath}/w200/${films.poster_path}`}alt={films.title}/>
           </div>
-
           </div>
          </Link>
       )
@@ -92,8 +90,6 @@ async function fetchList(dispatch , gen )  {
  //const url = 'https://imdb-api.com/en/API/Top250Movies/k_09fl5jeb'; API begränsat till 100 portar per dag.
  // const url = 'https://api.themoviedb.org/3/movie/popular?api_key=298722d66314704d61c48e8fe9330363';
  const url = `https://api.themoviedb.org/3/discover/movie?api_key=298722d66314704d61c48e8fe9330363&with_genres=${gen}`;
-
-
 
  try {
    let response = await fetch(url)

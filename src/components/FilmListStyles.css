@@ -1,19 +1,17 @@
-
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 .container-fluid {
   position: absolute;
   /*border: 1px solid #050404;*/
   top: 30rem;
-  display: flex;
   justify-content: center;
   flex-direction: row;
   text-align: center;
-  grid-template-columns: repeat(4, minmax(200px, 2fr));
-  /*scroll-behavior: auto;*/
+  scroll-behavior: auto;
 }
-/*.movie-title h3{
-  color: aliceblue;
-  text-align: center;
-}*/
 
 button {
   background-color: rgba(0, 0, 0, 0.103);
@@ -27,26 +25,24 @@ button {
   font-family: "Poppins", sans-serif;
 }
 
-.button-category {
+.button-category button {
   top: 14rem;
   position:relative;
   display: auto;
   justify-content:space-around;
-}
-.button-category button {
   margin: 3rem;
   justify-content:center;
 
 }
 .movie-app > .row{
-  overflow-y: auto;
+  overflow-x: auto;
   flex-wrap: nowrap;
   display: grid;
-  position: flex;
+  position: row;
   justify-content: center;
   flex-direction: row;
   margin: 1 auto;
-  grid-template-columns: repeat(7, minmax(200px, 2fr));
+   grid-template-columns: repeat(7, minmax(200px, 1fr));
 }
 
 

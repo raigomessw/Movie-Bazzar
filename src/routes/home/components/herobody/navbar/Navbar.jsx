@@ -7,6 +7,7 @@ import { HiOutlineMenuAlt4 } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
+import { NavLink } from 'react-router-dom'
 
 
 
@@ -33,20 +34,22 @@ function Navbar() {
     <div className="navbar-home">
         <div name="home" className={nav ? "navbar-home navbar-bg-home" : "navbar-home"}>
             <div className={nav ? "logo-home darkk" : "logo-home"}>
-               <img src={Logotipo} alt="Logo" width="20" height="20"/>
-             {/* <h2 className="logo-home">MOVIE BAZZAR</h2> */}
+
             </div>
             <ul className="nav-menu">
                 <Link to="home" className="link-home" smooth="true" duration={500}><li>Home</li></Link>
                 <Link to="films" className="link-films" smooth="true" duration={500}><li>Films</li></Link>
             </ul>
             <div className="nav-icons">
+
+                <NavLink to="checkout"> 
+                <AiOutlineShoppingCart className="icon" />
+                </NavLink>
+
               <div className="search-container">
               <Search/>
               </div>
-              <div className="shoppingKart-container">
-              <AiOutlineShoppingCart className="icon" />
-              </div>
+
             </div>
 
             <div className="hamburger" onClick={handleNav}>

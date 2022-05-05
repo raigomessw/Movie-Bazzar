@@ -48,7 +48,7 @@ const FilmList = () => {
 
   return(
     <div className="">
-      <div className="">
+     
          <div className="button-category">
             <button  onClick={() => fetchList(dispatch , 28, 1)} >Action</button>
 
@@ -67,7 +67,7 @@ const FilmList = () => {
            <button onClick={() => fetchList(dispatch , 53 , 1)}>Thriller</button>
 
            <button onClick={() => fetchList(dispatch , 12 , 1)}>Adventure</button>
-          </div>
+       
         </div>
          <div className='container-fluid movie-app'>
           <div className='row'>

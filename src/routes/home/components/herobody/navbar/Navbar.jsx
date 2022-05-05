@@ -7,6 +7,7 @@ import { HiOutlineMenuAlt4 } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
+import { NavLink } from 'react-router-dom'
 
 
 
@@ -40,12 +41,15 @@ function Navbar() {
                 <Link to="films" className="link-films" smooth="true" duration={500}><li>Films</li></Link>
             </ul>
             <div className="nav-icons">
+
+                <NavLink to="checkout"> 
+                <AiOutlineShoppingCart className="icon" />
+                </NavLink>
+
               <div className="search-container">
               <Search/>
               </div>
-              <div className="shoppingKart-container">
-              <AiOutlineShoppingCart className="icon" />
-              </div>
+
             </div>
 
             <div className="hamburger" onClick={handleNav}>

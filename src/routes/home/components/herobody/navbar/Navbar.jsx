@@ -34,7 +34,7 @@ function Navbar() {
     <div className="navbar-home">
         <div name="home" className={nav ? "navbar-home navbar-bg-home" : "navbar-home"}>
             <div className={nav ? "logo-home darkk" : "logo-home"}>
-
+               <img src={Logotipo} alt="Logo" width="20" height="20"/>
             </div>
             <ul className="nav-menu">
                 <Link to="home" className="link-home" smooth="true" duration={500}><li>Home</li></Link>

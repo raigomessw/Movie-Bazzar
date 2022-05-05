@@ -28,11 +28,11 @@ const FilmList = () => {
 
         <Link key={films.original_title} to={`/filmsinfo/${films.id}` }>
           <div className="movie-app">
-          <div className='image-container d-flex justify-content-start m-3'>
-           <img src={`${apipath}/w200/${films.poster_path}`}alt={films.title}/>
+           <div className='image-container d-flex justify-content-start m-3'>
+              <img src={`${apipath}/w200/${films.poster_path}`}alt={films.title}/>
+           </div>
           </div>
-          </div>
-         </Link>
+        </Link>
       )
     });
 

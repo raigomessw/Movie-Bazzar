@@ -11,6 +11,37 @@
     color: rgb(247, 247, 247);
 }
 
+.search-container{
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+}
+.search-iconn{
+  display: absolute;
+  position: relative;
+  top: 2.6rem;
+  right: 5rem;
+}
+/* .shoppingKart-container{
+  top: 0rem;
+  display: flex;
+  position: relative;
+
+} */
+.search{
+ display: none;
+}
+.search-active{
+  display: flex;
+  flex-direction: center;
+  width: 200px;
+  height: 100px;
+  top: 60px;
+  right: 9rem;
+  position: absolute;
+  transition: 0.8s;
+  color: rgb(255, 255, 255);
+}
 .navbar-bg-home {
     background-color: rgb(0, 0, 0);
     transition: .5s;
@@ -66,12 +97,22 @@ li {
     display: none;
 }
 
-.nav-icons {
-  padding: 10px;
-  font-size: 1.5rem;
+/* .nav-icons {
+  padding: 20px;
+  font-size: 1.8rem;
   cursor: pointer;
-  color: rgb(10, 5, 5);
+} */
+.bg-transparent {
+  background-color: transparent;
+  border: 1px white solid;
+  color: rgb(255, 255, 255);
+  font-weight: 400px;
+  width: 200px;
+  font-family: Poppins;
+  height: 40px;
+  outline: none
 }
+
 
 .icon {
     font-size: 1.5rem;

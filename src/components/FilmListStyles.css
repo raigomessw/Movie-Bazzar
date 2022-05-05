@@ -29,15 +29,13 @@ button {
   position: fixed;
   z-index: 1;
   width: 100%;
-  justify-content:center;
   background-color: black;
 }
 
 .button-category button {
-  display: auto;
-  margin: 3rem;
-  justify-content:center;
-
+  display: relative;
+  width: 115px;
+  margin: 2rem;
 }
 .movie-app > .row{
   overflow-x: auto;
@@ -123,6 +121,8 @@ button {
   }
   .button-category button {
     margin: .8rem;
+    width: 100px;
+    text-align: center;
     justify-content:center;
   }
 

@@ -6,7 +6,6 @@ const Herobody = () => {
     return (
       <div className="herobody">
         <div className="logo">
-
         </div>
         <div className="filmList-container">
           <FilmList/>

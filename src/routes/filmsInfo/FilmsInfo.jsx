@@ -11,6 +11,8 @@ const FilmsInfo = () => {
 
   const list = listObject.list;
 
+  let comments = [{ text : "Not bad, I liked the old ones better" , name : "John" , icon: "https://e7.pngegg.com/pngimages/870/211/png-clipart-iphone-world-emoji-day-man-iphone-electronics-face.png"} 
+  , { text : "Loved it!" , name : "Sara" , icon: "http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/woman.png"}];
   // Function : price is determined by number of puchaches
   let moviePrice = 16.19;
 
@@ -58,7 +60,10 @@ const FilmsInfo = () => {
                     </div>
                     <div className='movie-buttons'>
                       <button className='buy'>Add to cart</button>
+
+                      <Link to="/checkout">
                       <button className='wish'>Add to wishlist</button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -73,6 +78,44 @@ const FilmsInfo = () => {
                 </div>   
             </div>
           </div>
+
+          <div className='movie-container'>
+            <div className='card1'>
+              <div> 
+              <h2> Comments</h2>
+
+              <div> 
+              {comments.map((member, index) => {
+                        
+                        return (
+                            <div>
+                               <img className = "img4" src={member.icon} alt="" />
+                               
+                               <label className='labels1'>{member.name} : </label>
+                               <label className='labels2'> {member.text} </label>
+                              
+                              
+                              </div> 
+                           
+                        );
+                
+                    })}
+          
+      
+
+          
+<input className="inputC" ></input>
+<button> Leave a comment</button>
+
+
+
+
+              </div>
+
+              </div>
+</div>
+</div>
+
     </div> //movie-body ends
 
   )

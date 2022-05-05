@@ -5,6 +5,7 @@ import { HiOutlineMenuAlt4 } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
+import { NavLink } from 'react-router-dom'
 
 
 
@@ -31,13 +32,16 @@ function Navbar() {
         <div name="home" className={nav ? "navbar-home navbar-bg-home" : "navbar-home"}>
             <div className={nav ? "logo-home darkk" : "logo-home"}>
                 <h2 className="logo-home">MOVIE BAZZAR</h2>
+                
             </div>
             <ul className="nav-menu">
                 <Link to="home" className="link-home" smooth="true" duration={500}><li>Home</li></Link>
                 <Link to="films" className="link-films" smooth="true" duration={500}><li>Films</li></Link>
             </ul>
             <div className="nav-icons">
+                <NavLink to="checkout"> 
                 <AiOutlineShoppingCart className="icon" />
+                </NavLink>
             </div>
 
             <div className="hamburger" onClick={handleNav}>

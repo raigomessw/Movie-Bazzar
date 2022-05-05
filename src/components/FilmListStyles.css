@@ -29,12 +29,12 @@ button {
   position: fixed;
   z-index: 1;
   width: 100%;
+  justify-content:center;
   background-color: black;
 }
 
 .button-category button {
   display: auto;
-  justify-content:space-around;
   margin: 3rem;
   justify-content:center;
 
@@ -43,11 +43,12 @@ button {
   overflow-x: auto;
   flex-wrap: nowrap;
   display: grid;
-  position: row;
+  position: relative;
+  left:15rem;
   justify-content: center;
   flex-direction: row;
   margin: 1 auto;
-   grid-template-columns: repeat(7, minmax(200px, 1fr));
+   grid-template-columns: repeat(5, minmax(200px, 1fr));
 }
 
 
@@ -73,12 +74,12 @@ button {
   .container-fluid {
     position: relative;
     /*border: 1px solid #050404;*/
-    top: 17rem;
     display: flex;
+    padding:2rem;
+    right:15rem;
     justify-content: center;
     flex-direction: row;
     text-align: center;
-    grid-template-columns: repeat(2, minmax(200px, 2fr));
   }
   .movie-app > .row{
     overflow-y: auto;
@@ -88,7 +89,7 @@ button {
     justify-content: center;
     flex-direction: row;
     margin: 1 auto;
-    grid-template-columns: repeat(1, minmax(200px, 2fr));
+    grid-template-columns: repeat(2, minmax(150px, 2fr));
   }
   .image-container {
     box-shadow: 2px 2px 10px rgb(255, 255, 255);
@@ -116,6 +117,9 @@ button {
   .button-category {
     display: auto;
     position: auto;
+    top: 7.8rem;
+    width: 100%;
+    object-fit: contain;
   }
   .button-category button {
     margin: .8rem;

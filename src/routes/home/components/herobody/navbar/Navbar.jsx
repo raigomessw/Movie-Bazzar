@@ -16,19 +16,20 @@ function Navbar() {
     const [nav, setNav] = useState(false)
     const handleNav = () => setNav(!nav)
 
-    const [color, setColor] = useState(false)
-    const changeColor = () => {
-        if (window.scrollY >= 100) {
-            setColor(true)
-        } else {
-            setColor(false)
-        }
-    }
+    // const [color, setColor] = useState(false)
+    // const changeColor = () => {
+    //     if (window.scrollY >= 100) {
+    //         setColor(true)
+    //     } else {
+    //         setColor(false)
+    //     }
+    // }
 
-    window.addEventListener(`scroll`, changeColor)
+    // window.addEventListener(`scroll`, changeColor)
 
   return (
-     <div className={color ? "navbar-home navbar-bg-home" : "navbar-home"}>
+    //  <div className={color ? "navbar-home navbar-bg-home" : "navbar-home"}>
+    <div className="navbar-home">
         <div name="home" className={nav ? "navbar-home navbar-bg-home" : "navbar-home"}>
             <div className={nav ? "logo-home darkk" : "logo-home"}>
                <img src={Logotipo} alt="" width="20" height="20"/>

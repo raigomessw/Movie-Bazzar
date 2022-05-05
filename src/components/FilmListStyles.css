@@ -6,7 +6,7 @@
 .container-fluid {
   position: absolute;
   /*border: 1px solid #050404;*/
-  top: 30rem;
+  top: 20rem;
   justify-content: center;
   flex-direction: row;
   text-align: center;
@@ -24,10 +24,15 @@ button {
   cursor: pointer;
   font-family: "Poppins", sans-serif;
 }
+.button-category{
+  top: 7rem;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background-color: black;
+}
 
 .button-category button {
-  top: 14rem;
-  position:relative;
   display: auto;
   justify-content:space-around;
   margin: 3rem;
@@ -47,7 +52,7 @@ button {
 
 
 .image-container {
-  box-shadow: 3px 3px 10px rgb(255, 255, 255);
+  box-shadow: 1px 1px 11px rgb(255, 255, 255);
   margin: 2rem;
   cursor: pointer;
   height: fit-content;

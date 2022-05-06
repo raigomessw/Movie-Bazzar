@@ -42,7 +42,7 @@ function Navbar() {
             </ul>
             <div className="nav-icons">
 
-                <NavLink to="checkout">
+                <NavLink to="/checkout">
                 <AiOutlineShoppingCart className="icon" />
                 </NavLink>
 

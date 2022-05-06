@@ -51,7 +51,7 @@ const FilmsInfo = () => {
     //const dispatch = useDispatch()
 
     dispatch(actions.addToCart(movieToAdd));
-    console.log(shoppingCartObjects[0].product.name);
+    // console.log(shoppingCartObjects[0].product.name);
   };
 
   //const add = actions.addToCart(state, movieSelected.title)

@@ -37,19 +37,16 @@ function Navbar() {
                <img src={Logotipo} alt="Logo" width="20" height="20"/>
             </div>
             <ul className="nav-menu">
-                <Link to="home" className="link-home" smooth="true" duration={500}><li>Home</li></Link>
-                <Link to="films" className="link-films" smooth="true" duration={500}><li>Films</li></Link>
+                <NavLink to="/" className="link-home" smooth="true" duration={500}><li>Home</li></NavLink>
             </ul>
             <div className="nav-icons">
 
                 <NavLink to="/checkout">
                 <AiOutlineShoppingCart className="icon" />
                 </NavLink>
-
               <div className="search-container">
               {/* <Search/> */}
               </div>
-
             </div>
 
             <div className="hamburger" onClick={handleNav}>
@@ -57,8 +54,8 @@ function Navbar() {
             </div>
             <div className={nav ? "mobile-menu-1 active" : "mobile-menu-1"}>
                 <ul className="mobile-nav">
-                    <Link to="home" smooth="true" duration={500}><li>Home</li></Link>
-                    <Link to="filmes" smooth="true" duration={500}><li>Filmes</li></Link>
+                    <NavLink to="home" smooth="true" duration={500}><li>Home</li></NavLink>
+
                 </ul>
                 <div className="mobile-menu-botton">
                     <div className="menu-icons">

@@ -51,10 +51,6 @@
     color: rgb(0, 0, 0);
 }
 
-/* .logo-home{
-
-} */
-
 .logo-home,
 .link-home,
 .link-films,
@@ -97,11 +93,11 @@ li {
     display: none;
 }
 
-/* .nav-icons {
+.nav-icons {
   padding: 20px;
   font-size: 1.8rem;
   cursor: pointer;
-} */
+} 
 .bg-transparent {
   background-color: transparent;
   border: 1px white solid;

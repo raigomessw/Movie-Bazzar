@@ -38,7 +38,6 @@ function Navbar() {
             </div>
             <ul className="nav-menu">
                 <Link to="home" className="link-home" smooth="true" duration={500}><li>Home</li></Link>
-                <Link to="films" className="link-films" smooth="true" duration={500}><li>Films</li></Link>
             </ul>
             <div className="nav-icons">
 
@@ -58,7 +57,6 @@ function Navbar() {
             <div className={nav ? "mobile-menu-1 active" : "mobile-menu-1"}>
                 <ul className="mobile-nav">
                     <Link to="home" smooth="true" duration={500}><li>Home</li></Link>
-                    <Link to="filmes" smooth="true" duration={500}><li>Filmes</li></Link>
                 </ul>
                 <div className="mobile-menu-botton">
                     <div className="menu-icons">

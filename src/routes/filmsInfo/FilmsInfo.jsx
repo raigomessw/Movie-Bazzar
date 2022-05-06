@@ -4,9 +4,12 @@ import { Link, useParams } from 'react-router-dom'
 import Navbar from './components/navbarFilmsInfo/Navbar';
 import { STATUS } from '../../features/filmList';
 import '../filmsInfo/FilmsInfo.css';
+import { actions } from '../../features/shoppingCart';
+import { reducer as shopReducer } from '../../features/shoppingCart';
+import { useEffect } from 'react';
 
 const FilmsInfo = () => {
-
+  const dispatch = useDispatch();
   const listObject = useSelector(state => state.filmList);
   const list = listObject.list;
 
@@ -14,12 +17,51 @@ const FilmsInfo = () => {
   let comments = [{ text : "Not bad, I liked the old ones better" , name : "John" , icon: "https://e7.pngegg.com/pngimages/870/211/png-clipart-iphone-world-emoji-day-man-iphone-electronics-face.png"} 
   , { text : "Loved it!" , name : "Sara" , icon: "http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/woman.png"}];
 
-  // Function : price is determined by number of puchaches
   let moviePrice = 16.19;
   const params = useParams();
   const imagePath = 'https://image.tmdb.org/t/p/';
   const movieSelected = list.find(movie => movie.id == params.id)
-  //console.log(movieSelected)
+ 
+
+
+  const shoppingCartObjects = useSelector(state => state.shoppingCart);
+  const lista = shoppingCartObjects.state;
+ 
+  let movieTitle = (movieSelected.title)
+  
+  const movieToAdd = {
+   
+      name: movieTitle,
+      price: moviePrice
+    
+  }
+  
+  const ShoppingCartDelete = () => {
+    dispatch(actions.removeFromCart(movieTitle))
+  }
+  
+  const items = useSelector( state => state.shoppingCart);
+  
+  const ShoppingCart = () => {
+    //const dispatch = useDispatch()
+    
+    dispatch(actions.addToCart(movieToAdd));
+    console.log(shoppingCartObjects[0].product.name)
+  }
+  
+  
+  
+    //const add = actions.addToCart(state, movieSelected.title)
+    
+  
+
+
+
+
+
+
+
+
 
 
   return (
@@ -58,11 +100,10 @@ const FilmsInfo = () => {
                       <span>{moviePrice}$</span>
                     </div>
                     <div className='movie-buttons'>
-                      <button className='buy'>Add to cart</button>
 
-                      <Link to="/checkout">
-                      <button className='wish'>Add to wishlist</button>
-                      </Link>
+                      <button onClick={ShoppingCart} className='buy'>Add to cart</button>
+                      <button onClick={ShoppingCartDelete} className='wish' >Add to wishlist</button>
+
                     </div>
                   </div>
                 </div>
@@ -81,6 +122,7 @@ const FilmsInfo = () => {
           <div className='movie-container'>
             <div className='card1'>
               <div> 
+                
               <h2> Comments</h2>
 
               <div> 
@@ -99,9 +141,8 @@ const FilmsInfo = () => {
                         );
                 
                     })}
-          
-      
-
+        
+       
           
 <input className="inputC" ></input>
 <button> Leave a comment</button>

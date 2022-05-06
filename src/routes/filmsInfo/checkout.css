@@ -52,6 +52,16 @@ Need to add flex wrap for different displays.*/
 }
 
 
+.card2 {
+   
+    width: clamp( 100rem, 120vw, 900px);
+    display: flex;
+   flex-direction: row;
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+}
+
 .labels1 {
     font-size: 2rem;
     margin-left: 0.5rem;
@@ -65,6 +75,16 @@ Need to add flex wrap for different displays.*/
     margin-right: 0.5rem;
 }
 
+
+
+.labels3 {
+   
+    position: relative;
+    overflow: hidden;
+    display: flex;
+   flex-direction: row;
+   width: clamp( 70rem, 90vw, 700px);
+}
 
 
 .img3 {

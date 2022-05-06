@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import './NavbarHomeStyles.css'
-import Logotipo from '../../assets/logotipo.gif'
-import Search from './Search'
+import './NavbarFilmsinfoStyles.css'
+import Logotipo from '../../home/components/assets/logotipo.gif'
+// import Search from './Search'
 import { Link } from 'react-scroll/'
 import { HiOutlineMenuAlt4 } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
@@ -47,7 +47,7 @@ function Navbar() {
                 </NavLink>
 
               <div className="search-container">
-              <Search/>
+              {/* <Search/> */}
               </div>
 
             </div>

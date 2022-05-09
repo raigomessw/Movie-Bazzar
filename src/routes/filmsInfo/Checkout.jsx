@@ -6,138 +6,141 @@ import '../filmsInfo/checkout.css';
 
 
 const Checkout = () => {
-  
- let totalamount = 500.00;
 
- const shoppingCartObjects = useSelector(state => state.shoppingCart);
+  //These are only test samples too see how they would display
+  const listObject = useSelector(state => state.filmList);
+  const movieList = listObject.list;
+  const imagePath = 'https://image.tmdb.org/t/p/';
+
+  const price = 16.90
+
+  const shoppingCartObjects = useSelector(state => state.shoppingCart);
+
+  const movieOne = movieList[0];
+  const movieTwo = movieList[1];
+  const movieThree = movieList[2];
 
   return (
-    <div className='movie-body'>
-    
-    <div className='movie-container'>
-      
-    <div className='card1'>
-
-      
-    <div >
-      <h2>Payment Details</h2>
-      <br/>   <br/>  
+    <div className="checkout-container">
+      <div className="checkout-card">
+        <div className="checkout-information">
+          <h1 className="title">Checkout</h1>
+          <div>
+            <h2 className='order'>Order</h2>
+          </div>
 
 
-        <div> 
-              {shoppingCartObjects.map((item, index) => {
-                        
-                        return (
-                            <div className='card2'>
-                               
-                               
-                               <label className='labels'>{item.product.name}  </label>
-                              
-                               <label className='labels'>   Price: {item.product.price} USD    </label>
-                              
-                               <label className='labels'>  Nr: {item.count}  </label>
-                              
+          <div className="movie-list">
 
-                              </div> 
-                           
-                        );
-                
-                    })}
-<br/>
-<label  className="labels2" >Total Amount:  50.00 USD </label>
-<br/>  <br/>
-</div>
-              <div >
-             
-             <div className='labels3'> 
-    <label className="labels" >First Name:</label>
-    <input className="inputF" id="firstname" name="firstname" type="text" required minlength="3" maxlength="15">
-        </input>
-        
-    <label  className="labels">Last Name:</label>
-    <input className="inputF" id="lastname" name="lastname" type="text" required minlength="3" maxlength="15">
-        </input>
+            <p>{movieOne.title}</p>
+            <div>
+              <div className="img-movie">
+                <img src={`${imagePath}/w500/${movieOne.poster_path}`} alt="" />
+              </div>
+              <div className='items'>
+                <button>+</button>
+                <p>Quantatiy : 1</p>
+                <button>-</button>
+                <span>{price} $</span>
+              </div>
+            </div>
+
+            <p>{movieTwo.title}</p>
+            <div>
+              <div className="img-movie">
+                <img src={`${imagePath}/w500/${movieTwo.poster_path}`} alt="" />
+              </div>
+              <div className='items'>
+                <button>+</button>
+                <p>Quantatiy : 1</p>
+                <button>-</button>
+                <span>{price} $</span>
+              </div>
+            </div>
+
+            <p>{movieThree.title}</p>
+            <div>
+              <div className="img-movie">
+                <img src={`${imagePath}/w500/${movieThree.poster_path}`} alt="" />
+              </div>
+              <div className='items'>
+                <button>+</button>
+                <p>Quantatiy : 1</p>
+                <button>-</button>
+                <span>{price} $</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div className='total'>
+            <span>Total price: {price}$</span>
+          </div>
+
+          <h3 className='customer-information'>Customer information</h3>
+
+          <div className="inputs">
+            <div>
+              <span>Name: </span>
+              <input type="text" />
+              <span>Surename: </span>
+              <input type="text" />
+            </div>
+            <div>
+              <span>Adress: </span>
+              <input type="text" />
+              <span>Zip Code: </span>
+              <input type="number" />
+            </div>
+            <div>
+              <span>City: </span>
+              <input type="text" />
+              <span>Country: </span>
+              <input type="text" />
+            </div>
+            <div>
+              <span>Phone: </span>
+              <input type="number" />
+              <span>Email: </span>
+              <input type="text" />
+            </div>
+          </div>
+
+          <div className='creditcard'>
+            <img className="img3" src={`https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png`} alt="" />
+            <img className="img3" src={`https://cdn2.downdetector.com/static/uploads/logo/mastercard.jpg`} alt="" />
+            <img className="img3" src={`https://logowik.com/content/uploads/images/amex-card1708.jpg`} alt="" />
+            <img className="img3" src={`https://www.retailbankerinternational.com/wp-content/uploads/sites/2/2020/02/JCBI.png`} alt="" />
+            <img className="img3" src={`https://i.pcmag.com/imagery/reviews/068BjcjwBw0snwHIq0KNo5m-15..v1602794215.png`} alt="" />
+          </div>
+
+          <div className='creditcard-inputs'>
+            <div>
+              <span>Creditcard: </span>
+              <input type="number" />
+              <span>Expire date: </span>
+              <input type="text" />
+            </div>
+            <div>
+              <span>Name on card: </span>
+              <input type="text" />
+              <span>CCV: </span>
+              <input type="number" />
+            </div>
+          </div>
+
+          <div className="actions">
+            <Link to="/thankyou">
+              <button id="pay">
+                Pay
+              </button>
+            </Link>
+          </div>
+
         </div>
-
-    <br/> 
-
-    <div className='labels3'> 
-    <label className="labels" >Address:</label>
-    <input className="inputF"></input>
-    <label className="labels" >Zip Code</label>
-    <input className="inputF" id="zipcode" name="zipcode" type="number" required minlength="5" maxlength="6">
-        </input>
-
-        </div>
-        
-    <br/> 
-    <div className='labels3'> 
-    <label  className="labels">City:</label>
-    <input className="inputF"></input>
-    <label  className="labels">Country:</label>
-    <input className="inputF"></input>
+      </div>
     </div>
-        
-    <br/> 
-    <div className='labels3'> 
-    <label  className="labels" >Phone:</label>
-    <input className="inputF" ></input>
-    <label  className="labels" >Email:</label>
-    <input className="inputF"></input>
-    </div>
-        
-    
-    <br/> 
-    <br/> 
-<div>
-    <img className = "img3" src={`https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png`} alt="" />
-    <img className = "img3" src={`https://cdn2.downdetector.com/static/uploads/logo/mastercard.jpg`} alt="" />
-    <img className = "img3" src={`https://logowik.com/content/uploads/images/amex-card1708.jpg`} alt="" />
-    <img className = "img3" src={`https://www.retailbankerinternational.com/wp-content/uploads/sites/2/2020/02/JCBI.png`} alt="" />
-    <img className = "img3" src={`https://i.pcmag.com/imagery/reviews/068BjcjwBw0snwHIq0KNo5m-15..v1602794215.png`} alt="" />
-    
-  
-    </div>  
-    <br/> 
-    <br/> 
-    <div className='labels3'> 
-    <label  className="labels" >Credit Card:</label>
-    <input className="inputF"></input>
-    <label  className="labels" >Expiry date:</label>
-    <input className="inputF"  ></input>
-    </div>  
-    <br/> 
-
-    <div className='labels3'> 
-    <label  className="labels" >Name on card:</label>
-    <input className="inputF"></input>
-    <label  className="labels" >CCV:</label>
-    <input className="inputF"  ></input>
-    </div>  
-    <br/> 
-    <br/> 
-   
-  
-  
-    <br/> 
-    <br/> 
-
-
-  
-    <br/> 
-    <br/> 
-    <Link to="/thankyou">
-                      <button className='wish'>Submit your payment</button>
-                      </Link>
-    
-     </div>
-    
-    </div>
-    </div>
-    
-    </div></div>
-  
-  )
+  );
 }
 
 export default Checkout;

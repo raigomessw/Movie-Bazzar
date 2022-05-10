@@ -1,15 +1,78 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom'
 import '../filmsInfo/checkout.css';
-
+import { actions } from '../../features/shoppingCart';
+import { reducer as shopReducer } from '../../features/shoppingCart';
+import { useEffect } from 'react';
 
 
 const Checkout = () => {
-  
- let totalamount = 500.00;
+  const dispatch = useDispatch();
+
 
  const shoppingCartObjects = useSelector(state => state.shoppingCart);
+ const [currentFilm, setCurrentFilm ] = useState(null);
+
+  const  DeleteMovie = (index) => {
+    let movieTitle = ( shoppingCartObjects[index]?.product.name);
+    let moviePrice = ( shoppingCartObjects[index]?.product.price); 
+    const movieToDelete = {    
+     name: movieTitle,
+     price: moviePrice
+   }  
+   dispatch(actions.removeFromCart(movieToDelete)) 
+}
+
+const  IncreaseOne = (index) => {
+  let movieTitle = ( shoppingCartObjects[index]?.product.name);
+  let moviePrice = ( shoppingCartObjects[index]?.product.price);
+  const movieToDelete = {   
+   name: movieTitle,
+   price: moviePrice
+ } 
+ dispatch(actions.increaseAmount(movieToDelete))
+}
+
+const  DecreaseOne = (index) => {
+  let movieTitle = ( shoppingCartObjects[index]?.product.name);
+  let moviePrice = ( shoppingCartObjects[index]?.product.price);
+  const movieToDelete = { 
+   name: movieTitle,
+   price: moviePrice
+ } 
+
+  if (shoppingCartObjects[index].count == 1 ){
+    dispatch(actions.removeFromCart(movieToDelete))
+  } else 
+ dispatch(actions.decreaseAmount(movieToDelete)) 
+}
+
+
+const billing =  shoppingCartObjects.map((item, index) => (
+    
+    
+  <div className='card2' key={index}>
+     
+     
+     <label  className='labels'>{item.product.name}  </label>
+    
+     <label className='labels'>   Price: {item.product.price} USD    </label>
+    
+     <label className='labels'>  Nr: {item.count}  </label>
+      
+     <button  onClick={()=> {   setCurrentFilm(index) , IncreaseOne(index) }} className='wish' > +1 </button>
+
+     <button  onClick={()=> {   setCurrentFilm(index) , DecreaseOne(index) }} className='wish' > -1 </button>
+
+     <button  onClick={()=> {   setCurrentFilm(index) , DeleteMovie(index) }} className='wish' >Remove Movie</button>
+    
+    </div> 
+    
+
+
+))
+
 
   return (
     <div className='movie-body'>
@@ -25,24 +88,8 @@ const Checkout = () => {
 
 
         <div> 
-              {shoppingCartObjects.map((item, index) => {
-                        
-                        return (
-                            <div className='card2'>
-                               
-                               
-                               <label className='labels'>{item.product.name}  </label>
-                              
-                               <label className='labels'>   Price: {item.product.price} USD    </label>
-                              
-                               <label className='labels'>  Nr: {item.count}  </label>
-                              
-
-                              </div> 
-                           
-                        );
-                
-                    })}
+             {billing}
+                    
 <br/>
 <label  className="labels2" >Total Amount:  50.00 USD </label>
 <br/>  <br/>

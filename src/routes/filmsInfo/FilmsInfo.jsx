@@ -17,18 +17,18 @@ const FilmsInfo = () => {
   let comments = [{ text : "Not bad, I liked the old ones better" , name : "John" , icon: "https://e7.pngegg.com/pngimages/870/211/png-clipart-iphone-world-emoji-day-man-iphone-electronics-face.png"} 
   , { text : "Loved it!" , name : "Sara" , icon: "http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/woman.png"}];
 
-  let moviePrice = 16.19;
+  
   const params = useParams();
   const imagePath = 'https://image.tmdb.org/t/p/';
   const movieSelected = list.find(movie => movie.id == params.id)
  
 
 
-  const shoppingCartObjects = useSelector(state => state.shoppingCart);
-  const lista = shoppingCartObjects.state;
- 
-  let movieTitle = (movieSelected.title)
+ // const shoppingCartObjects = useSelector(state => state.shoppingCart);
   
+  let movieTitle = (movieSelected.title)
+  let moviePrice = 16.19;
+
   const movieToAdd = {
    
       name: movieTitle,
@@ -36,34 +36,15 @@ const FilmsInfo = () => {
     
   }
   
-  const ShoppingCartDelete = () => {
-    dispatch(actions.removeFromCart(movieTitle))
-  }
   
-  const items = useSelector( state => state.shoppingCart);
-  
-  const ShoppingCart = () => {
+  const AddShoppingCart = () => {
     //const dispatch = useDispatch()
     
+    console.log("adds to the basket" , movieToAdd)
     dispatch(actions.addToCart(movieToAdd));
-    console.log(shoppingCartObjects[0].product.name)
   }
   
   
-  
-    //const add = actions.addToCart(state, movieSelected.title)
-    
-  
-
-
-
-
-
-
-
-
-
-
   return (
     <div className='movie-body'>
           <div className='movie-container'>
@@ -101,8 +82,8 @@ const FilmsInfo = () => {
                     </div>
                     <div className='movie-buttons'>
 
-                      <button onClick={ShoppingCart} className='buy'>Add to cart</button>
-                      <button onClick={ShoppingCartDelete} className='wish' >Add to wishlist</button>
+                      <button onClick={AddShoppingCart} className='buy'>Add to cart</button>
+                      <button className='wish' >Add to wishlist</button>
 
                     </div>
                   </div>

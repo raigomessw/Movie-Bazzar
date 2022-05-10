@@ -8,7 +8,7 @@ const dispatch = useDispatch()
 const addToCart = () => dispatch(actions.addToCart());
 
 return(
-    <button>Add to cart</button>
+    <button>Add to fgffgdfdfg cart</button>
 )
 
 }

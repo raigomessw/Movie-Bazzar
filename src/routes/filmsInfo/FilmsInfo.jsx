@@ -46,29 +46,31 @@ const FilmsInfo = () => {
     },
   ];
 
-  let moviePrice = 16.19;
+  
   const params = useParams();
   const imagePath = "https://image.tmdb.org/t/p/";
   const movieSelected = list.find((movie) => movie.id == params.id);
 
-  const movieTitle = movieSelected.title;
+ // const shoppingCartObjects = useSelector(state => state.shoppingCart);
+  
+  let movieTitle = (movieSelected.title)
+  let moviePrice = 16.19;
+
   const movieToAdd = {
-    name: movieTitle,
-    price: moviePrice,
-  };
-
-  const ShoppingCartDelete = () => {
-    dispatch(actions.removeFromCart(movieTitle));
-  };
-
-  const ShoppingCart = () => {
+   
+      name: movieTitle,
+      price: moviePrice
+    
+  }
+  
+  
+  const AddShoppingCart = () => {
     //const dispatch = useDispatch()
-
+    
+    console.log("adds to the basket" , movieToAdd)
     dispatch(actions.addToCart(movieToAdd));
-    // console.log(shoppingCartObjects[0].product.name);
-  };
-
-  //const add = actions.addToCart(state, movieSelected.title)
+  }
+  
 
   return (
     <div>
@@ -92,6 +94,7 @@ const FilmsInfo = () => {
                       {movieSelected.original_language}
                     </span>
                   </div>
+
                   <div>
                     <span>Rating:</span>
                     <span>{movieSelected.vote_average}</span>
@@ -119,6 +122,7 @@ const FilmsInfo = () => {
                     <button onClick={ShoppingCartDelete} className="wish">
                       Add to wishlist
                     </button>
+
                   </div>
                 </div>
               </div>

@@ -2,11 +2,11 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Navbar from "./navBarFilms/NavbarFilmInfo";
-// import { STATUS } from "../../features/filmList";
+ import { STATUS } from "../../features/filmList";
 import "../filmsInfo/FilmsInfo.css";
 import { actions } from "../../features/shoppingCart";
-// import { reducer as shopReducer } from "../../features/shoppingCart";
-// import { useEffect } from "react";
+ import { reducer as shopReducer } from "../../features/shoppingCart";
+ import { useEffect } from "react";
 
 const FilmsInfo = () => {
   const dispatch = useDispatch();
@@ -116,12 +116,10 @@ const FilmsInfo = () => {
                     <span>{moviePrice}$</span>
                   </div>
                   <div className="movie-buttons">
-                    <button onClick={ShoppingCart} className="buy">
+                    <button onClick={AddShoppingCart} className="buy">
                       Add to cart
                     </button>
-                    <button onClick={ShoppingCartDelete} className="wish">
-                      Add to wishlist
-                    </button>
+                   
 
                   </div>
                 </div>

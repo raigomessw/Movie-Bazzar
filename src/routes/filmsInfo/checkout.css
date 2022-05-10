@@ -143,12 +143,12 @@ Phone: 480px
 
 @media (max-width: 768px) {
     .inputs div {
-        flex-wrap: wrap;
+        display: block;
     }
 
     .inputs input {
-       
-        width: 18rem;
+        margin-left: 4.6rem;
+        width: 20rem;
         height: 2.5rem;
     }
 
@@ -182,6 +182,7 @@ Phone: 480px
 .creditcard-inputs div {
     display: flex;
     padding: 0.7rem;
+    
 }
 
 .creditcard-inputs input {
@@ -198,7 +199,27 @@ Phone: 480px
 }
 
 @media (max-width: 768px) {
+    .img3 {
+        display: block;
+        flex-wrap: wrap;
+        padding: 1px;
+        height: 80px;
+        width: 500px;
+    }    
 
+    .creditcard-inputs div {
+        
+        height: 8em;       
+        
+    }
+
+    .creditcard-inputs input {
+        height: 3rem;
+    }
+
+    .creditcard-inputs span {
+        font-size: larger;
+    }
 }
 
 

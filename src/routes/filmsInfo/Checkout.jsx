@@ -5,20 +5,9 @@ import { actions } from '../../features/shoppingCart';
 import '../filmsInfo/checkout.css';
 
 
-
 const Checkout = () => {
 
-  // const dispatch = useDispatch();
-
-  // const DeleteItem = () => {
-  //   dispatch(actions.removeFromCart(movieTitle))
-  // }
-
-  // const AddItem = () => {
-  //   dispatch(actions.addToCart(movieToAdd));
-  // }
-
-  //These are only test samples too see how they would display
+ 
   const listObject = useSelector(state => state.filmList);
   const movieList = listObject.list;
   const imagePath = 'https://image.tmdb.org/t/p/';

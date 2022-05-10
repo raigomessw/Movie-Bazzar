@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom'
@@ -115,76 +116,86 @@ const billing =  shoppingCartObjects.map((item, index) => (
     <input className="inputF" id="zipcode" name="zipcode" type="number" required minlength="5" maxlength="6">
         </input>
 
+              </div>
+
+              <br />
+              <div className="labels3">
+                <label className="labels">City:</label>
+                <input className="inputF"></input>
+                <label className="labels">Country:</label>
+                <input className="inputF"></input>
+              </div>
+
+              <br />
+              <div className="labels3">
+                <label className="labels">Phone:</label>
+                <input className="inputF"></input>
+                <label className="labels">Email:</label>
+                <input className="inputF"></input>
+              </div>
+
+              <br />
+              <br />
+              <div>
+                <img
+                  className="img3"
+                  src={`https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png`}
+                  alt=""
+                />
+                <img
+                  className="img3"
+                  src={`https://cdn2.downdetector.com/static/uploads/logo/mastercard.jpg`}
+                  alt=""
+                />
+                <img
+                  className="img3"
+                  src={`https://logowik.com/content/uploads/images/amex-card1708.jpg`}
+                  alt=""
+                />
+                <img
+                  className="img3"
+                  src={`https://www.retailbankerinternational.com/wp-content/uploads/sites/2/2020/02/JCBI.png`}
+                  alt=""
+                />
+                <img
+                  className="img3"
+                  src={`https://i.pcmag.com/imagery/reviews/068BjcjwBw0snwHIq0KNo5m-15..v1602794215.png`}
+                  alt=""
+                />
+              </div>
+              <br />
+              <br />
+              <div className="labels3">
+                <label className="labels">Credit Card:</label>
+                <input className="inputF"></input>
+                <label className="labels">Expiry date:</label>
+                <input className="inputF"></input>
+              </div>
+              <br />
+
+              <div className="labels3">
+                <label className="labels">Name on card:</label>
+                <input className="inputF"></input>
+                <label className="labels">CCV:</label>
+                <input className="inputF"></input>
+              </div>
+              <br />
+              <br />
+
+              <br />
+              <br />
+
+              <br />
+              <br />
+              <Link to="/thankyou">
+                <button className="wish">Submit your payment</button>
+              </Link>
+            </div>
+          </div>
         </div>
-        
-    <br/> 
-    <div className='labels3'> 
-    <label  className="labels">City:</label>
-    <input className="inputF"></input>
-    <label  className="labels">Country:</label>
-    <input className="inputF"></input>
+      </div>
     </div>
-        
-    <br/> 
-    <div className='labels3'> 
-    <label  className="labels" >Phone:</label>
-    <input className="inputF" ></input>
-    <label  className="labels" >Email:</label>
-    <input className="inputF"></input>
-    </div>
-        
-    
-    <br/> 
-    <br/> 
-<div>
-    <img className = "img3" src={`https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png`} alt="" />
-    <img className = "img3" src={`https://cdn2.downdetector.com/static/uploads/logo/mastercard.jpg`} alt="" />
-    <img className = "img3" src={`https://logowik.com/content/uploads/images/amex-card1708.jpg`} alt="" />
-    <img className = "img3" src={`https://www.retailbankerinternational.com/wp-content/uploads/sites/2/2020/02/JCBI.png`} alt="" />
-    <img className = "img3" src={`https://i.pcmag.com/imagery/reviews/068BjcjwBw0snwHIq0KNo5m-15..v1602794215.png`} alt="" />
-    
-  
-    </div>  
-    <br/> 
-    <br/> 
-    <div className='labels3'> 
-    <label  className="labels" >Credit Card:</label>
-    <input className="inputF"></input>
-    <label  className="labels" >Expiry date:</label>
-    <input className="inputF"  ></input>
-    </div>  
-    <br/> 
-
-    <div className='labels3'> 
-    <label  className="labels" >Name on card:</label>
-    <input className="inputF"></input>
-    <label  className="labels" >CCV:</label>
-    <input className="inputF"  ></input>
-    </div>  
-    <br/> 
-    <br/> 
-   
-  
-  
-    <br/> 
-    <br/> 
-
-
-  
-    <br/> 
-    <br/> 
-    <Link to="/thankyou">
-                      <button className='wish'>Submit your payment</button>
-                      </Link>
-    
-     </div>
-    
-    </div>
-    </div>
-    
-    </div></div>
-  
-  )
-}
+  );
+};
 
 export default Checkout;

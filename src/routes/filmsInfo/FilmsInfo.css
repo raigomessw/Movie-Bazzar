@@ -1,4 +1,4 @@
-/* Not added yet : 
+/* Not added yet :
 Need to add flex wrap for different displays.*/
 
 * {
@@ -24,6 +24,7 @@ Need to add flex wrap for different displays.*/
     border-radius: 1rem;
     position: relative;
     overflow: hidden;
+    top: 5rem;
 }
 
 .img-1 {
@@ -46,7 +47,6 @@ img {
 
 .movie-info-container {
     width: 50%;
-    
 }
 
 .general-info {
@@ -88,7 +88,7 @@ img {
 .movie-info {
     margin-top: 1rem;
     width: 90%;
-    
+
 }
 
 .general-info div {
@@ -120,10 +120,36 @@ img {
 
 .card:first-child,
 .card:first-child .img-1 {
-    box-shadow: 0 0 0.5rem white;    
+    box-shadow: 0 0 0.5rem white;
 }
 
 .card:first-child .general-info div span:last-of-type {
     font-weight: 900;
     color: #ff3939;
 }
+
+.movie-comentars{
+  display: flex;
+  position: relative;
+  top: 6rem;
+
+}
+.comments-container{
+  margin: 1rem;
+  padding: auto;
+}
+.test{
+  overflow-y: scroll;
+  overflow-x: scroll;
+  position: relative;
+  max-width: 100%;
+  max-height:200px;
+  background-color: rgba(39, 35, 35, 0.342);
+  box-shadow: 1px 1px 10px rgb(255, 255, 255);
+}
+.inputs input{
+ margin: 1rem;
+ width: 60%;
+}
+
+

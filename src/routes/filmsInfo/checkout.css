@@ -54,7 +54,7 @@ Need to add flex wrap for different displays.*/
 
 .card2 {
    
-    width: clamp( 100rem, 120vw, 900px);
+    width: clamp( 80rem, 100vw, 700px);
     display: flex;
    flex-direction: row;
     position: relative;

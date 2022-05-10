@@ -68,8 +68,11 @@ const reducer = createReducer( initialState, {
     //     })
     //     return newstate;
     // }
+
+    
         
     [removeFromCart] : (state, action ) => (
+        
         state.filter(cartItem => cartItem.product.name !== action.payload.name)
     )    
 

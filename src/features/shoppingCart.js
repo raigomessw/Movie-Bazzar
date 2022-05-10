@@ -8,12 +8,8 @@ const decreaseAmount = createAction('decrease amount');
 
 
 const actions = { addToCart, removeFromCart, increaseAmount, decreaseAmount};
-
-
     
-const initialState = [
- 
-]; 
+const initialState = []; 
 
 
 const reducer = createReducer( initialState, {

@@ -1,3 +1,10 @@
+/*
+Desktop: 1200px
+Laptop: 1024px
+Tablet: 768px
+Phone: 480px
+*/
+
 * {
     padding: 0;
     margin: 0;
@@ -68,11 +75,38 @@
     box-shadow: 0 0 0.5rem white;
 }
 
+.items {
+    align-items: center;
+}
+
+.items button {
+    padding: 0.8rem;
+    font-size: larger;
+    margin: 1rem;
+}
+
+.addCount {
+    box-shadow: 0 0 0.7rem red;
+    background-color: red;
+}
+
+.deleteCount {
+    box-shadow: 0 0 0.7rem rgb(255, 123, 0);
+    background-color: rgb(255, 123, 0);
+}
+
+.addCount:active {
+    background-color: rgb(243, 171, 171);
+}
+
+.deleteCount:active {
+    background-color: rgb(243, 190, 140);
+}
+
 .total {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-
 }
 
 /* Order section ends*/
@@ -88,11 +122,10 @@
     margin-bottom: 1rem;
 }
 
-
 .inputs div {
     display: flex;
     padding: 0.7rem;
-    
+
 }
 
 .inputs input {
@@ -106,6 +139,26 @@
     font-size: 1.2rem;
     margin-right: 2rem;
     padding: 5px;
+}
+
+@media (max-width: 768px) {
+    .inputs div {
+        flex-wrap: wrap;
+    }
+
+    .inputs input {
+       
+        width: 18rem;
+        height: 2.5rem;
+    }
+
+    .inputs span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.7rem;
+        margin-bottom: 5px;
+    }
 }
 
 /* Customer information section ends*/
@@ -142,6 +195,10 @@
     font-size: 1rem;
     margin-right: 2rem;
     padding: 5px;
+}
+
+@media (max-width: 768px) {
+
 }
 
 

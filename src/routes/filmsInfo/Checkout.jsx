@@ -1,11 +1,22 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom'
+import { actions } from '../../features/shoppingCart';
 import '../filmsInfo/checkout.css';
 
 
 
 const Checkout = () => {
+
+  // const dispatch = useDispatch();
+
+  // const DeleteItem = () => {
+  //   dispatch(actions.removeFromCart(movieTitle))
+  // }
+
+  // const AddItem = () => {
+  //   dispatch(actions.addToCart(movieToAdd));
+  // }
 
   //These are only test samples too see how they would display
   const listObject = useSelector(state => state.filmList);
@@ -16,10 +27,6 @@ const Checkout = () => {
 
   const shoppingCartObjects = useSelector(state => state.shoppingCart);
 
-  const movieOne = movieList[0];
-  const movieTwo = movieList[1];
-  const movieThree = movieList[2];
-
   return (
     <div className="checkout-container">
       <div className="checkout-card">
@@ -29,49 +36,25 @@ const Checkout = () => {
             <h2 className='order'>Order</h2>
           </div>
 
+          {shoppingCartObjects.map((item, index) => {
+            return (
+              <div className="movie-list">
+                <p>{item.product.name}</p>
+                <div>
+                  <div className="img-movie">
+                    <img src={`${imagePath}/w500/${item.product.poster}`} alt="" />
+                  </div>
+                  <div className='items'>
+                    <button className='addCount'>+</button>
+                    <p>Item: {item.count}</p>
+                    <button className='deleteCount'>-</button>
+                  </div>
+                  <span>{item.product.price} $</span>
+                </div>
+              </div>
+            );
 
-          <div className="movie-list">
-
-            <p>{movieOne.title}</p>
-            <div>
-              <div className="img-movie">
-                <img src={`${imagePath}/w500/${movieOne.poster_path}`} alt="" />
-              </div>
-              <div className='items'>
-                <button>+</button>
-                <p>Quantatiy : 1</p>
-                <button>-</button>
-                <span>{price} $</span>
-              </div>
-            </div>
-
-            <p>{movieTwo.title}</p>
-            <div>
-              <div className="img-movie">
-                <img src={`${imagePath}/w500/${movieTwo.poster_path}`} alt="" />
-              </div>
-              <div className='items'>
-                <button>+</button>
-                <p>Quantatiy : 1</p>
-                <button>-</button>
-                <span>{price} $</span>
-              </div>
-            </div>
-
-            <p>{movieThree.title}</p>
-            <div>
-              <div className="img-movie">
-                <img src={`${imagePath}/w500/${movieThree.poster_path}`} alt="" />
-              </div>
-              <div className='items'>
-                <button>+</button>
-                <p>Quantatiy : 1</p>
-                <button>-</button>
-                <span>{price} $</span>
-              </div>
-            </div>
-
-          </div>
+          })}
 
           <div className='total'>
             <span>Total price: {price}$</span>

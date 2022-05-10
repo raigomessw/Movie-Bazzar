@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./NavbarHomeStyles.css";
 import Logotipo from "../../assets/logotipo.gif";
-import Search from "./Search";
+// import Search from "./Search";
 import { Link } from "react-scroll/";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
@@ -29,8 +29,7 @@ function Navbar() {
     <div className="navbar-home">
       <div
         name="home"
-        className={nav ? "navbar-home navbar-bg-home" : "navbar-home"}
-      >
+        className={nav ? "navbar-home navbar-bg-home" : "navbar-home"}>
         <div className={nav ? "logo-home darkk" : "logo-home"}>
           <img src={Logotipo} alt="Logo" width="20" height="20" />
         </div>
@@ -45,7 +44,7 @@ function Navbar() {
           </NavLink>
 
           <div className="search-container">
-            <Search />
+            {/* <Search /> */}
           </div>
         </div>
 

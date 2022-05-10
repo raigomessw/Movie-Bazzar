@@ -42,7 +42,6 @@ const  DecreaseOne = (index) => {
    name: movieTitle,
    price: moviePrice
  } 
-
   if (shoppingCartObjects[index].count == 1 ){
     dispatch(actions.removeFromCart(movieToDelete))
   } else 
@@ -62,11 +61,11 @@ const billing =  shoppingCartObjects.map((item, index) => (
     
      <label className='labels'>  Nr: {item.count}  </label>
       
-     <button  onClick={()=> {   setCurrentFilm(index) , IncreaseOne(index) }} className='wish' > +1 </button>
+     <button  onClick={()=> {   IncreaseOne(index) }} className='wish' > +1 </button>
 
-     <button  onClick={()=> {   setCurrentFilm(index) , DecreaseOne(index) }} className='wish' > -1 </button>
+     <button  onClick={()=> {   DecreaseOne(index) }} className='wish' > -1 </button>
 
-     <button  onClick={()=> {   setCurrentFilm(index) , DeleteMovie(index) }} className='wish' >Remove Movie</button>
+     <button  onClick={()=> {   DeleteMovie(index) }} className='wish' >Remove Movie</button>
     
     </div> 
     

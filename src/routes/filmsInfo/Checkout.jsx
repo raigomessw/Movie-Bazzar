@@ -7,14 +7,54 @@ import '../filmsInfo/checkout.css';
 
 const Checkout = () => {
 
- 
+  const dispatch = useDispatch()
+
+  const shoppingCartObjects = useSelector(state => state.shoppingCart);
+  //const [currentFilm, setCurrentFilm] = useState(null);
+
   const listObject = useSelector(state => state.filmList);
-  const movieList = listObject.list;
   const imagePath = 'https://image.tmdb.org/t/p/';
+
+  /* Functions for selected movie */
+
+  const IncreaseOne = (index) => {
+    let movieTitle = (shoppingCartObjects[index].product.name);
+    let moviePrice = (shoppingCartObjects[index].product.price);
+    const movieToDelete = {
+      name: movieTitle,
+      price: moviePrice
+    }
+    dispatch(actions.increaseAmount(movieToDelete))
+  }
+
+  const DecreaseOne = (index) => {
+    let movieTitle = (shoppingCartObjects[index].product.name);
+    let moviePrice = (shoppingCartObjects[index].product.price);
+    const movieToDelete = {
+      name: movieTitle,
+      price: moviePrice
+    }
+    if (shoppingCartObjects[index].count == 1) {
+      dispatch(actions.removeFromCart(movieToDelete))
+    } else
+      dispatch(actions.decreaseAmount(movieToDelete))
+  }
+
+  const DeleteMovie = (index) => {
+    let movieTitle = (shoppingCartObjects[index].product.name);
+    let moviePrice = (shoppingCartObjects[index].product.price);
+    const movieToDelete = {
+      name: movieTitle,
+      price: moviePrice
+    }
+    dispatch(actions.removeFromCart(movieToDelete))
+  }
+
+
 
   const price = 16.90
 
-  const shoppingCartObjects = useSelector(state => state.shoppingCart);
+  // const shoppingCartObjects = useSelector(state => state.shoppingCart);
 
   return (
     <div className="checkout-container">
@@ -27,16 +67,16 @@ const Checkout = () => {
 
           {shoppingCartObjects.map((item, index) => {
             return (
-              <div className="movie-list">
+              <div className="movie-list" key={index}>
                 <p>{item.product.name}</p>
                 <div>
                   <div className="img-movie">
                     <img src={`${imagePath}/w500/${item.product.poster}`} alt="" />
                   </div>
                   <div className='items'>
-                    <button className='addCount'>+</button>
+                    <button onClick={() => { IncreaseOne(index) }} className='addCount'>+</button>
                     <p>Item: {item.count}</p>
-                    <button className='deleteCount'>-</button>
+                    <button onClick={() => { DecreaseOne(index) }} className='deleteCount'>-</button>
                   </div>
                   <span>{item.product.price} $</span>
                 </div>

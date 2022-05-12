@@ -43,21 +43,20 @@ const FilmsInfo = () => {
     },
   ];
 
-
   const params = useParams();
   const imagePath = "https://image.tmdb.org/t/p/";
   const movieSelected = list.find((movie) => movie.id == params.id);
 
  // const shoppingCartObjects = useSelector(state => state.shoppingCart);
-
+ 
   let movieTitle = (movieSelected.title)
   let moviePrice = 16.19;
 
   const movieToAdd = {
 
       name: movieTitle,
-      price: moviePrice
-
+      price: moviePrice,
+      poster: movieImg
   }
 
 

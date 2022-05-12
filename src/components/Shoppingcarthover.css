@@ -13,49 +13,49 @@
   }
 
   .checkoutbtn :hover {
-    
+
   }
-  
+
   /* The container <div> - needed to position the dropdown content */
   .dropdown {
-    position: absolute;
-    display: inline-block;  
+    position: flex;
+    display: inline-block;
   }
-  
+
   /* Dropdown Content (Hidden by Default) */
 
 
   .dropdown-content {
     display: none;
-    position: relative;
+    position: absolute;
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-   
-    right: 10rem;
+    top:2rem;
+    right: 3rem;
   }
   /*display: flex;
   justify-content: space-between;
    Links inside the dropdown */
 
-  
-  
+
+
 
   .dropdown-content div {
     color: rgb(255, 255, 255);
    /* padding: 1px 3px;*/
     text-decoration: none;
     display: block;
-  
+
   }
-  
+
   /* Change color of dropdown links on hover */
   /*.dropdown-content div:hover {background-color: #ddd;}*/
-  
+
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {display: block;
   }
-  
+
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
@@ -65,7 +65,7 @@
     color: white;
     padding-right: 30%;
     font-size: 10px;
-    
+
   }
 
   .titletextright {
@@ -94,8 +94,8 @@
     display: inline-block;
     background-color: Transparent;
     background-repeat:no-repeat;
-    border: none; 
-    color: white;   
+    border: none;
+    color: white;
 
   }
 
@@ -104,7 +104,7 @@
     background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
-    color: white;    
+    color: white;
   }
 
   .dropdown:hover .btnplus:hover {

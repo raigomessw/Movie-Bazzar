@@ -13,7 +13,7 @@ const Checkout = () => {
 
 
  const shoppingCartObjects = useSelector(state => state.shoppingCart);
- const [currentFilm, setCurrentFilm ] = useState(null);
+ //const [currentFilm, setCurrentFilm ] = useState(null);
 
   const  DeleteMovie = (index) => {
     let movieTitle = ( shoppingCartObjects[index]?.product.name);

@@ -7,7 +7,7 @@ const Search  = () => {
   const handleSearch = () => setSearch(!search)
 
   return (
-    <forme className='form-search'>
+    <form className='form-search'>
      <div className='search-iconn' onClick={handleSearch}>
        {!search ? (<AiOutlineSearch className="icon-search" style={{ color: "#ffff" }} />) : (<AiOutlineClose style={{ color: "#ffff" }} className="icon-close" />)}
      </div>
@@ -16,7 +16,7 @@ const Search  = () => {
          <input className="bg-transparent" type="text" placeholder="Search films" onChange="" />
        </div>
       </div>
-    </forme>
+    </form>
   )
 
 }

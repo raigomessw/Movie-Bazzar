@@ -64,7 +64,7 @@ function Navbar() {
           </ul>
           <div className="mobile-menu-botton">
             <div className="menu-icons">
-              <Link>
+              <Link to="checkout">
                 <div>
                   <AiOutlineShoppingCart
                     className="icon"

@@ -139,8 +139,8 @@ img {
   padding: auto;
 }
 .test{
-  overflow-y: scroll;
-  overflow-x: scroll;
+  overflow-y: auto;
+  overflow-x: auto;
   position: relative;
   max-width: 100%;
   max-height:200px;

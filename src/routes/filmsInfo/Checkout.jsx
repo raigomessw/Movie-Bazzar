@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom'
@@ -16,59 +15,61 @@ const Checkout = () => {
  const [currentFilm, setCurrentFilm ] = useState(null);
 
   const  DeleteMovie = (index) => {
-    let movieTitle = ( shoppingCartObjects[index]?.product.name);
-    let moviePrice = ( shoppingCartObjects[index]?.product.price); 
-    const movieToDelete = {    
+    let movieTitle = ( shoppingCartObjects[index].product.name);
+    let moviePrice = ( shoppingCartObjects[index].product.price);
+    const movieToDelete = {
      name: movieTitle,
      price: moviePrice
-   }  
-   dispatch(actions.removeFromCart(movieToDelete)) 
+   }
+   dispatch(actions.removeFromCart(movieToDelete))
 }
 
 const  IncreaseOne = (index) => {
-  let movieTitle = ( shoppingCartObjects[index]?.product.name);
-  let moviePrice = ( shoppingCartObjects[index]?.product.price);
-  const movieToDelete = {   
+  let movieTitle = ( shoppingCartObjects[index].product.name);
+  let moviePrice = ( shoppingCartObjects[index].product.price);
+  const movieToDelete = {
    name: movieTitle,
    price: moviePrice
- } 
+ }
  dispatch(actions.increaseAmount(movieToDelete))
 }
 
 const  DecreaseOne = (index) => {
-  let movieTitle = ( shoppingCartObjects[index]?.product.name);
-  let moviePrice = ( shoppingCartObjects[index]?.product.price);
-  const movieToDelete = { 
+  let movieTitle = ( shoppingCartObjects[index].product.name);
+  let moviePrice = ( shoppingCartObjects[index].product.price);
+  const movieToDelete = {
    name: movieTitle,
    price: moviePrice
- } 
+
+ }
   if (shoppingCartObjects[index].count == 1 ){
     dispatch(actions.removeFromCart(movieToDelete))
-  } else 
- dispatch(actions.decreaseAmount(movieToDelete)) 
+  } else
+ dispatch(actions.decreaseAmount(movieToDelete))
 }
 
 
 const billing =  shoppingCartObjects.map((item, index) => (
-    
-    
+
+
   <div className='card2' key={index}>
-     
-     
+
+
      <label  className='labels'>{item.product.name}  </label>
-    
+
      <label className='labels'>   Price: {item.product.price} USD    </label>
-    
+
      <label className='labels'>  Nr: {item.count}  </label>
-      
+
+
      <button  onClick={()=> {   IncreaseOne(index) }} className='wish' > +1 </button>
 
      <button  onClick={()=> {   DecreaseOne(index) }} className='wish' > -1 </button>
 
      <button  onClick={()=> {   DeleteMovie(index) }} className='wish' >Remove Movie</button>
-    
-    </div> 
-    
+
+    </div>
+
 
 
 ))
@@ -76,39 +77,39 @@ const billing =  shoppingCartObjects.map((item, index) => (
 
   return (
     <div className='movie-body'>
-    
+
     <div className='movie-container'>
-      
+
     <div className='card1'>
 
-      
+
     <div >
       <h2>Payment Details</h2>
-      <br/>   <br/>  
+      <br/>   <br/>
 
 
-        <div> 
+        <div>
              {billing}
-                    
+
 <br/>
 <label  className="labels2" >Total Amount:  50.00 USD </label>
 <br/>  <br/>
 </div>
               <div >
-             
-             <div className='labels3'> 
+
+             <div className='labels3'>
     <label className="labels" >First Name:</label>
     <input className="inputF" id="firstname" name="firstname" type="text" required minlength="3" maxlength="15">
         </input>
-        
+
     <label  className="labels">Last Name:</label>
     <input className="inputF" id="lastname" name="lastname" type="text" required minlength="3" maxlength="15">
         </input>
         </div>
 
-    <br/> 
+    <br/>
 
-    <div className='labels3'> 
+    <div className='labels3'>
     <label className="labels" >Address:</label>
     <input className="inputF"></input>
     <label className="labels" >Zip Code</label>

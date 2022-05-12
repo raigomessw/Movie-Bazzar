@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom'
 import { actions } from '../../features/shoppingCart';
 import '../filmsInfo/checkout.css';
-import { actions } from '../../features/shoppingCart';
 import { reducer as shopReducer } from '../../features/shoppingCart';
 import { useEffect } from 'react';
 
@@ -87,7 +86,7 @@ const Checkout = () => {
           })}
 
           <div className='total'>
-            <span>${item.count * 20} $</span>
+            <span>99.00 $</span>
           </div>
 
           <h3 className='customer-information'>Customer information</h3>

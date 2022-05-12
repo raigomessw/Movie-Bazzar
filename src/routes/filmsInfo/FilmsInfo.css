@@ -34,6 +34,13 @@ Need to add flex wrap for different displays.*/
     overflow: hidden;
 }
 
+.img4 {
+    height: 3%;
+    width: 3%;
+    border-radius: 4rem;
+    object-fit: cover;
+}
+
 img {
     width: 100%;
     height: 100%;

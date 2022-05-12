@@ -50,6 +50,7 @@ const FilmsInfo = () => {
  // const shoppingCartObjects = useSelector(state => state.shoppingCart);
  
   let movieTitle = (movieSelected.title)
+  const movieImg = (movieSelected.poster_path)
   let moviePrice = 16.19;
 
   const movieToAdd = {

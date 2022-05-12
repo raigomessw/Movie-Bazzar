@@ -13,7 +13,7 @@
   }
 
   .checkoutbtn :hover {
-
+    background-color: #04AA6D;
   }
 
   /* The container <div> - needed to position the dropdown content */
@@ -31,8 +31,8 @@
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    top:2rem;
-    right: 3rem;
+    top: 4rem;
+    right: 1rem;
   }
   /*display: flex;
   justify-content: space-between;

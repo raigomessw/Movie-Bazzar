@@ -8,6 +8,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import Shoppincarthover from "../../../../../components/Shoppingcarthover";
 
 function Navbar() {
   const [nav, setNav] = useState(false);
@@ -39,14 +40,11 @@ function Navbar() {
           </Link>
         </ul>
         <div className="nav-icons">
-          <NavLink to="checkout">
-            <AiOutlineShoppingCart className="icon" />
-          </NavLink>
-
-          <div className="search-container">
-            {/* <Search /> */}
-          </div>
-        </div>
+                <Shoppincarthover />
+              <div className="search-container">
+              {/* <Search/> */}
+              </div>
+            </div>
 
         <div className="hamburger" onClick={handleNav}>
           {!nav ? (

@@ -97,6 +97,7 @@ li {
   padding: 20px;
   font-size: 1.8rem;
   cursor: pointer;
+  position: relative;
 } 
 .bg-transparent {
   background-color: transparent;

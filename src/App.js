@@ -11,19 +11,12 @@ function App() {
 
   return (
     <main>
-      
         <Routes >
-
           <Route exact path="/"element={< Home />}/>
-
           <Route path="/filmsInfo/:id" element={<FilmsInfo/>}/>
-
-          <Route path="/checkout" element={<Checkout/>}/>
-          <Route path="/thankyou" element={<Thankyou/>}/>
-       
-     
+          <Route path="/checkout" element={<Checkout />}/>
+          <Route path="/thankyou" element={<Thankyou />}/>
         </Routes >
-    
       </main>
     );
 }

@@ -14,7 +14,6 @@ const Home = () => {
             <div>
                 <Navbar/>
                 <HerobodyHome />
-            
             </div>
         </Link>
     )

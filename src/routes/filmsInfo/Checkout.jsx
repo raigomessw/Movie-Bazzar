@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom'
 import { actions } from '../../features/shoppingCart';
 import '../filmsInfo/checkout.css';
-
+import { actions } from '../../features/shoppingCart';
+import { reducer as shopReducer } from '../../features/shoppingCart';
+import { useEffect } from 'react';
 
 const Checkout = () => {
-
   const dispatch = useDispatch()
 
   const shoppingCartObjects = useSelector(state => state.shoppingCart);
@@ -148,11 +149,12 @@ const Checkout = () => {
               </button>
             </Link>
           </div>
-
+          </div>
         </div>
       </div>
-    </div>
   );
+
 }
+
 
 export default Checkout;

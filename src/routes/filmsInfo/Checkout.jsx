@@ -50,9 +50,8 @@ const Checkout = () => {
     dispatch(actions.removeFromCart(movieToDelete))
   }
 
-
-
-  const price = 16.90
+  const price = 20
+  let totalPrice = 0
 
   // const shoppingCartObjects = useSelector(state => state.shoppingCart);
 
@@ -77,8 +76,9 @@ const Checkout = () => {
                     <button onClick={() => { IncreaseOne(index) }} className='addCount'>+</button>
                     <p>Item: {item.count}</p>
                     <button onClick={() => { DecreaseOne(index) }} className='deleteCount'>-</button>
+                    <button onClick={() => { DeleteMovie(index) }} className='deletemovie'>Delete</button>
                   </div>
-                  <span>{item.product.price} $</span>
+                  <span>${item.count * 20} $</span>
                 </div>
               </div>
             );
@@ -86,7 +86,7 @@ const Checkout = () => {
           })}
 
           <div className='total'>
-            <span>Total price: {price}$</span>
+            <span>${item.count * 20} $</span>
           </div>
 
           <h3 className='customer-information'>Customer information</h3>

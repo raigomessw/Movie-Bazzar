@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "./NavbarHomeStyles.css";
 import Logotipo from "../../assets/logotipo.gif";
-import Search from "./Search";
+// import Search from "./Search";
 import { Link } from "react-scroll/";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import Shoppincarthover from "../../../../../components/Shoppingcarthover";
 
 function Navbar() {
   const [nav, setNav] = useState(false);
@@ -29,8 +30,7 @@ function Navbar() {
     <div className="navbar-home">
       <div
         name="home"
-        className={nav ? "navbar-home navbar-bg-home" : "navbar-home"}
-      >
+        className={nav ? "navbar-home navbar-bg-home" : "navbar-home"}>
         <div className={nav ? "logo-home darkk" : "logo-home"}>
           <img src={Logotipo} alt="Logo" width="20" height="20" />
         </div>
@@ -40,14 +40,11 @@ function Navbar() {
           </Link>
         </ul>
         <div className="nav-icons">
-          <NavLink to="checkout">
-            <AiOutlineShoppingCart className="icon" />
-          </NavLink>
-
-          <div className="search-container">
-            <Search />
-          </div>
-        </div>
+                <Shoppincarthover />
+              <div className="search-container">
+              {/* <Search/> */}
+              </div>
+            </div>
 
         <div className="hamburger" onClick={handleNav}>
           {!nav ? (

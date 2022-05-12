@@ -2,11 +2,8 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Navbar from "./navBarFilms/NavbarFilmInfo";
- import { STATUS } from "../../features/filmList";
 import "../filmsInfo/FilmsInfo.css";
 import { actions } from "../../features/shoppingCart";
- import { reducer as shopReducer } from "../../features/shoppingCart";
- import { useEffect } from "react";
 
 const FilmsInfo = () => {
   const dispatch = useDispatch();
@@ -46,31 +43,31 @@ const FilmsInfo = () => {
     },
   ];
 
-  
+
   const params = useParams();
   const imagePath = "https://image.tmdb.org/t/p/";
   const movieSelected = list.find((movie) => movie.id == params.id);
 
  // const shoppingCartObjects = useSelector(state => state.shoppingCart);
-  
+
   let movieTitle = (movieSelected.title)
   let moviePrice = 16.19;
 
   const movieToAdd = {
-   
+
       name: movieTitle,
       price: moviePrice
-    
+
   }
-  
-  
+
+
   const AddShoppingCart = () => {
     //const dispatch = useDispatch()
-    
+
     console.log("adds to the basket" , movieToAdd)
     dispatch(actions.addToCart(movieToAdd));
   }
-  
+
 
   return (
     <div>
@@ -119,7 +116,7 @@ const FilmsInfo = () => {
                     <button onClick={AddShoppingCart} className="buy">
                       Add to cart
                     </button>
-                   
+
 
                   </div>
                 </div>

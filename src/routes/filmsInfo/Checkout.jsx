@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom'
 import { actions } from '../../features/shoppingCart';
 import '../filmsInfo/checkout.css';
-import { actions } from '../../features/shoppingCart';
 import { reducer as shopReducer } from '../../features/shoppingCart';
 import { useEffect } from 'react';
 
@@ -12,7 +11,11 @@ const Checkout = () => {
 
   const shoppingCartObjects = useSelector(state => state.shoppingCart);
   //const [currentFilm, setCurrentFilm] = useState(null);
-
+  let counter = 0
+  shoppingCartObjects.map((item, index) => {
+    counter = item.count + counter
+  }
+  )
   const listObject = useSelector(state => state.filmList);
   const imagePath = 'https://image.tmdb.org/t/p/';
 
@@ -52,7 +55,6 @@ const Checkout = () => {
   }
 
   const price = 20
-  let totalPrice = 0
 
   // const shoppingCartObjects = useSelector(state => state.shoppingCart);
 
@@ -87,7 +89,7 @@ const Checkout = () => {
           })}
 
           <div className='total'>
-            <span>${item.count * 20} $</span>
+            <span>Total Amount: {counter*20}.00 USD </span>
           </div>
 
           <h3 className='customer-information'>Customer information</h3>
@@ -149,9 +151,9 @@ const Checkout = () => {
               </button>
             </Link>
           </div>
-          </div>
         </div>
       </div>
+    </div>
   );
 
 }

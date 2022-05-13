@@ -62,34 +62,44 @@ const Checkout = () => {
     <div className="checkout-container">
       <div className="checkout-card">
         <div className="checkout-information">
-          <h1 className="title">Checkout</h1>
           <div>
+            <h1 className="title">Checkout</h1>
             <h2 className='order'>Order</h2>
           </div>
 
           {shoppingCartObjects.map((item, index) => {
             return (
               <div className="movie-list" key={index}>
-                <p>{item.product.name}</p>
-                <div>
+                <div className='movie-title'>
+                  <p>{item.product.name}</p>
+                </div>
+                <div className='selected-container'>
                   <div className="img-movie">
                     <img src={`${imagePath}/w500/${item.product.poster}`} alt="" />
                   </div>
+                  <div className='counter'>
+                      <p>Item: {item.count}</p>
+                    </div>
                   <div className='items'>
                     <button onClick={() => { IncreaseOne(index) }} className='addCount'>+</button>
-                    <p>Item: {item.count}</p>
+
                     <button onClick={() => { DecreaseOne(index) }} className='deleteCount'>-</button>
-                    <button onClick={() => { DeleteMovie(index) }} className='deletemovie'>Delete</button>
+
+                    <button onClick={() => { DeleteMovie(index) }} className='deleteMovie'>X</button>
                   </div>
-                  <span>${item.count * 20} $</span>
+
+                    <div className='total'>
+                      <span className='total_price'>{item.count * 20}$</span>
+                    </div>
                 </div>
               </div>
             );
 
           })}
 
-          <div className='total'>
-            <span>Total Amount: {counter*20}.00 USD </span>
+          <div className='subTotal'>
+            <span className='totalText'>Total Amount: </span>
+            <span className='totalAll'>{counter * 20}USD</span>
           </div>
 
           <h3 className='customer-information'>Customer information</h3>
@@ -105,7 +115,7 @@ const Checkout = () => {
               <span>Adress: </span>
               <input type="text" />
               <span>Zip Code: </span>
-              <input type="number" />
+              <input type="text" />
             </div>
             <div>
               <span>City: </span>
@@ -115,7 +125,7 @@ const Checkout = () => {
             </div>
             <div>
               <span>Phone: </span>
-              <input type="number" />
+              <input type="text" />
               <span>Email: </span>
               <input type="text" />
             </div>
@@ -132,7 +142,7 @@ const Checkout = () => {
           <div className='creditcard-inputs'>
             <div>
               <span>Creditcard: </span>
-              <input type="number" />
+              <input type="text" />
               <span>Expire date: </span>
               <input type="text" />
             </div>
@@ -140,7 +150,7 @@ const Checkout = () => {
               <span>Name on card: </span>
               <input type="text" />
               <span>CCV: </span>
-              <input type="number" />
+              <input type="text" />
             </div>
           </div>
 

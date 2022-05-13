@@ -1,227 +1,325 @@
-/* Not added yet : 
-Need to add flex wrap for different displays.*/
+/*
+Desktop: 1200px
+Laptop: 1024px
+Tablet: 768px
+Phone: 480px
+*/
 
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
 }
 
-.movie-body{
-        display: grid;
-        place-items: center;
-        min-height: 100vh;
-        background-color: black;
-        color: #ffe7c8;
-        font-size: 0.95rem;
-        padding: 5rem;
-}
-
-.inputF {
-    border: black solid 1px;
-    border-radius: 15px;
-    padding: 15px;
-    margin-bottom: 10px;
-    margin-right: 30px;
-    width: 300px;
-    box-shadow: 0 0 0.5rem white;
-}
-
-
-.inputC {
-    border: black solid 1px;
-    border-radius: 15px;
-    font-size: large;
-    padding: 15px;
-    margin-bottom: 10px;
-    margin-right: 30px;
-    width: 800px;
-    height: 100px;
-    box-shadow: 0 0 0.5rem white;
-}
-
-
-.card1 {
-    box-shadow: 3px 3px 10px rgb(255, 255, 255);
-    width: clamp( 100rem, 120vw, 900px);
+.checkout-container {
     display: flex;
-    padding: 1.5rem;
+    font-size: 0.95rem;
+    min-height: 100vh;
+    color: #ffe7c8;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+
+}
+
+.checkout-card {
+    width: 50rem;
+    padding: 3.5rem;
     border-radius: 1rem;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 0 0.8rem white;
 }
 
-
-.card2 {
-   
-    width: clamp( 80rem, 100vw, 700px);
+.title {
     display: flex;
-   flex-direction: row;
-    position: relative;
-    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    color: red;
+}
+
+/* Order section */
+
+.movie-list {
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.movie-list div {
+    display: flex;
     padding: 10px;
+    justify-content: space-between;
 }
 
-.labels1 {
-    font-size: 2rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-   
+.movie-list p {
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
-.labels2 {
+.movie-list span {
     font-size: 1.5rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    font-weight: bold;
+    color: red;
 }
 
-
-
-.labels3 {
-   
-    position: relative;
-    overflow: hidden;
-    display: flex;
-   flex-direction: row;
-   width: clamp( 70rem, 90vw, 700px);
-}
-
-
-.img3 {
-    position: relative;
-    width: 9rem;
-    height: 6rem;
-    right: 0;
-    top: 0;
-    overflow: hidden;
-    padding: 10px;
-
-}
-
-
-.img4 {
-    position: relative;
-    shape-image-threshold: calc();
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    overflow: hidden;
-    padding: 1px;
-
-}
-
-.wish2 {
-    font-size: 2rem;
-    box-shadow: 0 0 0.5rem white;
-}
-
-
-.wish2:hover{
-    background: #f87000;
-    transition-duration: 0.5s;
-    transform: scale(0.99);
-}
-
-.img-1 {
-    width: 350px;
-    height: 550px;
+.img-movie {
+    width: 125px;
+    height: 165px;
     border-radius: .5rem;
     overflow: hidden;
 }
 
-img {
+.img-movie img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    box-shadow: 0 0 0.5rem white;
 }
 
-.top {
+.items {
+    align-items: center;
+}
+
+.items button {
+    padding: 0.8rem;
+    font-size: larger;
+    margin: 1rem;
+}
+
+.addCount {
+    box-shadow: 0 0 0.7rem red;
+    background-color: red;
+}
+
+.deleteCount {
+    box-shadow: 0 0 0.7rem rgb(255, 123, 0);
+    background-color: rgb(255, 123, 0);
+}
+
+.addCount:active {
+    background-color: rgb(243, 171, 171);
+}
+
+.deleteCount:active {
+    background-color: rgb(243, 190, 140);
+}
+
+.total {
     display: flex;
-    width: 95%;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
-.movie-info-container {
-    width: 50%;
-    
+@media (max-width: 768px) {
+    .total {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
 }
 
-.labels {
-    font-size: 1.3rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    flex: 1;
-    padding: 15;
+@media (max-width: 480px) {
+
+    .checkout-container {
+        padding: 1rem;
+    }
+
+    .checkout-card {
+        padding: 1rem;
+    }
+
+    .img-movie {
+        width: 105px;
+        height: 145px;
+        margin-right: 0.8rem;
+    }
+
+    .img-movie img {
+        box-shadow: 0 0 0.3rem white;
+    }
+
+    .items button {
+        padding: 0.4rem;
+        font-size: larger;
+        margin: 1rem;
+    }
+
+    .total {
+        font-size: 1.5rem;
+    }
 }
 
-.movie-language {
-    text-transform: uppercase;
-}
+/* Order section ends*/
 
-.buy {
-    font-size: 1rem;
-    box-shadow: 0 0 0.5rem white;
-}
+/* Customer information section */
 
-.buy:hover{
-    background: #ff3939;
-    transition-duration: 0.5s;
-    transform: scale(0.99);
-}
-
-.wish {
-    font-size: 1rem;
-    box-shadow: 0 0 0.5rem white;
-}
-
-.wish:hover{
-    background: #f87000;
-    transition-duration: 0.5s;
-    transform: scale(0.99);
-}
-
-.general-info h2 {
+.customer-information {
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
-.movie-info {
-    margin-top: 1rem;
-    width: 90%;
+.inputs div {
+    display: flex;
+    padding: 0.7rem;
+
+}
+
+.inputs input {
+    border: black solid 1px;
+    border-radius: 6px;
+    padding: 10px;
+    margin-right: auto;
+}
+
+.inputs span {
+    font-size: 1.2rem;
+    margin-right: 2rem;
+    padding: 5px;
+}
+
+@media (max-width: 768px) {
+
+    .inputs div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inputs input {
+        margin: auto;
+        width: 20rem;
+        height: 2.5rem;
+    }
+
+    .inputs span {
+        margin: auto;
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .inputs input {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+/* Customer information section ends*/
+
+/* Credit card section */
+
+.img3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 8.6rem;
+    height: 6rem;
+    object-fit: cover;
+    border-radius: 1rem;
+    padding: 10px;
+}
+
+.creditcard-inputs {
+    margin-bottom: 1.6rem;
+}
+
+.creditcard-inputs div {
+    display: flex;
+    padding: 0.7rem;
     
 }
 
-.general-info div {
-    margin: 1rem 0;
+.creditcard-inputs input {
+    border: black solid 1px;
+    border-radius: 6px;
+    padding: 10px;
+    margin-right: auto;
+}
+
+.creditcard-inputs span {
+    font-size: 1rem;
+    margin-right: 2rem;
+    padding: 5px;
+}
+
+@media (max-width: 768px) {
+    .img3 {
+        display: flex;
+        float: left;
+        padding: 5px;
+        width: 20%;
+    }    
+
+    .creditcard-inputs div {
+        display: block;
+        block-size: auto;
+        padding: 5px;       
+    }
+
+    .creditcard-inputs input {
+        min-width: 480px;
+    }
+
+    .creditcard-inputs span {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .img3 {
+        display: flex;
+        padding: 3px;
+        width: 20%;
+        float: left;
+    }
+
+    .creditcard-inputs div {
+        display: block;
+        block-size: auto;
+        padding: 5px;
+    }
+
+    .creditcard-inputs input {
+        min-width: 400px;
+        height: 90%;
+        margin-bottom: 1rem;
+    }
+
+}
+
+
+/* Credit card section ends*/
+
+/* Button */
+
+.actions {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.7rem;
 }
 
-.img-2 {
-    position: absolute;
-    width: 40%;
-    height: 100%;
-    right: 0;
-    top: 0;
-    overflow: hidden;
-    opacity: .6;
+#pay {
+    font-size: large;
+    height: 3.5rem;
+    width: 6rem;
+    background-color: red;
+    box-shadow: 0 0 0.7rem red;
 }
 
-.card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 30%;
-    width: 10%;
-    height: 100%;
-    background-image: linear-gradient(to right, black, transparent);
-    z-index: 1;
+#pay:hover {
+    background: rgb(255, 123, 0);
+    transition-duration: 0.5s;
+    box-shadow: 0 0 9rem rgb(255, 123, 0);
 }
 
-.card:first-child,
-.card:first-child .img-1 {
-    box-shadow: 0 0 0.5rem white;    
-}
+@media (max-width: 768px) {
 
-.card:first-child .general-info div span:last-of-type {
-    font-weight: 900;
-    color: #ff3939;
+    #pay {
+        font-size: 1.5rem;
+        height: 5rem;
+        width: 8rem;
+    }
+
 }

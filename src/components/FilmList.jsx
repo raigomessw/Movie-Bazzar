@@ -23,7 +23,7 @@ const FilmList = () => {
     content = 'Väntar på films...';
 
   }else if (status === STATUS.SUCCESS) {
-    content = list.map((films) => {
+    content = list.map((films , index) => {
       return(
 
         <Link key={films.original_title} to={`/filmsinfo/${films.id}` }>

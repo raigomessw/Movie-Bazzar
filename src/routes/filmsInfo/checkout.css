@@ -1,8 +1,6 @@
 /*
-Desktop: 1200px
-Laptop: 1024px
-Tablet: 768px
-Phone: 480px
+iPhone SE: 375px
+Second-size phone: 480px
 */
 
 * {
@@ -35,6 +33,12 @@ Phone: 480px
     flex-direction: column;
     align-items: center;
     color: red;
+}
+
+@media (max-width: 375px) {
+    .title {
+        font-size: 1.7rem;
+    }
 }
 
 /* Order section */
@@ -86,13 +90,21 @@ Phone: 480px
 }
 
 .addCount {
+    border: none;
     box-shadow: 0 0 0.7rem red;
     background-color: red;
 }
 
 .deleteCount {
+    border: none;
     box-shadow: 0 0 0.7rem rgb(255, 123, 0);
     background-color: rgb(255, 123, 0);
+}
+
+.deleteMovie {
+    border: none;
+    box-shadow: 0 0 0.7rem rgb(94, 94, 94);        
+    background-color: rgb(87, 84, 84);
 }
 
 .addCount:active {
@@ -103,48 +115,150 @@ Phone: 480px
     background-color: rgb(243, 190, 140);
 }
 
-.total {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+.deleteMovie:active {
+    background-color: rgb(215, 187, 160);
 }
 
-@media (max-width: 768px) {
-    .total {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
+.counter {
+    
+    align-items: center;
+}
+
+.total {
+    align-items: center;
+
+}
+
+.subTotal {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: space-between;
+}
+
+.totalText {
+    font-size: 1.3rem;
+}
+
+.totalAll {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: red;
 }
 
 @media (max-width: 480px) {
 
     .checkout-container {
-        padding: 1rem;
+        padding: 10px;
     }
 
-    .checkout-card {
-        padding: 1rem;
+    .checkout-card {    
+        padding: 10px;
     }
 
     .img-movie {
-        width: 105px;
-        height: 145px;
-        margin-right: 0.8rem;
+        width: 8rem;
+        height: 170px;
+        
     }
 
     .img-movie img {
-        box-shadow: 0 0 0.3rem white;
+        box-shadow: 0 0 0.5rem white;
     }
 
-    .items button {
+    .items button {       
         padding: 0.4rem;
         font-size: larger;
         margin: 1rem;
     }
 
+    .counter {
+        align-items: center;
+    }
+
     .total {
+        align-items: center;
         font-size: 1.5rem;
     }
+
+}
+
+@media (max-width: 414px) {
+
+    .movie-list div {
+        display: flex;
+        align-items: center;
+        padding: 2px;
+    }
+
+    .items {
+        flex-direction: column;
+    }
+
+    .items button {
+        width: 30px;
+        padding: 0.3px;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .order {
+        font-size: 1.2rem;
+    }
+
+    .movie-list div {
+        display: flex;
+        align-items: center;
+        padding: 1px;
+    }
+
+    .selected-container div {
+        margin: auto;
+        padding: 1px;
+    }
+
+    .img-movie {
+        box-shadow: 0 0 0.3rem white;
+        height: 180px;
+        width: 90px;
+    }
+
+    /* .items {
+        flex-direction: column;
+    }
+
+    .items button {
+        width: 30px;
+        padding: 0.3px;
+    } */
+
+    .counter {
+        box-sizing: border-box;
+
+    }
+
+    .total {
+        box-sizing: border-box;
+        align-self: flex-end;
+    }
+
+    .total span{
+        font-size: 1.2rem;
+        max-width: 100%;
+    }
+
+    .movie-list p {
+        font-size: 1rem;
+    }
+
+    .totalText {
+        font-size: 1.2rem;
+    }
+
+    .totalAll {
+        font-size: 1.3rem;
+    }
+
 }
 
 /* Order section ends*/
@@ -158,52 +272,126 @@ Phone: 480px
     align-items: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    
 }
 
-.inputs div {
+/* .inputs {
     display: flex;
-    padding: 0.7rem;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+} */
 
+/* .inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+
+/* .inputs div {
+    padding: 0.7rem;
+} */
+
+.input-2 div {
+    padding: 0.7rem;
 }
 
-.inputs input {
-    border: black solid 1px;
+
+/* .inputs input {
     border-radius: 6px;
     padding: 10px;
     margin-right: auto;
+} */
+
+.input-2 input {
+    border-radius: 6px;
+    height: 38px;
+    width: 150px;
+    padding: 5px;
 }
 
-.inputs span {
+/* .inputs span {
+    font-size: 1.2rem;
+    margin-right: 2rem;
+    padding: 5px;
+} */
+
+.input-2 span {
     font-size: 1.2rem;
     margin-right: 2rem;
     padding: 5px;
 }
 
+@media (min-width: 820px) {
+    /* .inputs {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    } */
+
+    .input-2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* .inputs div {
+        justify-content: center;
+        flex-direction: column;
+        padding: 1px;
+    } */
+
+    .input-2 div {
+        justify-content: center;
+        flex-direction: column;
+        padding: 1px;
+    }
+
+    .input-2 input {
+        max-width: 8rem;
+    }
+}
+
+@media (min-width: 840px) {
+    .input-2 input {
+        padding: 20px;
+        min-width: 10rem;
+    }
+}
+
 @media (max-width: 768px) {
 
-    .inputs div {
+    .input-2 div {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .inputs input {
+    .input-2 input {
         margin: auto;
         width: 20rem;
         height: 2.5rem;
     }
 
-    .inputs span {
+    .input-2 span {
         margin: auto;
         font-size: 1.7rem;
     }
 }
 
 @media (max-width: 480px) {
-    .inputs input {
+    .input-2 input {
         width: 100%;
         margin: auto;
     }
+}
+
+@media (max-width: 375px) {
+    .customer-information {
+        font-size: 1.4rem;
+    }
+
 }
 
 /* Customer information section ends*/
@@ -227,7 +415,7 @@ Phone: 480px
 .creditcard-inputs div {
     display: flex;
     padding: 0.7rem;
-    
+
 }
 
 .creditcard-inputs input {
@@ -243,22 +431,27 @@ Phone: 480px
     padding: 5px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 820px) {
+
     .img3 {
-        display: flex;
-        float: left;
-        padding: 5px;
+        padding: 10px;
         width: 20%;
-    }    
+    }
+
+    .creditcard-inputs {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
 
     .creditcard-inputs div {
-        display: block;
-        block-size: auto;
-        padding: 5px;       
+        flex-direction: column;
+        padding: 2px;
     }
 
     .creditcard-inputs input {
-        min-width: 480px;
+        margin: auto;
     }
 
     .creditcard-inputs span {
@@ -267,23 +460,60 @@ Phone: 480px
 }
 
 @media (max-width: 480px) {
-    .img3 {
+
+    .creditcard {
         display: flex;
-        padding: 3px;
+        max-height: max-content;
+        padding: 0.5px;
+    }
+
+    .img3 {
+        border-radius: 0.6rem;
+        height: 60px;
         width: 20%;
-        float: left;
     }
 
     .creditcard-inputs div {
-        display: block;
-        block-size: auto;
-        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .creditcard-inputs span {
+        font-size: 1.7rem;
+        margin: auto;
     }
 
     .creditcard-inputs input {
-        min-width: 400px;
+        margin: auto;
+        width: 100%;
         height: 90%;
         margin-bottom: 1rem;
+    }
+
+}
+
+@media (max-width: 375px) {
+    .img3 {
+        border-radius: 1px;
+        height: 50px;
+        padding: 4px;
+    }
+
+    .creditcard-inputs div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .creditcard-inputs span {
+        margin: auto;
+    }
+
+    .creditcard-inputs input {
+        width: 100%;
+        margin: auto;
     }
 
 }

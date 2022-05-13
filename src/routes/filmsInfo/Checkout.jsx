@@ -7,6 +7,7 @@ import { reducer as shopReducer } from '../../features/shoppingCart';
 import { useEffect } from 'react';
 
 const Checkout = () => {
+
   const dispatch = useDispatch()
 
   const shoppingCartObjects = useSelector(state => state.shoppingCart);
@@ -24,6 +25,7 @@ const Checkout = () => {
   const IncreaseOne = (index) => {
     let movieTitle = (shoppingCartObjects[index].product.name);
     let moviePrice = (shoppingCartObjects[index].product.price);
+
     const movieToDelete = {
       name: movieTitle,
       price: moviePrice

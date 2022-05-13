@@ -104,21 +104,6 @@ const Checkout = () => {
 
           <h3 className='customer-information'>Customer information</h3>
 
-          {/* <div className="inputs">
-            <div>
-              <span>Name: </span>
-              <input type="text" />
-              <span>Surename: </span>
-              <input type="text" />
-            </div>
-            <div>
-              <span>Adress: </span>
-              <input type="text" />
-              <span>Zip Code: </span>
-              <input type="text" />
-            </div>
-          </div> */}
-
           <div className='input-2'>
             <div>
               <span>Name: </span>

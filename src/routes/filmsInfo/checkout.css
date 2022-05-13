@@ -189,6 +189,15 @@ Second-size phone: 480px
         align-items: center;
         padding: 2px;
     }
+
+    .items {
+        flex-direction: column;
+    }
+
+    .items button {
+        width: 30px;
+        padding: 0.3px;
+    }
 }
 
 @media (max-width: 375px) {
@@ -214,14 +223,14 @@ Second-size phone: 480px
         width: 90px;
     }
 
-    .items {
+    /* .items {
         flex-direction: column;
     }
 
     .items button {
         width: 30px;
         padding: 0.3px;
-    }
+    } */
 
     .counter {
         box-sizing: border-box;
@@ -266,49 +275,113 @@ Second-size phone: 480px
     
 }
 
-.inputs div {
+/* .inputs {
     display: flex;
-    padding: 0.7rem;
-    
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+} */
 
+/* .inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+
+/* .inputs div {
+    padding: 0.7rem;
+} */
+
+.input-2 div {
+    padding: 0.7rem;
 }
 
-.inputs input {
-    border: black solid 1px;
+
+/* .inputs input {
     border-radius: 6px;
     padding: 10px;
     margin-right: auto;
-   
+} */
+
+.input-2 input {
+    border-radius: 6px;
+    height: 38px;
+    width: 150px;
+    padding: 5px;
 }
 
-.inputs span {
+/* .inputs span {
+    font-size: 1.2rem;
+    margin-right: 2rem;
+    padding: 5px;
+} */
+
+.input-2 span {
     font-size: 1.2rem;
     margin-right: 2rem;
     padding: 5px;
 }
 
+@media (min-width: 820px) {
+    /* .inputs {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    } */
+
+    .input-2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* .inputs div {
+        justify-content: center;
+        flex-direction: column;
+        padding: 1px;
+    } */
+
+    .input-2 div {
+        justify-content: center;
+        flex-direction: column;
+        padding: 1px;
+    }
+
+    .input-2 input {
+        max-width: 8rem;
+    }
+}
+
+@media (min-width: 840px) {
+    .input-2 input {
+        padding: 20px;
+        min-width: 10rem;
+    }
+}
+
 @media (max-width: 768px) {
 
-    .inputs div {
+    .input-2 div {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .inputs input {
+    .input-2 input {
         margin: auto;
         width: 20rem;
         height: 2.5rem;
     }
 
-    .inputs span {
+    .input-2 span {
         margin: auto;
         font-size: 1.7rem;
     }
 }
 
 @media (max-width: 480px) {
-    .inputs input {
+    .input-2 input {
         width: 100%;
         margin: auto;
     }
@@ -358,7 +431,7 @@ Second-size phone: 480px
     padding: 5px;
 }
 
-@media (max-width: 820px) {
+@media (min-width: 820px) {
 
     .img3 {
         padding: 10px;
@@ -366,11 +439,15 @@ Second-size phone: 480px
     }
 
     .creditcard-inputs {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         
     }
 
     .creditcard-inputs div {
-
+        flex-direction: column;
+        padding: 2px;
     }
 
     .creditcard-inputs input {

@@ -78,8 +78,8 @@ const Checkout = () => {
                     <img src={`${imagePath}/w500/${item.product.poster}`} alt="" />
                   </div>
                   <div className='counter'>
-                      <p>Item: {item.count}</p>
-                    </div>
+                    <p>Item: {item.count}</p>
+                  </div>
                   <div className='items'>
                     <button onClick={() => { IncreaseOne(index) }} className='addCount'>+</button>
 
@@ -88,9 +88,9 @@ const Checkout = () => {
                     <button onClick={() => { DeleteMovie(index) }} className='deleteMovie'>X</button>
                   </div>
 
-                    <div className='total'>
-                      <span className='total_price'>{item.count * 20}$</span>
-                    </div>
+                  <div className='total'>
+                    <span className='total_price'>{item.count * 20}$</span>
+                  </div>
                 </div>
               </div>
             );
@@ -104,7 +104,7 @@ const Checkout = () => {
 
           <h3 className='customer-information'>Customer information</h3>
 
-          <div className="inputs">
+          {/* <div className="inputs">
             <div>
               <span>Name: </span>
               <input type="text" />
@@ -117,6 +117,22 @@ const Checkout = () => {
               <span>Zip Code: </span>
               <input type="text" />
             </div>
+          </div> */}
+
+          <div className='input-2'>
+            <div>
+              <span>Name: </span>
+              <input type="text" />
+              <span>Surename: </span>
+              <input type="text" />
+            </div>
+            <div>
+              <span>Adress: </span>
+              <input type="text" />
+              <span>Zip Code: </span>
+              <input type="text" />
+            </div>
+
             <div>
               <span>City: </span>
               <input type="text" />

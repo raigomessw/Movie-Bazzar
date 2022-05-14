@@ -40,12 +40,12 @@ function Navbar() {
             <div className="nav-menu">
                 <NavLink to="/" className="link-home" smooth="true" duration={500}><li>Home</li></NavLink>
             </div>
-            <div className="nav-icons">
-                <Shoppincarthover />
-              <div className="search-container">
-              {/* <Search/> */}
-              </div>
-            </div>
+            <div className="">
+          <div className="kart">
+            <Shoppincarthover />
+          </div>
+          <div className="search-container">{/* <Search/> */}</div>
+        </div>
 
             <div className="hamburger" onClick={handleNav}>
                 {!nav ? (<HiOutlineMenuAlt4 className="icon" style={{ color: "#ffff" }} />) : (<AiOutlineClose style={{ color: "#ffff" }} className="icon" />)}

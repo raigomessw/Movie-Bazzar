@@ -140,9 +140,8 @@ li {
         transition: 0.3s;
         color: rgb(5, 2, 2);
     }
-    .kart{
+    .menu-cart{
       display: flex;
-      box-shadow: 1px rgb(0, 0, 0);
     }
 
     .logo-home {
@@ -185,7 +184,7 @@ li {
         width: 90%;
     }
     .nav-menu {
-        display: none;
+        display: flex;
     }
     .nav-icons {
         display: none;

@@ -5,9 +5,9 @@ import Logotipo from "../../assets/logotipo.gif";
 import { Link } from "react-scroll/";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+//import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+//import { NavLink } from "react-router-dom";
 import Shoppincarthover from "../../../../../components/Shoppingcarthover";
 
 function Navbar() {
@@ -40,7 +40,7 @@ function Navbar() {
             <li>Home</li>
           </Link>
         </ul>
-        <div className="nav-icons">
+        <div className="">
           <div className="kart">
             <Shoppincarthover />
           </div>
@@ -61,12 +61,10 @@ function Navbar() {
             </Link>
           </ul>
           <div className="mobile-menu-botton">
-            <div className="menu-icons">
-              <div to="checkout">
-                <div className="kart" style={{ color: "#050404" }}>
-                <Shoppincarthover />
-                </div>
-              </div>
+            <div className="menu-cart">
+               <div className="nav-menu" style={{ color: "#050404" }}>
+                 <Shoppincarthover />
+               </div>
             </div>
             <div className="social-icons-home">
               <FaFacebook className="iconSocial" />

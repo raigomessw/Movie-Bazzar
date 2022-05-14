@@ -11,32 +11,44 @@
     min-width: 200px;
     background-color: black;
   }
-
+/* Change the background color of the dropdown button when the dropdown content is shown */
   .checkoutbtn:hover {
     background-color: #350303;
   }
 
   /* The container <div> - needed to position the dropdown content */
   .dropdown {
-    position: flex;
-    display: inline-block;
+    display: flex;
+    position: absolute;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 3rem;
+    right:1rem;
+
   }
 
   /* Dropdown Content (Hidden by Default) */
 
 
-  .dropdown-content {
-    display: none;
+   /* .dropdown-content {
+    display: flex;
     position: absolute;
-    min-width: 200px;
+    min-width: 300px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    top: 3.5rem;
-    right: 1rem;
-  }
+    top: 4rem;
+    right:3rem;
+  } */
   /*display: flex;
   justify-content: space-between;
    Links inside the dropdown */
+
+   .cart-icon{
+     display: flex;
+     right:1rem;
+     position: absolute;
+   }
 
 
 
@@ -52,18 +64,18 @@
   /* Change color of dropdown links on hover */
   /*.dropdown-content div:hover {background-color: #ddd;}*/
 
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {display: block;
+  /*  Not show the dropdown if not click*/
+  .dropdown .dropdown-content {
+    display:none;
   }
 
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
   .titletextleft {
     font-style: italic;
     display: inline-block;
     color: white;
     padding-right: 30%;
+    font-weight: bold;
     font-size: 10px;
 
   }
@@ -107,12 +119,12 @@
     color: white;
   }
 
-  .dropdown:hover .btnplus:hover {
+  .dropdown .btnplus:hover {
     background-color: darkgray;
     border-radius: 50%;
   }
 
-  .dropdown:hover .btnminus:hover {
+  .dropdown .btnminus:hover {
     background-color: darkgray;
     border-radius: 50%;
   }
@@ -126,8 +138,29 @@
 
 .dropdown-child {
   display: inline-block;
+  width:200px;
   background-color: #252525;
   border: 0.5px solid #470b0b;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 500;
+}
+
+@media screen and (max-width: 940px) {
+  .dropdown {
+    display: flex;
+    position: absolute;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 3rem;
+    right:1rem;
+
+  }
+  .cart-icon{
+    display: flex;
+    right:0rem;
+    top: 2rem;
+    position: absolute;
+  }
+
 }

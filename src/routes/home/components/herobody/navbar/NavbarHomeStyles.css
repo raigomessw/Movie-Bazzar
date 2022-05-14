@@ -140,6 +140,9 @@ li {
         transition: 0.3s;
         color: rgb(5, 2, 2);
     }
+    .menu-cart{
+      display: flex;
+    }
 
     .logo-home {
         position: flex;
@@ -181,7 +184,7 @@ li {
         width: 90%;
     }
     .nav-menu {
-        display: none;
+        display: flex;
     }
     .nav-icons {
         display: none;

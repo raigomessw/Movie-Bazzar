@@ -25,6 +25,7 @@
     z-index: 1;
     top: 3rem;
     right:1rem;
+    background-color: rgb(0, 0, 0);
 
   }
 
@@ -59,6 +60,7 @@
     text-decoration: none;
     display: block;
 
+
   }
 
   /* Change color of dropdown links on hover */
@@ -73,19 +75,19 @@
   .titletextleft {
     font-style: italic;
     display: inline-block;
-    color: white;
+    color: rgb(0, 0, 0);
     padding-right: 30%;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 12px;
 
   }
 
   .titletextright {
     font-style: italic;
     display: inline-block;
-    color: white;
+    color: rgb(255, 255, 255);
     padding-left: 30%;
-    font-size: 10px;
+    font-size: 11px;
     margin-left: 7rem;
     top: -1rem;
     position: relative;
@@ -94,9 +96,9 @@
   .titletextrightcount {
     font-style: italic;
     display: inline-block;
-    color: white;
+    color: rgb(0, 0, 0);
     padding-left: 30%;
-    font-size: 10px;
+    font-size: 13px;
     margin-left: 7.5rem;
     top: -1rem;
     position: relative;
@@ -131,15 +133,15 @@
 
   .dropdown-childtop {
     display: inline-block;
-    background-color: #350303;
-    border: 0.5px solid #470b0b;
+    background-color: #f8f8f8;
+    border: 0.5px solid #000000;
     font-size: small;
   }
 
 .dropdown-child {
   display: inline-block;
   width:200px;
-  background-color: #252525;
+  background-color: #ffffff;
   border: 0.5px solid #470b0b;
   font-size: 15px;
   font-weight: 500;
@@ -150,10 +152,11 @@
     display: flex;
     position: absolute;
     min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
     z-index: 1;
     top: 3rem;
     right:1rem;
+    background-color: rgb(0, 0, 0);
 
   }
   .cart-icon{

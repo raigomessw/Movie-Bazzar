@@ -56,7 +56,7 @@ function Navbar() {
         </div>
         <div className={nav ? "mobile-menu-1 active" : "mobile-menu-1"}>
           <ul className="mobile-nav">
-            <Link to="home" smooth="true" duration={500}>
+            <Link to="/" smooth="true" duration={500}>
               <li>Home</li>
             </Link>
           </ul>

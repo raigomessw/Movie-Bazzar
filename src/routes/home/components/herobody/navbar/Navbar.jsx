@@ -30,7 +30,8 @@ function Navbar() {
     <div className="navbar-home">
       <div
         name="home"
-        className={nav ? "navbar-home navbar-bg-home" : "navbar-home"}>
+        className={nav ? "navbar-home navbar-bg-home" : "navbar-home"}
+      >
         <div className={nav ? "logo-home darkk" : "logo-home"}>
           <img src={Logotipo} alt="Logo" width="20" height="20" />
         </div>
@@ -40,11 +41,11 @@ function Navbar() {
           </Link>
         </ul>
         <div className="nav-icons">
-                <Shoppincarthover />
-              <div className="search-container">
-              {/* <Search/> */}
-              </div>
-            </div>
+          <div className="kart">
+            <Shoppincarthover />
+          </div>
+          <div className="search-container">{/* <Search/> */}</div>
+        </div>
 
         <div className="hamburger" onClick={handleNav}>
           {!nav ? (
@@ -61,14 +62,11 @@ function Navbar() {
           </ul>
           <div className="mobile-menu-botton">
             <div className="menu-icons">
-              <Link to="checkout">
-                <div>
-                  <AiOutlineShoppingCart
-                    className="icon"
-                    style={{ color: "#050404" }}
-                  />
+              <div to="checkout">
+                <div className="kart" style={{ color: "#050404" }}>
+                <Shoppincarthover />
                 </div>
-              </Link>
+              </div>
             </div>
             <div className="social-icons-home">
               <FaFacebook className="iconSocial" />

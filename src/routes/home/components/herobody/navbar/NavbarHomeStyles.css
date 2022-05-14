@@ -140,6 +140,10 @@ li {
         transition: 0.3s;
         color: rgb(5, 2, 2);
     }
+    .kart{
+      display: flex;
+      box-shadow: 1px rgb(0, 0, 0);
+    }
 
     .logo-home {
         position: flex;

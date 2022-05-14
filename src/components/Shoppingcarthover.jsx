@@ -25,7 +25,7 @@ const shoppingCartList =  shoppingCartObjects.map((item) => (
         <div class="dropdown">
         <div className="nav-menu">
              <NavLink to="/checkout">
-              <AiOutlineShoppingCart className="icon" />
+              <AiOutlineShoppingCart className="icon" style={{ color: "#ffff" }} />
              </NavLink>
          </div>
      <div class="dropdown-content">
@@ -36,7 +36,7 @@ const shoppingCartList =  shoppingCartObjects.map((item) => (
     </NavLink>
     </div>
     </div>
-        
+
 
      /*<div class="dropdown">
     <button class="dropbtn">Dropdown</button>

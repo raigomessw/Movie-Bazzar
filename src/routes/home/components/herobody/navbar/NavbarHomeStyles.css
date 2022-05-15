@@ -54,6 +54,11 @@
 /* .logo-home{
 
 } */
+.link-home{
+  font-size: 1.4rem;
+  position: relative;
+  right:10rem;
+}
 
 .logo-home,
 .link-home,

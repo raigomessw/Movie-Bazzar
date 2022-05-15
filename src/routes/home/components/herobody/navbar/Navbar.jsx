@@ -5,6 +5,7 @@ import Logotipo from "../../assets/logotipo.gif";
 import { Link } from "react-scroll/";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
+import { AiFillHome } from "react-icons/ai";
 //import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 //import { NavLink } from "react-router-dom";
@@ -37,7 +38,7 @@ function Navbar() {
         </div>
         <ul className="nav-menu">
           <Link to="home" className="link-home" smooth="true" duration={500}>
-            <li>Home</li>
+            <AiFillHome/>
           </Link>
         </ul>
         <div className="">

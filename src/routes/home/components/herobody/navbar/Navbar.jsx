@@ -5,9 +5,10 @@ import Logotipo from "../../assets/logotipo.gif";
 import { Link } from "react-scroll/";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { AiFillHome } from "react-icons/ai";
+//import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+//import { NavLink } from "react-router-dom";
 import Shoppincarthover from "../../../../../components/Shoppingcarthover";
 
 function Navbar() {
@@ -30,21 +31,22 @@ function Navbar() {
     <div className="navbar-home">
       <div
         name="home"
-        className={nav ? "navbar-home navbar-bg-home" : "navbar-home"}>
+        className={nav ? "navbar-home navbar-bg-home" : "navbar-home"}
+      >
         <div className={nav ? "logo-home darkk" : "logo-home"}>
           <img src={Logotipo} alt="Logo" width="20" height="20" />
         </div>
         <ul className="nav-menu">
           <Link to="home" className="link-home" smooth="true" duration={500}>
-            <li>Home</li>
+            <AiFillHome/>
           </Link>
         </ul>
-        <div className="nav-icons">
-                <Shoppincarthover />
-              <div className="search-container">
-              {/* <Search/> */}
-              </div>
-            </div>
+        <div className="">
+          <div className="kart">
+            <Shoppincarthover />
+          </div>
+          <div className="search-container">{/* <Search/> */}</div>
+        </div>
 
         <div className="hamburger" onClick={handleNav}>
           {!nav ? (
@@ -55,20 +57,15 @@ function Navbar() {
         </div>
         <div className={nav ? "mobile-menu-1 active" : "mobile-menu-1"}>
           <ul className="mobile-nav">
-            <Link to="home" smooth="true" duration={500}>
+            <Link to="/" smooth="true" duration={500}>
               <li>Home</li>
             </Link>
           </ul>
           <div className="mobile-menu-botton">
-            <div className="menu-icons">
-              <Link to="checkout">
-                <div>
-                  <AiOutlineShoppingCart
-                    className="icon"
-                    style={{ color: "#050404" }}
-                  />
-                </div>
-              </Link>
+            <div className="menu-cart">
+               <div className="nav-menu" style={{ color: "#050404" }}>
+                 <Shoppincarthover />
+               </div>
             </div>
             <div className="social-icons-home">
               <FaFacebook className="iconSocial" />

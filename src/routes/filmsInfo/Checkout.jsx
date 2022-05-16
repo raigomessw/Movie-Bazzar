@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { actions } from '../../features/shoppingCart';
@@ -11,14 +11,8 @@ const Checkout = () => {
   const dispatch = useDispatch()
 
   const shoppingCartObjects = useSelector(state => state.shoppingCart);
-  //const [currentFilm, setCurrentFilm] = useState(null);
+
   let counter = 0
-  
-  // shoppingCartObjects.map((item, index) => {
-
-  // }
-  // )
-
 
 
   const imagePath = 'https://image.tmdb.org/t/p/';

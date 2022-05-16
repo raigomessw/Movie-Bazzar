@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Navbar from "./navBarFilms/NavbarFilmInfo";
@@ -7,6 +7,7 @@ import { actions } from "../../features/shoppingCart";
 
 
 const FilmsInfo = () => {
+
   const dispatch = useDispatch();
   const listObject = useSelector((state) => state.filmList);
   const list = listObject.list;
@@ -49,7 +50,6 @@ const FilmsInfo = () => {
   const movieSelected = list.find((movie) => movie.id == params.id);
   console.log(movieSelected);
 
- // const shoppingCartObjects = useSelector(state => state.shoppingCart);
 
   let movieTitle = (movieSelected.title)
   const movieImg = (movieSelected.poster_path)
@@ -57,15 +57,12 @@ const FilmsInfo = () => {
 
   
   const movieToAdd = {
-
       name: movieTitle,
       price: moviePrice,
       poster: movieImg
   }
 
-
   const AddShoppingCart = () => {
-    //const dispatch = useDispatch()
     dispatch(actions.addToCart(movieToAdd));
   }
 

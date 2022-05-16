@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { actions } from '../../features/shoppingCart';
 import '../filmsInfo/checkout.css';
-import { reducer as shopReducer } from '../../features/shoppingCart';
-import { useEffect } from 'react';
+
+
 
 const Checkout = () => {
 
@@ -13,11 +13,14 @@ const Checkout = () => {
   const shoppingCartObjects = useSelector(state => state.shoppingCart);
   //const [currentFilm, setCurrentFilm] = useState(null);
   let counter = 0
-  shoppingCartObjects.map((item, index) => {
-    counter = item.count + counter
-  }
-  )
-  const listObject = useSelector(state => state.filmList);
+  
+  // shoppingCartObjects.map((item, index) => {
+
+  // }
+  // )
+
+
+
   const imagePath = 'https://image.tmdb.org/t/p/';
 
   /* Functions for selected movie */
@@ -40,7 +43,7 @@ const Checkout = () => {
       name: movieTitle,
       price: moviePrice
     }
-    if (shoppingCartObjects[index].count == 1) {
+    if (shoppingCartObjects[index].count === 1) {
       dispatch(actions.removeFromCart(movieToDelete))
     } else
       dispatch(actions.decreaseAmount(movieToDelete))
@@ -56,10 +59,6 @@ const Checkout = () => {
     dispatch(actions.removeFromCart(movieToDelete))
   }
 
-  const price = 20
-
-  // const shoppingCartObjects = useSelector(state => state.shoppingCart);
-
   return (
     <div className="checkout-container">
       <div className="checkout-card">
@@ -70,6 +69,7 @@ const Checkout = () => {
           </div>
 
           {shoppingCartObjects.map((item, index) => {
+            counter = item.count + counter
             return (
               <div className="movie-list" key={index}>
                 <div className='movie-title'>

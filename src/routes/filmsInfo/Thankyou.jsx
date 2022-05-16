@@ -1,10 +1,8 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../filmsInfo/checkout.css";
 
 const Thankyou = () => {
-  let totalamount = 500.0;
 
   return (
     <div className="movie-body">

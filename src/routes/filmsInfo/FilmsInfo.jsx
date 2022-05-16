@@ -5,6 +5,7 @@ import Navbar from "./navBarFilms/NavbarFilmInfo";
 import "../filmsInfo/FilmsInfo.css";
 import { actions } from "../../features/shoppingCart";
 
+
 const FilmsInfo = () => {
   const dispatch = useDispatch();
   const listObject = useSelector((state) => state.filmList);
@@ -54,6 +55,7 @@ const FilmsInfo = () => {
   const movieImg = (movieSelected.poster_path)
   let moviePrice = 20;
 
+  
   const movieToAdd = {
 
       name: movieTitle,

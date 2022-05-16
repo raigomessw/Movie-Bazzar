@@ -46,12 +46,13 @@ const FilmsInfo = () => {
   const params = useParams();
   const imagePath = "https://image.tmdb.org/t/p/";
   const movieSelected = list.find((movie) => movie.id == params.id);
+  console.log(movieSelected);
 
  // const shoppingCartObjects = useSelector(state => state.shoppingCart);
 
   let movieTitle = (movieSelected.title)
   const movieImg = (movieSelected.poster_path)
-  let moviePrice = 16.19;
+  let moviePrice = 20;
 
   const movieToAdd = {
 
@@ -63,8 +64,6 @@ const FilmsInfo = () => {
 
   const AddShoppingCart = () => {
     //const dispatch = useDispatch()
-
-    console.log("adds to the basket" , movieToAdd)
     dispatch(actions.addToCart(movieToAdd));
   }
 
@@ -161,7 +160,6 @@ const FilmsInfo = () => {
           </div>
         </comment>
       </div>
-      //movie-body ends
     </div>
   );
 };

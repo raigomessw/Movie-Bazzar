@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import "../filmsInfo/FilmsInfo.css";
 import { saveComm } from "../../features/firebaseFunctions";
 import db from "../../features/firebaseConfig";
-
+ 
+import firebase from 'firebase/app';
+ 
 
 const Comments = ({ film }) => {
   let content = [];
@@ -44,7 +46,7 @@ const Comments = ({ film }) => {
   });
 
   const fetchComments = async (film) => {
-    db.collection("comments")(querySnapshot => {
+    db.collection("comments").onSnapshot((querySnapshot) => {
       var filmcoms = [];
       querySnapshot.forEach((doc) => {
         filmcoms.push(doc.data());

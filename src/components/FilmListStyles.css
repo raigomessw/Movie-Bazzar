@@ -31,6 +31,9 @@ button {
   width: 100%;
   background-color: black;
 }
+.button-category button:hover{
+background-color:rgb(65, 16, 16);
+}
 
 .button-category button {
   display: relative;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { actions } from '../../features/shoppingCart';
@@ -15,7 +15,6 @@ const Checkout = () => {
   const shoppingCartObjects = useSelector(state => state.shoppingCart);
 
   let counter = 0
-
 
   const imagePath = 'https://image.tmdb.org/t/p/';
 
@@ -52,9 +51,31 @@ const Checkout = () => {
       name: movieTitle,
       price: moviePrice
     }
-    toast.error(`${movieTitle} has been deleted`, {position: "bottom-center" });
+    toast.error(`${movieTitle} has been deleted`, { position: "bottom-center" });
     dispatch(actions.removeFromCart(movieToDelete))
   }
+
+  const initialValues = 
+  { name: "", surename: "",
+    adress: "", zipcode: "",
+    city:"", country:"", phone:"", email:""};
+
+  const [customerInfo, setCustomerInfo] = useState("")
+  const [creditInfo, setCreditInfo] = useState("")
+  const [error, setError] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (customerInfo.length == 0 || creditInfo.length == 0) {
+      setError(true)
+    }
+    //If name and surename is filled :
+    if (customerInfo.length && creditInfo.length) {
+      <Link to="/thankyou">
+     </Link>
+    }
+  }
+
 
   return (
     <div className="checkout-container">
@@ -103,64 +124,114 @@ const Checkout = () => {
 
           <h3 className='customer-information'>Customer information</h3>
 
-          <div className='input-2'>
-            <div>
-              <span>Name: </span>
-              <input type="text" />
-              <span>Surename: </span>
-              <input type="text" />
-            </div>
-            <div>
-              <span>Adress: </span>
-              <input type="text" />
-              <span>Zip Code: </span>
-              <input type="text" />
+          <form onSubmit={handleSubmit}>
+            <div className='input-2'>
+              <div>
+                <span>Name: </span>
+                <input type="text" onChange={e => setCustomerInfo(e.target.value)} />
+                <div>
+                  {error && customerInfo.length <= 0 ?
+                    <label>Can't be empty</label> : ""}
+                </div>
+                <span>Surename: </span>
+                <input type="text" onChange={e => setCustomerInfo(e.target.value)} />
+                <div>
+                  {error && customerInfo.length <= 0 ?
+                    <label>Can't be empty</label> : ""}
+                </div>
+              </div>
+              <div>
+                <span>Adress: </span>
+                <input type="text" onChange={e => setCustomerInfo(e.target.value)} />
+                <div>
+                  {error && customerInfo.length <= 0 ?
+                    <label>Can't be empty</label> : ""}
+                </div>
+                <span>Zip Code: </span>
+                <input type="text" onChange={e => setCustomerInfo(e.target.value)} />
+                <div>
+                  {error && customerInfo.length <= 0 ?
+                    <label>Can't be empty</label> : ""}
+                </div>
+              </div>
+              <div>
+                <span>City: </span>
+                <input type="text" onChange={e => setCustomerInfo(e.target.value)} />
+                <div>
+                  {error && customerInfo.length <= 0 ?
+                    <label>Can't be empty</label> : ""}
+                </div>
+                <span>Country: </span>
+                <input type="text" onChange={e => setCustomerInfo(e.target.value)} />
+                <div>
+                  {error && customerInfo.length <= 0 ?
+                    <label>Can't be empty</label> : ""}
+                </div>
+              </div>
+              <div>
+                <span>Phone: </span>
+                <input type="text" onChange={e => setCustomerInfo(e.target.value)} />
+                <div>
+                  {error && customerInfo.length <= 0 ?
+                    <label>Can't be empty</label> : ""}
+                </div>
+                <span>Email: </span>
+                <input type="text" onChange={e => setCustomerInfo(e.target.value)} />
+                <div>
+                  {error && customerInfo.length <= 0 ?
+                    <label>Can't be empty</label> : ""}
+                </div>
+              </div>
             </div>
 
-            <div>
-              <span>City: </span>
-              <input type="text" />
-              <span>Country: </span>
-              <input type="text" />
-            </div>
-            <div>
-              <span>Phone: </span>
-              <input type="text" />
-              <span>Email: </span>
-              <input type="text" />
-            </div>
-          </div>
 
-          <div className='creditcard'>
-            <img className="img3" src={`https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png`} alt="" />
-            <img className="img3" src={`https://cdn2.downdetector.com/static/uploads/logo/mastercard.jpg`} alt="" />
-            <img className="img3" src={`https://logowik.com/content/uploads/images/amex-card1708.jpg`} alt="" />
-            <img className="img3" src={`https://www.retailbankerinternational.com/wp-content/uploads/sites/2/2020/02/JCBI.png`} alt="" />
-            <img className="img3" src={`https://i.pcmag.com/imagery/reviews/068BjcjwBw0snwHIq0KNo5m-15..v1602794215.png`} alt="" />
-          </div>
-
-          <div className='creditcard-inputs'>
-            <div>
-              <span>Creditcard: </span>
-              <input type="text" />
-              <span>Expire date: </span>
-              <input type="text" />
+            <div className='creditcard'>
+              <img className="img3" src={`https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png`} alt="" />
+              <img className="img3" src={`https://cdn2.downdetector.com/static/uploads/logo/mastercard.jpg`} alt="" />
+              <img className="img3" src={`https://logowik.com/content/uploads/images/amex-card1708.jpg`} alt="" />
+              <img className="img3" src={`https://www.retailbankerinternational.com/wp-content/uploads/sites/2/2020/02/JCBI.png`} alt="" />
+              <img className="img3" src={`https://i.pcmag.com/imagery/reviews/068BjcjwBw0snwHIq0KNo5m-15..v1602794215.png`} alt="" />
             </div>
-            <div>
-              <span>Name on card: </span>
-              <input type="text" />
-              <span>CCV: </span>
-              <input type="text" />
-            </div>
-          </div>
 
-          <div className="actions">
-            <Link to="/thankyou">
+            <div className='creditcard-inputs'>
+              <div>
+                <span>Creditcard: </span>
+                <input type="text" onChange={e => setCreditInfo(e.target.value)} />
+                <div>
+                  {error && creditInfo.length <= 0 ?
+                    <label>Can't be empty</label> : ""}
+                </div>
+                <span>Expire date: </span>
+                <input type="text" onChange={e => setCreditInfo(e.target.value)} />
+                <div>
+                  {error && creditInfo.length <= 0 ?
+                    <label>Can't be empty</label> : ""}
+                </div>
+              </div>
+              <div>
+                <span>Name on card: </span>
+                <input type="text" onChange={e => setCreditInfo(e.target.value)} />
+                <div>
+                  {error && creditInfo.length <= 0 ?
+                    <label>Can't be empty</label> : ""}
+                </div>
+                <span>CCV: </span>
+                <input type="text" onChange={e => setCreditInfo(e.target.value)} />
+                <div>
+                  {error && creditInfo.length <= 0 ?
+                    <label>Can't be empty</label> : ""}
+                </div>
+              </div>
+            </div>
+
+            <div className="actions">
+              {/* <Link to="/thankyou"> */}
               <button id="pay">
                 Pay
               </button>
-            </Link>
-          </div>
+              {/* </Link> */}
+            </div>
+          </form>
         </div>
       </div>
     </div>

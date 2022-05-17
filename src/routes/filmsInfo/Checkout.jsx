@@ -10,7 +10,7 @@ const Checkout = () => {
   const dispatch = useDispatch()
 
   const shoppingCartObjects = useSelector(state => state.shoppingCart);
- 
+   
   let counter = 0
   shoppingCartObjects.map((item, index) => {
     counter = item.count + counter

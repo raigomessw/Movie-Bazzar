@@ -3,14 +3,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import "../filmsInfo/FilmsInfo.css";
 import {  saveComm} from "../../features/firebasefunctions";
 import db from "../../firebase.config";
+import firebase from 'firebase/app'; 
 
 const Comments = ({ film }) => {
 
+  let content = []
 
   const [comm , setComm] = useState(""); 
-  const [name , setName] = useState(""); 
-  const dispatch = useDispatch();
+  const [name , setName] = useState("");  
 
+
+  let commentlist = []; 
     const saveComment = () =>{
       try{
           const data = { 
@@ -32,27 +35,39 @@ const Comments = ({ film }) => {
     }
     
 
-    const fetchCommentData = async() => {
-      await fetchcomments(film.id).then((data) => {
+    // const fetchCommentData = async() => {
+    //   await fetchcomments(film.id).then((data) => {
 
-        console.log(data)
+    //     console.log("dat is ", data)
 
-      });
+    //   });
 
-    }
+    // }
 useEffect(() => {
-  fetchCommentData()
+  fetchComments(film)
 });
 
-const fetchcomments = async(film) => {
-  db.collection("comments").where("filmId", "==", film)
+const fetchComments = async(film) => {
+ db.collection("comments") 
   .onSnapshot((querySnapshot) => {
       var filmcoms = [];
       querySnapshot.forEach((doc) => {
           filmcoms.push(doc.data());
       });
       console.log("List of  comments ", filmcoms );
-      return filmcoms
+      content =  filmcoms && filmcoms.map((item, index) => {
+        return (
+          <div className="movie-list" key={index}>
+            <div className='movie-title'>
+              <p>{item.comment}</p>
+            </div>
+            
+          </div>
+        );
+
+      })
+      return content
+      
   })
 }
 
@@ -68,12 +83,11 @@ const fetchcomments = async(film) => {
 
               <div className="test">
                 
-                <p> here comes the list of comments </p>
+            {content}
+
+            
 
               </div>
-
-
-
 
 
  

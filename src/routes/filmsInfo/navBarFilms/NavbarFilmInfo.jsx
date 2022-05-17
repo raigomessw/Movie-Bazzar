@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import './NavbarFilmsinfoStyles.css'
 import Logotipo from '../../home/components/assets/logotipo.gif'
-import Search from '../../home/components/herobody/navbar/Search'
-import { Link } from 'react-scroll/'
 import { HiOutlineMenuAlt4 } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
 import { AiFillHome } from "react-icons/ai";

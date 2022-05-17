@@ -154,6 +154,11 @@ img {
   background-color: rgba(39, 35, 35, 0.342);
   box-shadow: 1px 1px 10px rgb(255, 255, 255);
 }
+.comments-container{
+  height:50px;
+  width: 300px;
+
+}
 .constainer_imputs{
   position: relative;
   top:20px;
@@ -169,10 +174,11 @@ img {
   transition: 0.8s;
   position: relative;
   margin: 0 auto;
-  height:30px;
+  height:40px;
   width: 300px;
   color: rgb(0, 0, 0);
 }
+
 
 /* Mobil mode */
 @media screen and (max-width: 940px) {

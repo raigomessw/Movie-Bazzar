@@ -10,7 +10,7 @@ Need to add flex wrap for different displays.*/
 .movie-body{
         display: grid;
         place-items: center;
-        min-height: 100vh;
+        max-height: 100%;
         background-color: black;
         color: #ffe7c8;
         font-size: 0.95rem;
@@ -18,7 +18,7 @@ Need to add flex wrap for different displays.*/
 }
 
 .card {
-    width: clamp( 100rem, 95vw, 900px);
+    width: auto;
     display: flex;
     padding: 1.5rem;
     border-radius: 1rem;
@@ -149,14 +149,131 @@ img {
   overflow-y: auto;
   overflow-x: auto;
   position: relative;
-  max-width: 100%;
+  max-width: auto;
   max-height:200px;
   background-color: rgba(39, 35, 35, 0.342);
   box-shadow: 1px 1px 10px rgb(255, 255, 255);
 }
-.inputs input{
- margin: 1rem;
- width: 60%;
+.constainer_imputs{
+  position: relative;
+  top:20px;
+ }
+ .constainer_imputs button {
+  position: relative;
+  top:15px;
+
 }
+.inputs input{
+  background-color: rgba(248, 248, 248, 0.986);
+  border-radius: 1rem;
+  transition: 0.8s;
+  position: relative;
+  margin: 0 auto;
+  height:30px;
+  width: 300px;
+  color: rgb(0, 0, 0);
+}
+
+/* Mobil mode */
+@media screen and (max-width: 940px) {
+  .movie-body{
+    display: grid;
+    place-items: center;
+    max-height: 100%;
+    background-color: black;
+    color: #ffe7c8;
+    font-size: 0.95rem;
+    padding: 4rem;
+}
+.card {
+  width: 300px;
+  height: 500px;
+  display: flex;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  position: flex;
+  overflow-y: scroll;
+  top: 5rem;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 90%;
+  width: 10%;
+  height: 100%;
+  background-image: linear-gradient(to right, black, transparent);
+  z-index: 1;
+}
+.card:first-child,
+.card:first-child .img-1 {
+    box-shadow: 0 0 0.5rem white;
+}
+.card:first-child .general-info div span:last-of-type {
+  font-weight: 900;
+  color: #ff3939;
+}
+
+.img-2 {
+  position: absolute;
+    width: 100%;
+    height:40%;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    opacity: .6;
+}
+
+.general-info div {
+  margin: 1rem 0;
+  right: 2rem;
+  top:10rem;
+  position: relative;
+  object-fit: cover;
+  justify-content: space-between;
+}
+.general-info span{
+  position: relative;
+  margin: 5px;
+  object-fit: cover;
+  right: 0rem;
+}
+
+.movie-info {
+  display: flex;
+  position: absolute;
+  top: 45rem;
+  width: 90%;
+  min-height: auto;
+  overflow-y: hidden;
+}
+.img4 {
+  height: 10%;
+  width: 10%;
+  border-radius: 4rem;
+  object-fit: cover;
+}
+
+ .inputs input{
+  background-color: rgba(248, 248, 248, 0.986);
+  border-radius: 1rem;
+  transition: 0.8s;
+  position: relative;
+  margin: 0 auto;
+  height:30px;
+  width: 300px;
+  color: rgb(0, 0, 0);
+ }
+ .constainer_imputs{
+  position: relative;
+   top:20px;
+ }
+ .constainer_imputs button {
+  position: relative;
+   top:20px;
+
+}
+
+  }
 
 

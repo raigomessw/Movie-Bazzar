@@ -21,7 +21,7 @@ const FilmsInfo = () => {
   const movieSelected = list.find((movie) => movie.id == params.id);
 
  // const shoppingCartObjects = useSelector(state => state.shoppingCart);
- 
+
   let movieTitle = (movieSelected.title)
   const movieImg = (movieSelected.poster_path)
   let moviePrice = 16.19;
@@ -57,31 +57,33 @@ const FilmsInfo = () => {
                   />
                 </div>
                 <div className="general-info">
-                  <h2>{movieSelected.title}</h2>
-                  <div>
+                  <div className="title_movie">
+                   <h2>{movieSelected.title}</h2>
+                  </div>
+                  <div className="language">
                     <span>Language:</span>
                     <span className="movie-language">
                       {movieSelected.original_language}
                     </span>
                   </div>
 
-                  <div>
+                  <div className="rating">
                     <span>Rating:</span>
                     <span>{movieSelected.vote_average}</span>
                   </div>
-                  <div>
+                  <div className="polularity">
                     <span>Popularity:</span>
                     <span>{movieSelected.popularity}</span>
                   </div>
-                  <div>
+                  <div className="movie_id">
                     <span>Movie#</span>
                     <span>{movieSelected.id}</span>
                   </div>
-                  <div>
+                  <div className="movie_date">
                     <span>Release date:</span>
                     <span>{movieSelected.release_date}</span>
                   </div>
-                  <div>
+                  <div className="movie_price">
                     <span>Price:</span>
                     <span>{moviePrice}$</span>
                   </div>
@@ -89,8 +91,6 @@ const FilmsInfo = () => {
                     <button onClick={AddShoppingCart} className="buy">
                       Add to cart
                     </button>
-
-
                   </div>
                 </div>
               </div>
@@ -106,13 +106,7 @@ const FilmsInfo = () => {
             </div>
           </div>
         </div>
-
-      
-                <Comments film={movieSelected}/>
-      
-
-
-           
+             <Comments film={movieSelected}/>
       </div>
       //movie-body ends
     </div>

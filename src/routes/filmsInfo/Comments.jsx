@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import "../filmsInfo/FilmsInfo.css";
 import { saveComm } from "../../features/firebaseFunctions";
 import db from "../../features/firebaseConfig";
- 
 import firebase from 'firebase/app';
- 
+
 
 const Comments = ({ film }) => {
   let content = [];
@@ -19,9 +18,7 @@ const Comments = ({ film }) => {
     try {
       const data = {
         name: name,
-
         comment: comm,
-
         filmId: film.id,
       };
 

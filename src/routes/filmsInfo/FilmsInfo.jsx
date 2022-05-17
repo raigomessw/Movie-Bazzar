@@ -4,44 +4,17 @@ import { useParams } from "react-router-dom";
 import Navbar from "./navBarFilms/NavbarFilmInfo";
 import "../filmsInfo/FilmsInfo.css";
 import { actions } from "../../features/shoppingCart";
+import { getAuth, signInAnonymously } from 'firebase';
+import { app } from "firebase"; 
+import Comments from "./Comments";
 
 const FilmsInfo = () => {
+
+
+
   const dispatch = useDispatch();
   const listObject = useSelector((state) => state.filmList);
   const list = listObject.list;
-
-  let comments = [
-    {
-      text: "Not bad, I liked the old ones betterrrrrrrrrrrrrrrrrrrrrrr",
-      name: "John",
-      icon: "https://e7.pngegg.com/pngimages/870/211/png-clipart-iphone-world-emoji-day-man-iphone-electronics-face.png",
-    },
-    {
-      text: "Loved it!",
-      name: "Sara",
-      icon: "http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/woman.png",
-    },
-    {
-      text: "Not bad, I liked the old ones better",
-      name: "John",
-      icon: "https://e7.pngegg.com/pngimages/870/211/png-clipart-iphone-world-emoji-day-man-iphone-electronics-face.png",
-    },
-    {
-      text: "Not bad, I liked the old ones better",
-      name: "John",
-      icon: "https://e7.pngegg.com/pngimages/870/211/png-clipart-iphone-world-emoji-day-man-iphone-electronics-face.png",
-    },
-    {
-      text: "Not bad, I liked the old ones better",
-      name: "John",
-      icon: "https://e7.pngegg.com/pngimages/870/211/png-clipart-iphone-world-emoji-day-man-iphone-electronics-face.png",
-    },
-    {
-      text: "Not bad, I liked the old ones better",
-      name: "John",
-      icon: "https://e7.pngegg.com/pngimages/870/211/png-clipart-iphone-world-emoji-day-man-iphone-electronics-face.png",
-    },
-  ];
 
   const params = useParams();
   const imagePath = "https://image.tmdb.org/t/p/";
@@ -134,30 +107,12 @@ const FilmsInfo = () => {
           </div>
         </div>
 
-        <comment className="movie-comentars">
-          <div className="">
-            <div className="">
-              <h2> Comments</h2>
-              <div className="test">
-                {comments.map((member, index) => {
-                  return (
-                    <div className="comments-container">
-                      <div className="card-comment">
-                        <img className="img4" src={member.icon} alt="" />
-                        <label className="labels1">{member.name} : </label>
-                        <label className="labels2"> {member.text} </label>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="inputs">
-                <input className="inputC"></input>
-                <button> Leave a comment</button>
-              </div>
-            </div>
-          </div>
-        </comment>
+      
+                <Comments film={movieSelected}/>
+      
+
+
+           
       </div>
       //movie-body ends
     </div>

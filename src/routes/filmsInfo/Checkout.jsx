@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { actions } from '../../features/shoppingCart';
 import '../filmsInfo/checkout.css';
 
+import { toast } from "react-toastify";
+
 
 
 const Checkout = () => {
@@ -50,6 +52,7 @@ const Checkout = () => {
       name: movieTitle,
       price: moviePrice
     }
+    toast.error(`${movieTitle} has been deleted`, {position: "bottom-center" });
     dispatch(actions.removeFromCart(movieToDelete))
   }
 

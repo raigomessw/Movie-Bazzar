@@ -1,47 +1,18 @@
-import React from "react";
+import React, { useState,useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Navbar from "./navBarFilms/NavbarFilmInfo";
 import "../filmsInfo/FilmsInfo.css";
 import { actions } from "../../features/shoppingCart";
+import Comments from "./Comments";
 
 const FilmsInfo = () => {
+
+
+
   const dispatch = useDispatch();
   const listObject = useSelector((state) => state.filmList);
   const list = listObject.list;
-
-  let comments = [
-    {
-      text: "Not bad, I liked the old ones betterrrrrrrrrrrrrrrrrrrrrrr",
-      name: "John",
-      icon: "https://e7.pngegg.com/pngimages/870/211/png-clipart-iphone-world-emoji-day-man-iphone-electronics-face.png",
-    },
-    {
-      text: "Loved it!",
-      name: "Sara",
-      icon: "http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/woman.png",
-    },
-    {
-      text: "Not bad, I liked the old ones better",
-      name: "John",
-      icon: "https://e7.pngegg.com/pngimages/870/211/png-clipart-iphone-world-emoji-day-man-iphone-electronics-face.png",
-    },
-    {
-      text: "Not bad, I liked the old ones better",
-      name: "John",
-      icon: "https://e7.pngegg.com/pngimages/870/211/png-clipart-iphone-world-emoji-day-man-iphone-electronics-face.png",
-    },
-    {
-      text: "Not bad, I liked the old ones better",
-      name: "John",
-      icon: "https://e7.pngegg.com/pngimages/870/211/png-clipart-iphone-world-emoji-day-man-iphone-electronics-face.png",
-    },
-    {
-      text: "Not bad, I liked the old ones better",
-      name: "John",
-      icon: "https://e7.pngegg.com/pngimages/870/211/png-clipart-iphone-world-emoji-day-man-iphone-electronics-face.png",
-    },
-  ];
 
   const params = useParams();
   const imagePath = "https://image.tmdb.org/t/p/";
@@ -67,6 +38,32 @@ const FilmsInfo = () => {
     console.log("adds to the basket" , movieToAdd)
     dispatch(actions.addToCart(movieToAdd));
   }
+
+
+  // useEffect(() => {
+  //   getData();
+  // },[]);
+
+  //   const getData = async () => {
+  //       console.log("apiData: ", movieSelected);
+
+  //         if(localStorage.getItem("savedApiData") === null) {
+  //           // localStorage.setItem("savedApiData", JSON.stringify([]));
+
+  //           const response = await fetch(
+  //            `https://api.themoviedb.org/3/discover/movie?api_key=298722d66314704d61c48e8fe9330363&with_genres`
+  //           );
+  //           const movieSelected = await response.json();
+  //           movieSelected(movieSelected);
+  //           localStorage.setItem("savedApiData", JSON.stringify(movieSelected));
+  //           console.log("saved apidata: ", movieSelected);
+
+  //         } else {
+  //           let apiDataLocal = JSON.parse(localStorage.getItem("savedApiData"));
+  //           movieSelected(apiDataLocal);
+  //           console.log("local Saved apiData: ", apiDataLocal);
+  //         }
+  //       };
 
 
   return (
@@ -133,33 +130,7 @@ const FilmsInfo = () => {
             </div>
           </div>
         </div>
-
-        <comment className="movie-comentars">
-          <div className="">
-            <div className="">
-              <h2> Comments</h2>
-              <div className="test">
-                {comments.map((member, index) => {
-                  return (
-                    <div className="comments-container">
-                      <div className="">
-                        <img className="img4" src={member.icon} alt="" />
-                        <label className="labels1">{member.name} : </label>
-                        <label className="labels2"> {member.text} </label>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="constainer_imputs">
-                <div className="inputs">
-                 <input className="inputC"></input>
-                </div>
-                <button> Leave a comment</button>
-              </div>
-            </div>
-          </div>
-        </comment>
+          <Comments film={movieSelected}/>
       </div>
       //movie-body ends
     </div>

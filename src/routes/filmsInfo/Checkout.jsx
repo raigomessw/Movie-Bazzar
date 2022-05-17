@@ -3,21 +3,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom'
 import { actions } from '../../features/shoppingCart';
 import '../filmsInfo/checkout.css';
-import { reducer as shopReducer } from '../../features/shoppingCart';
-import { useEffect } from 'react';
+
 
 const Checkout = () => {
 
   const dispatch = useDispatch()
 
   const shoppingCartObjects = useSelector(state => state.shoppingCart);
-  //const [currentFilm, setCurrentFilm] = useState(null);
+ 
   let counter = 0
   shoppingCartObjects.map((item, index) => {
     counter = item.count + counter
-  }
-  )
-  const listObject = useSelector(state => state.filmList);
+  });
+  
   const imagePath = 'https://image.tmdb.org/t/p/';
 
   /* Functions for selected movie */

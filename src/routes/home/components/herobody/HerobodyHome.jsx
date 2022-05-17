@@ -1,8 +1,11 @@
 import React from 'react'
 import FilmList from '../../../../components/FilmList'
-import './HerobodyHomeStyles.css'
+import './HerobodyHomeStyles.css';
+
 
 const Herobody = () => {
+
+
     return (
       <div className="herobody">
         <div className="logo">

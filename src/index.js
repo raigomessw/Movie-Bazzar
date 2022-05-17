@@ -9,7 +9,6 @@ import { configureStore } from '@reduxjs/toolkit';
 import { rootReducer } from './features/rootreducer';
 import { Provider } from 'react-redux';
 
-
 const store = configureStore({
     reducer: rootReducer
 });
@@ -17,6 +16,7 @@ const store = configureStore({
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  
     < HashRouter >
      <Provider store={store}>
        <App />

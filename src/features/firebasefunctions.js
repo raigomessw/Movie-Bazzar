@@ -1,11 +1,6 @@
 import { firestore } from "firebase";
-//import {doc , setDoc} from "../firebase.config";
-import { doc, setDoc } from "firebase/firestore"; 
 import firebase from 'firebase/app';
 import db from "../firebase.config";
-import { createAction, createReducer } from "@reduxjs/toolkit";
-
-
  
 export const saveComm = async(data) => {
 //await setDoc(doc(firestore , "comments" ,`${Date.now()}`), data, {merge : true})

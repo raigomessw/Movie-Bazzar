@@ -2,16 +2,11 @@ import React, { useState ,  useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import "../filmsInfo/FilmsInfo.css";
 import {  saveComm} from "../../features/firebasefunctions";
-import { useStateValue } from "../../features/StateProvider";
-import { actions } from "../../features/firebasecomments";
 import db from "../../firebase.config";
 
 const Comments = ({ film }) => {
 
 
-  const listObject = useSelector(state => state.firebasecomments);
-  const status = listObject.status;
-  const list = listObject.list;
   const [comm , setComm] = useState(""); 
   const [name , setName] = useState(""); 
   const dispatch = useDispatch();

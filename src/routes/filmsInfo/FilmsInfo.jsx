@@ -4,8 +4,6 @@ import { useParams } from "react-router-dom";
 import Navbar from "./navBarFilms/NavbarFilmInfo";
 import "../filmsInfo/FilmsInfo.css";
 import { actions } from "../../features/shoppingCart";
-import { getAuth, signInAnonymously } from 'firebase/compat/app';
-import { app } from 'firebase/compat/app';
 import Comments from "./Comments";
 
 const FilmsInfo = () => {

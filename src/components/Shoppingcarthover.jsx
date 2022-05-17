@@ -4,11 +4,9 @@ import { NavLink } from "react-router-dom";
 //import { reducer as shopReducer } from "../features/shoppingCart";
 import React, { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Shoppincarthover = () => {
-  const movieTitle = "Batman";
-  const qty = 2;
   const [cart, setCart] = useState(false);
   const handleCart = () => setCart(!cart);
 

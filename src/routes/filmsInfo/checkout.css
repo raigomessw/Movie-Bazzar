@@ -323,7 +323,11 @@ Second-size phone: 480px
     padding: 5px;
 }
 
-label {
+.err-div {
+    width: fit-content;
+}
+
+.err-msg {
     font-size: 0.8rem;
     color: red;
 }

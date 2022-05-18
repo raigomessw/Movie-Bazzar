@@ -55,27 +55,99 @@ const Checkout = () => {
     dispatch(actions.removeFromCart(movieToDelete))
   }
 
-  const initialValues = 
-  { name: "", surename: "",
+  const initialValues =
+  {
+    name: "", surename: "",
     adress: "", zipcode: "",
-    city:"", country:"", phone:"", email:""};
+    city: "", country: "", phone: "", email: "", creditcard: "", expDate: "", cardName: "", ccv: ""
+  };
 
-  const [customerInfo, setCustomerInfo] = useState("")
-  const [creditInfo, setCreditInfo] = useState("")
-  const [error, setError] = useState(false)
+  const [formValues, setFormValues] = useState(initialValues);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (customerInfo.length == 0 || creditInfo.length == 0) {
-      setError(true)
-    }
-    //If name and surename is filled :
-    if (customerInfo.length && creditInfo.length) {
-      <Link to="/thankyou">
-     </Link>
-    }
-  }
+    setFormErrors(validate(formValues));
+    setIsSubmit(true);
+  };
 
+  useEffect(() => {
+    console.log(formErrors);
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+      /*Link to final component*/
+    }
+
+  }, [formErrors]);
+
+  const validate = (values) => {
+    const errors = {};
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+
+    if (!values.name) {
+      errors.name = "Name is required!";
+    }
+    if (!values.surename) {
+      errors.surename = "Surename is required!";
+    }
+    if (!values.adress) {
+      errors.adress = "Adress is required!";
+    }
+    if (!values.zipcode) {
+      errors.zipcode = "Zip-code is required!";
+    }
+    if (!values.city) {
+      errors.city = "City is required!";
+    }
+    if (!values.country) {
+      errors.country = "Country is required!";
+    }
+    if (!values.phone) {
+      errors.phone = "Phone is required!";
+    }
+    if (!values.email) {
+      errors.email = "Email is required!";
+    }
+     /* For presentation */
+
+    //  else if (!regex.test(values.email)) {
+    //   errors.email = "Error email format!"
+    // }
+    if (!values.creditcard) {
+      errors.creditcard = "Card is required!";
+    }
+
+    /* For presentation */
+
+    // else if(values.creditcard.length < 8) {
+    //   errors.creditcard = "Invalid card"
+    // } else if(values.creditcard.length > 8) {
+    //   errors.creditcard = "Must be 8 digit"
+    // }
+    if (!values.expDate) {
+      errors.expDate = "Date is required!";
+    }
+    if (!values.cardName) {
+      errors.cardName = "Name is required!";
+    }
+    if (!values.ccv) {
+      errors.ccv = "CCV is required!";
+    }
+
+    /* For presentation */
+
+    // else if (values.ccv.length < 3) {
+    //   errors.ccv = "Invalid CCV"
+    // } else if(values.ccv.length > 3) {
+    //   errors.ccv = "Can't exceed more than 3 digit"
+    // }
+    return errors;
+  }
 
   return (
     <div className="checkout-container">
@@ -128,58 +200,50 @@ const Checkout = () => {
             <div className='input-2'>
               <div>
                 <span>Name: </span>
-                <input type="text" onChange={e => setCustomerInfo(e.target.value)} />
-                <div>
-                  {error && customerInfo.length <= 0 ?
-                    <label>Can't be empty</label> : ""}
+                <input type="text" name='name' value={formValues.name} onChange={handleChange} />
+                <div className='err-div'>
+                  <p className='err-msg'>{formErrors.name}</p>
                 </div>
                 <span>Surename: </span>
-                <input type="text" onChange={e => setCustomerInfo(e.target.value)} />
-                <div>
-                  {error && customerInfo.length <= 0 ?
-                    <label>Can't be empty</label> : ""}
+                <input type="text" name='surename' value={formValues.surename} onChange={handleChange} />
+                <div className='err-div'>
+                  <p className='err-msg'>{formErrors.surename}</p>
                 </div>
               </div>
               <div>
                 <span>Adress: </span>
-                <input type="text" onChange={e => setCustomerInfo(e.target.value)} />
-                <div>
-                  {error && customerInfo.length <= 0 ?
-                    <label>Can't be empty</label> : ""}
+                <input type="text" name='adress' value={formValues.adress} onChange={handleChange} />
+                <div className='err-div'>
+                  <p className='err-msg'>{formErrors.adress}</p>
                 </div>
                 <span>Zip Code: </span>
-                <input type="text" onChange={e => setCustomerInfo(e.target.value)} />
-                <div>
-                  {error && customerInfo.length <= 0 ?
-                    <label>Can't be empty</label> : ""}
+                <input type="text" name='zipcode' value={formValues.zipcode} onChange={handleChange} />
+                <div className='err-div'>
+                  <p className='err-msg'>{formErrors.zipcode}</p>
                 </div>
               </div>
               <div>
                 <span>City: </span>
-                <input type="text" onChange={e => setCustomerInfo(e.target.value)} />
-                <div>
-                  {error && customerInfo.length <= 0 ?
-                    <label>Can't be empty</label> : ""}
+                <input type="text" name='city' value={formValues.city} onChange={handleChange} />
+                <div className='err-div'>
+                  <p className='err-msg'>{formErrors.city}</p>
                 </div>
                 <span>Country: </span>
-                <input type="text" onChange={e => setCustomerInfo(e.target.value)} />
-                <div>
-                  {error && customerInfo.length <= 0 ?
-                    <label>Can't be empty</label> : ""}
+                <input type="text" name='country' value={formValues.country} onChange={handleChange} />
+                <div className='err-div'>
+                  <p className='err-msg'>{formErrors.country}</p>
                 </div>
               </div>
               <div>
                 <span>Phone: </span>
-                <input type="text" onChange={e => setCustomerInfo(e.target.value)} />
-                <div>
-                  {error && customerInfo.length <= 0 ?
-                    <label>Can't be empty</label> : ""}
+                <input type="text" name='phone' value={formValues.phone} onChange={handleChange} />
+                <div className='err-div'>
+                  <p className='err-msg'>{formErrors.phone}</p>
                 </div>
                 <span>Email: </span>
-                <input type="text" onChange={e => setCustomerInfo(e.target.value)} />
-                <div>
-                  {error && customerInfo.length <= 0 ?
-                    <label>Can't be empty</label> : ""}
+                <input type="text" name='email' value={formValues.email} onChange={handleChange} />
+                <div className='err-div'>
+                  <p className='err-msg'>{formErrors.email}</p>
                 </div>
               </div>
             </div>
@@ -196,33 +260,31 @@ const Checkout = () => {
             <div className='creditcard-inputs'>
               <div>
                 <span>Creditcard: </span>
-                <input type="text" onChange={e => setCreditInfo(e.target.value)} />
-                <div>
-                  {error && creditInfo.length <= 0 ?
-                    <label>Can't be empty</label> : ""}
+                <input type="text" name='creditcard' value={formValues.creditcard} onChange={handleChange} />
+                <div className='err-div'>
+                  <p className='err-msg'>{formErrors.creditcard}</p>
                 </div>
                 <span>Expire date: </span>
-                <input type="text" onChange={e => setCreditInfo(e.target.value)} />
-                <div>
-                  {error && creditInfo.length <= 0 ?
-                    <label>Can't be empty</label> : ""}
+                <input type="text" name='expDate' value={formValues.expDate} onChange={handleChange} />
+                <div className='err-div'>
+                  <p className='err-msg'>{formErrors.expDate}</p>
                 </div>
               </div>
               <div>
                 <span>Name on card: </span>
-                <input type="text" onChange={e => setCreditInfo(e.target.value)} />
-                <div>
-                  {error && creditInfo.length <= 0 ?
-                    <label>Can't be empty</label> : ""}
+                <input type="text" name='cardName' value={formValues.cardName} onChange={handleChange} />
+                <div className='err-div'>
+                  <p className='err-msg'>{formErrors.cardName}</p>
                 </div>
                 <span>CCV: </span>
-                <input type="text" onChange={e => setCreditInfo(e.target.value)} />
-                <div>
-                  {error && creditInfo.length <= 0 ?
-                    <label>Can't be empty</label> : ""}
+                <input type="text" name='ccv' value={formValues.ccv} onChange={handleChange} />
+                <div className='err-div'>
+                  <p className='err-msg'>{formErrors.ccv}</p>
                 </div>
               </div>
             </div>
+
+            {Object.keys(formErrors).length === 0 && isSubmit ? (<div><Link to="/thankyou"></Link></div>) : (console.log("Error detected"))}
 
             <div className="actions">
               {/* <Link to="/thankyou"> */}
@@ -231,7 +293,7 @@ const Checkout = () => {
               </button>
               {/* </Link> */}
             </div>
-          </form>
+          </form> {/*  change to form end */}
         </div>
       </div>
     </div>

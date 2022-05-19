@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 import { actions } from '../../features/shoppingCart';
 import '../filmsInfo/checkout.css';
 
@@ -90,7 +90,7 @@ const Checkout = () => {
 
   const validate = (values) => {
     const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    //const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
     if (!values.name) {
       errors.name = "Name is required!";

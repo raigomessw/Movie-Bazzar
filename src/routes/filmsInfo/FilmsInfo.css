@@ -150,7 +150,6 @@ img {
 
 .test {
   overflow-y: auto;
-  overflow-x: auto;
   position: relative;
   max-width: auto;
   max-height: 200px;

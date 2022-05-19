@@ -13,10 +13,6 @@
     padding: 1rem;
 }
 
-.comments-card {
-    width: fit-content;
-}
-
 .com-h2 {
     display: flex;
     flex-direction: row;
@@ -31,23 +27,27 @@
 }
 
 .comment-index {
-    min-height: fit-content;
     min-width: fit-content;
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: auto;
+
 }
 
 .comment-index div {
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 1px;
+    margin-right:1rem;
     margin-top: 12px;
     margin-bottom: 12px;
-    padding: 2px;
+    padding: 1px;
+
 }
 
 .comment-div {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     border-bottom: 1px double darkgrey;
+    align-content: center;
 }
 
 .user {
@@ -58,7 +58,9 @@
 
 .user-comment {
     font-size: 1rem;
-    margin-right: 4px;
+    position: relative;
+    display: flex;
+    margin-left: 5px;
 }
 
 .input-container {
@@ -95,4 +97,15 @@
 
 .comment-button button:active{
     background: #fbc598;
+}
+@media screen and (max-width: 940px) {
+  .comment-index {
+    min-width: auto;
+    height: 150px;
+    overflow-y: auto;
+    overflow-x: auto;
+
+}
+
+
 }

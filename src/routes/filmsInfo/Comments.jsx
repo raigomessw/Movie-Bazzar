@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../filmsInfo/Comments.css";
 import { saveComm } from "../../features/firebaseFunctions";
 import db from "../../features/firebaseConfig";
-import firebase from 'firebase/app';
+//import firebase from 'firebase/app';
 
 
 const Comments = ({ film }) => {
@@ -58,8 +58,7 @@ const Comments = ({ film }) => {
             return (
               <div className="comment-list" key={index}>
                 <div className="comment-div">
-                  <p className="user">{item.name} :</p>
-                  <p className="user-comment">{item.comment}</p>
+                  <p className="user">{item.name}</p><h3>:</h3><p className="user-comment">{item.comment}</p>
                 </div>
               </div>
             );

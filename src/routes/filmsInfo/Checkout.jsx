@@ -17,7 +17,7 @@ const Checkout = () => {
   const shoppingCartObjects = useSelector(state => state.shoppingCart);
 
   let counter = 0
-  
+
 
   const imagePath = 'https://image.tmdb.org/t/p/';
 
@@ -82,12 +82,11 @@ const Checkout = () => {
 
 
   useEffect(() => {
-    console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
-      /*Link to final component*/
-      navigate("/thankyou");
+      if (shoppingCartObjects) {
+        navigate("/thankyou");
+      }
     }
-
   }, [formErrors]);
 
   const validate = (values) => {
@@ -118,7 +117,7 @@ const Checkout = () => {
     if (!values.email) {
       errors.email = "Email is required!";
     }
-     /* For presentation */
+    /* For presentation */
 
     //  else if (!regex.test(values.email)) {
     //   errors.email = "Error email format!"

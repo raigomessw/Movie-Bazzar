@@ -4,6 +4,10 @@ import "../filmsInfo/Thankyou.css";
 
 const Thankyou = () => {
 
+  function randomNumber(min, max){
+    return Math.floor(Math.random() * (max-min)) + min;
+  }
+
   return (
 
     <div className="ty-container">
@@ -12,8 +16,8 @@ const Thankyou = () => {
           <h2>Thank you for your order</h2>
         </div>
         <div className="div-h">
-          <h3>Customer #10294</h3>
-          <h4>Order #18492</h4>
+          <h3>Customer #{randomNumber(2700,600)}</h3>
+          <h4>Order #{randomNumber(1984,120)}</h4>
         </div>
         <div className="customer-text">
           <p>Your purchase has been successful. You are now able to watch your purchased movies.</p>

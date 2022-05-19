@@ -83,8 +83,10 @@ const Checkout = () => {
 
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
-      if (shoppingCartObjects) {
+      if (shoppingCartObjects.length >= 1) {
         navigate("/thankyou");
+      } else {
+        toast.warn("Woops! You can't pay an empty cart. Please add at least 1 movie.", {position: "top-center"});
       }
     }
   }, [formErrors]);

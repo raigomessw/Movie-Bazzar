@@ -323,6 +323,15 @@ Second-size phone: 480px
     padding: 5px;
 }
 
+.err-div {
+    width: fit-content;
+}
+
+.err-msg {
+    font-size: 0.8rem;
+    color: red;
+}
+
 @media (min-width: 820px) {
     /* .inputs {
         display: flex;

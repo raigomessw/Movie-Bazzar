@@ -201,6 +201,16 @@ img {
   overflow-y: scroll;
   top: 5rem;
 }
+
+.img-1 {
+  display: none;
+}
+
+.general-info h2 {
+  font-size: 20px;
+  margin: auto;
+}
+
 .card::before {
   content: '';
   position: absolute;
@@ -215,10 +225,10 @@ img {
 .card:first-child .img-1 {
     box-shadow: 0 0 0.5rem white;
 }
-.card:first-child .general-info div span:last-of-type {
+/* .card:first-child .general-info div span:last-of-type {
   font-weight: 900;
   color: #ff3939;
-}
+} */
 
 .img-2 {
   position: absolute;
@@ -230,13 +240,26 @@ img {
     opacity: .6;
 }
 
+.general-info {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 10rem;
+  right: 2.2rem;
+  font-size: 1rem;
+  margin-left: none;
+  flex: 0;
+}
+
 .general-info div {
-  margin: 1rem 0;
-  right: 2rem;
-  top:10rem;
+  width: 255px;
+  /* margin: 1rem 0; */
+  /* right: 2rem; */
+  /* top: 10rem; */
   position: relative;
   object-fit: cover;
   justify-content: space-between;
+  /* margin-bottom: 1rem; */
 }
 .general-info span{
   position: relative;
@@ -249,7 +272,8 @@ img {
   display: flex;
   position: absolute;
   top: 45rem;
-  width: 90%;
+  width: 85%;
+  margin-top: 2.7rem;
   min-height: auto;
   overflow-y: hidden;
 }

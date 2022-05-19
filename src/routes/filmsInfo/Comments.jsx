@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../filmsInfo/FilmsInfo.css";
-import { saveComm } from "../../features/firebasefunctions";
+import { saveComm } from "../../features/firebaseFunctions";
 import db from "../../features/firebaseConfig";
 import firebase from 'firebase/app';
 

@@ -5,14 +5,14 @@ import db from "../../features/firebaseConfig";
 import firebase from 'firebase/app';
  
 const Comments = ({ film }) => {
-  let content = [];
+  const [commentlist , setCommentlist] = useState([]);
 
 
   const [comm , setComm] = useState(""); 
   const [name , setName] = useState("");  
 
 
-  let commentlist = []; 
+ 
     const saveComment = () =>{
       try{
           const data = { 
@@ -39,30 +39,20 @@ const Comments = ({ film }) => {
  
   useEffect(() => {
     fetchComments(film);
-  });
+    
+  } , []);
 
   const fetchComments = async (film) => {
-    db.collection("comments").onSnapshot((querySnapshot) => { 
+    db.collection("comments").where("filmId", "==", film.id)
+    .onSnapshot((querySnapshot) => { 
       var filmcoms = [];
       querySnapshot.forEach((doc) => {
         filmcoms.push(doc.data());
       });
 
       console.log("List of comments ", filmcoms);
+      setCommentlist(filmcoms); 
 
-      content =
-        filmcoms &&
-        filmcoms.map((item, index) => {
-          return (
-            <div className="movie-list" key={index}>
-              <div className="movie-title">
-                <p>{item.comment}</p>
-              </div>
-            </div>
-          );
-        });
-
-      return content;
     })
   };
  
@@ -76,8 +66,16 @@ const Comments = ({ film }) => {
             <div className="test">
               <div className="comments-container">
                 <div className="commits">
-                  <p>Commits Here</p>
-                  <div>{content}</div>
+                  <div> {commentlist.map((item, index) => {
+          return (
+            <div className="movie-list" key={index}>
+              <div className="movie-title">
+                <p>{item.name} : {item.comment}</p>
+              </div>
+            </div>
+          );
+        })}
+                    </div>
                 </div> 
               </div>
             </div>

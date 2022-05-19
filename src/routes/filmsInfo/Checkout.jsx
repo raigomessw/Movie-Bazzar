@@ -178,19 +178,15 @@ const Checkout = () => {
                   </div>
                   <div className='items'>
                     <button onClick={() => { IncreaseOne(index) }} className='addCount'>+</button>
-
                     <button onClick={() => { DecreaseOne(index) }} className='deleteCount'>-</button>
-
                     <button onClick={() => { DeleteMovie(index) }} className='deleteMovie'>X</button>
                   </div>
-
                   <div className='total'>
                     <span className='total_price'>{item.count * 20}$</span>
                   </div>
                 </div>
               </div>
             );
-
           })}
 
           <div className='subTotal'>

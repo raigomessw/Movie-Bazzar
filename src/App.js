@@ -1,4 +1,5 @@
 import React from 'react';
+import { Toastcontainer } from "react-toastify"; 
 import { Route, Router, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './routes/home/Home';
@@ -11,7 +12,9 @@ function App() {
 
   return (
     <main>
+        
         <Routes >
+        <Toastcontainer/>
           <Route exact path="/"element={< Home />}/>
           <Route path="/filmsInfo/:id" element={<FilmsInfo/>}/>
           <Route path="/checkout" element={<Checkout />}/>

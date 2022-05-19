@@ -59,7 +59,7 @@ const Comments = ({ film }) => {
  
   return (
     <div>
-      <comment className="movie-comentars">
+      <div className="movie-comentars">
         <div className="">
           <div className="">
  
@@ -103,7 +103,7 @@ const Comments = ({ film }) => {
             </div>
           </div>
         </div>
-      </comment>
+        </div>
     </div>
   );
 };

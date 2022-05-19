@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
@@ -8,13 +9,15 @@ import { toast } from "react-toastify";
 
 
 
+
 const Checkout = () => {
 
   const dispatch = useDispatch()
-
+  const navigate = useNavigate()
   const shoppingCartObjects = useSelector(state => state.shoppingCart);
 
   let counter = 0
+  
 
   const imagePath = 'https://image.tmdb.org/t/p/';
 
@@ -77,10 +80,12 @@ const Checkout = () => {
     setIsSubmit(true);
   };
 
+
   useEffect(() => {
     console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       /*Link to final component*/
+      navigate("/thankyou");
     }
 
   }, [formErrors]);
@@ -129,6 +134,7 @@ const Checkout = () => {
     // } else if(values.creditcard.length > 8) {
     //   errors.creditcard = "Must be 8 digit"
     // }
+
     if (!values.expDate) {
       errors.expDate = "Date is required!";
     }
@@ -284,7 +290,7 @@ const Checkout = () => {
               </div>
             </div>
 
-            {Object.keys(formErrors).length === 0 && isSubmit ? (<div><Link to="/thankyou"></Link></div>) : (console.log("Error detected"))}
+            {/* {Object.keys(formErrors).length === 0 && isSubmit ? <Link to="/thankyou" /> : null } */}
 
             <div className="actions">
               {/* <Link to="/thankyou"> */}

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Toastcontainer } from "react-toastify"; 
 import { Route, Router, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './routes/home/Home';
@@ -7,14 +6,15 @@ import FilmsInfo from './routes/filmsInfo/FilmsInfo'
 import Checkout from './routes/filmsInfo/Checkout';
 import Thankyou from './routes/filmsInfo/Thankyou';
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
 
   return (
     <main>
-        
-        <Routes >
-        <Toastcontainer/>
+        <ToastContainer/>  
+        <Routes >      
           <Route exact path="/"element={< Home />}/>
           <Route path="/filmsInfo/:id" element={<FilmsInfo/>}/>
           <Route path="/checkout" element={<Checkout />}/>

@@ -290,8 +290,6 @@ const Checkout = () => {
               </div>
             </div>
 
-            {/* {Object.keys(formErrors).length === 0 && isSubmit ? <Link to="/thankyou" /> : null } */}
-
             <div className="actions">
               {/* <Link to="/thankyou"> */}
               <button id="pay">

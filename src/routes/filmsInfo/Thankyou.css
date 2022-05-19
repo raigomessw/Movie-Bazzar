@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.ty-container {
+    display: flex;
+    font-size: 0.95rem;
+    min-height: 100vh;
+    color: #ffe7c8;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+}
+
+.ty-card {
+    width: 65rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 0.8rem white;
+}
+
+.ty-h2{
+    margin-top: 7px;
+}
+
+.ty-h2 h2{
+    margin-left: 1rem;
+}
+
+.div-h {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem;
+    margin-left: 5px;
+    margin-right: 5px;
+    
+}
+
+.customer-text {
+    margin-top: 8px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.customer-text p {
+    font-size: 1.2rem;
+}
+
+.nav-text {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.nav-text p {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.button-container button {
+    border: none;
+    font-size: medium;
+    border-radius: 1.2rem;
+    width: 11rem;
+    background-color: red;
+    box-shadow: 0 0 1rem rgb(229, 64, 64);
+}
+
+.button-container button:active {
+    background-color: rgb(255, 154, 154);
+}

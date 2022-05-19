@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Navbar from "./navBarFilms/NavbarFilmInfo";
@@ -8,9 +9,8 @@ import Comments from "./Comments";
 
 const FilmsInfo = () => {
 
-
-
   const dispatch = useDispatch();
+  const nav = useNavigate()
   const listObject = useSelector((state) => state.filmList);
   const list = listObject.list;
 
@@ -21,6 +21,10 @@ const FilmsInfo = () => {
   let movieTitle = (movieSelected.title)
   const movieImg = (movieSelected.poster_path)
   let moviePrice = 20;
+
+  // if(!movieTitle) {
+  //   nav("/error");
+  // }
 
   const movieToAdd = {
     name: movieTitle,

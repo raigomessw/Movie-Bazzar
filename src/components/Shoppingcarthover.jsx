@@ -13,14 +13,14 @@ const Shoppincarthover = () => {
   const shoppingCartObjects = useSelector((state) => state.shoppingCart);
 
   const shoppingCartList = shoppingCartObjects.map((item) => (
-    <div class="dropdown-child">
+    <div className="dropdown-child">
       <div className="titletextleft">{item.product.name} </div>
       <div className="titletextrightcount">{item.count}</div>
     </div>
   ));
 
   return (
-    <div class="dropdown">
+    <div className="dropdown">
       <div className="cart-icon" onClick={handleCart}>
         {!cart ? (
           <AiOutlineShoppingCart className="icon" style={{ color: "#ffff" }} />
@@ -28,9 +28,9 @@ const Shoppincarthover = () => {
           <AiOutlineClose style={{ color: "#ffff" }} className="icon" />
         )}
       </div>
-      <div class={cart ? "dropdown" : "dropdown-content"}>
+      <div className={cart ? "dropdown" : "dropdown-content"}>
         <div className="">
-        <div class="dropdown-childtop">
+        <div className="dropdown-childtop">
           <div className="titletextleft">Title</div>{" "}
           <div className="titletextright">Qty</div>{" "}
         </div>

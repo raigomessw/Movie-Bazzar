@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/Movie-Bazzar/static/media/logotipo.c71eb7c3.gif"
   },
   {
-    "revision": "07e915ca0f817717781b70b6183549e4",
+    "revision": "873e0673144c290a5f5f14e8073a2b17",
     "url": "/Movie-Bazzar/index.html"
   }
 ];

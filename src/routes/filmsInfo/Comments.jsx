@@ -1,110 +1,87 @@
 import React, { useState, useEffect } from "react";
-import "../filmsInfo/FilmsInfo.css";
+import "../filmsInfo/Comments.css";
 import { saveComm } from "../../features/firebaseFunctions";
 import db from "../../features/firebaseConfig";
-import firebase from 'firebase/app';
+//import firebase from 'firebase/app';
+
 
 
 const Comments = ({ film }) => {
-  let content = [];
+  const [commentlist, setCommentlist] = useState([]);
+
 
   const [comm, setComm] = useState("");
-
   const [name, setName] = useState("");
-
-  //let commentlist = [];
 
   const saveComment = () => {
     try {
-      const data = {
-        name: name,
-        comment: comm,
-        filmId: film.id,
-      };
-
-      console.log("data", data);
-
-      saveComm(data);
-
-      cleardata();
+      const data = { name: name, comment: comm, filmId: film.id }
+      saveComm(data)
+      cleardata()
     } catch (error) {
-      console.log(error);
+      // console.log(error)
     }
-  };
+  }
+
+
 
   const cleardata = () => {
     setComm(" ");
-
     setName(" ");
   };
 
   useEffect(() => {
     fetchComments(film);
-  });
+
+  }, []);
 
   const fetchComments = async (film) => {
-    db.collection("comments").onSnapshot((querySnapshot) => {
-      var filmcoms = [];
-      querySnapshot.forEach((doc) => {
-        filmcoms.push(doc.data());
-      });
-
-      console.log("List of comments ", filmcoms);
-
-      content =
-        filmcoms &&
-        filmcoms.map((item, index) => {
-          return (
-            <div className="movie-list" key={index}>
-              <div className="movie-title">
-                <p>{item.comment}</p>
-              </div>
-            </div>
-          );
+    db.collection("comments").where("filmId", "==", film.id)
+      .onSnapshot((querySnapshot) => {
+        var filmcoms = [];
+        querySnapshot.forEach((doc) => {
+          filmcoms.push(doc.data());
         });
-
-      return content;
-    })
+        setCommentlist(filmcoms);
+      })
   };
 
+
   return (
-    <div>
-      <comment className="movie-comentars">
-        <div className="">
-          <div className="">
-            <h2> Comments</h2>
-            <div className="test">
-              <div className="comments-container">
-                <div className="commits">
-                  <p>Commits Here</p>
-                  <div>{content}</div>
+    <div className="comment-body">
+      <div className="comment-container">
+
+        <div className="com-h2">
+          <h2>Comments</h2>
+        </div>
+
+        <div className="comment-index">
+          {commentlist.map((item, index) => {
+            return (
+              <div className="comment-list" key={index}>
+                <div className="comment-div">
+                  <p className="user">{item.name}</p><h3>:</h3><p className="user-comment">{item.comment}</p>
                 </div>
+
               </div>
-            </div>
-            <div className="constainer_imputs">
-              <div className="inputs">
-                <input
-                  className="inputC"
-                  type="text"
-                  required
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Write your name here"
-                ></input>
-                <input
-                  className="inputC"
-                  type="text"
-                  required
-                  value={comm}
-                  onChange={(e) => setComm(e.target.value)}
-                  placeholder="Write your comment here"
-                ></input>
-              </div>
-              <button onClick={saveComment}> Leave a comment</button>
+            );
+          })}
+        </div>
+
+        <form>
+          <div className="input-container">
+            <div className="input-div">
+              <input className="inputC" type="text" required value={name} onChange={(e) => setName(e.target.value)} placeholder="Write your name here" ></input>
+              <input className="inputC" type="text" required value={comm} onChange={(e) => setComm(e.target.value)} placeholder="Write your comment here" ></input>
             </div>
           </div>
+        </form>
+
+        <div className="comment-button">
+          <button onClick={saveComment}>Leave a comment</button>
         </div>
-      </comment>
+
+      </div>
     </div>
   );
 };

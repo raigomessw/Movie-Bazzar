@@ -1,8 +1,4 @@
 
-import { firestore } from "firebase";
-
-import firebase from "firebase/app";
-
 import db from "./firebaseConfig";
 
 export const saveComm = async(data) => {

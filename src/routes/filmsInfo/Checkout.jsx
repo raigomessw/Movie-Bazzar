@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 import { actions } from '../../features/shoppingCart';
 import '../filmsInfo/checkout.css';
 
@@ -90,7 +90,7 @@ const Checkout = () => {
 
   const validate = (values) => {
     const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    //const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
     if (!values.name) {
       errors.name = "Name is required!";
@@ -178,19 +178,15 @@ const Checkout = () => {
                   </div>
                   <div className='items'>
                     <button onClick={() => { IncreaseOne(index) }} className='addCount'>+</button>
-
                     <button onClick={() => { DecreaseOne(index) }} className='deleteCount'>-</button>
-
                     <button onClick={() => { DeleteMovie(index) }} className='deleteMovie'>X</button>
                   </div>
-
                   <div className='total'>
                     <span className='total_price'>{item.count * 20}$</span>
                   </div>
                 </div>
               </div>
             );
-
           })}
 
           <div className='subTotal'>

@@ -158,19 +158,25 @@ img {
 }
 
 .comments-container {
-  height: 50px;
+  height: 100px;
   width: 300px;
+
+}
+.commits{
+  display: flex;
+  width:13rem;
+  border: 1px solid rgb(41, 190, 41)
 
 }
 
 .constainer_imputs {
   position: relative;
-  top: 20px;
+  top: 15px;
 }
 
 .constainer_imputs button {
   position: relative;
-  top: 15px;
+  top: 20px;
 
 }
 

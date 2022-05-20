@@ -5,6 +5,7 @@ import db from "../../features/firebaseConfig";
 //import firebase from 'firebase/app';
 
 
+
 const Comments = ({ film }) => {
   const [commentlist, setCommentlist] = useState([]);
 
@@ -21,6 +22,7 @@ const Comments = ({ film }) => {
       // console.log(error)
     }
   }
+
 
 
   const cleardata = () => {
@@ -60,6 +62,7 @@ const Comments = ({ film }) => {
                 <div className="comment-div">
                   <p className="user">{item.name}</p><h3>:</h3><p className="user-comment">{item.comment}</p>
                 </div>
+
               </div>
             );
           })}

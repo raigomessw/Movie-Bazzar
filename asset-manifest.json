@@ -1,5 +1,5 @@
 {
-  "main.css": "/Movie-Bazzar/static/css/main.05c66a11.chunk.css",
+  "main.css": "/Movie-Bazzar/static/css/main.48640bdf.chunk.css",
   "main.js": "/Movie-Bazzar/static/js/main.3e3f46f7.chunk.js",
   "main.js.map": "/Movie-Bazzar/static/js/main.3e3f46f7.chunk.js.map",
   "runtime~main.js": "/Movie-Bazzar/static/js/runtime~main.37b062ad.js",
@@ -8,9 +8,9 @@
   "static/js/2.39d51190.chunk.js": "/Movie-Bazzar/static/js/2.39d51190.chunk.js",
   "static/js/2.39d51190.chunk.js.map": "/Movie-Bazzar/static/js/2.39d51190.chunk.js.map",
   "index.html": "/Movie-Bazzar/index.html",
-  "precache-manifest.e018e6f96a42582130281f3bd127ce60.js": "/Movie-Bazzar/precache-manifest.e018e6f96a42582130281f3bd127ce60.js",
+  "precache-manifest.e9924b5db31685bb743709ad509bd239.js": "/Movie-Bazzar/precache-manifest.e9924b5db31685bb743709ad509bd239.js",
   "service-worker.js": "/Movie-Bazzar/service-worker.js",
   "static/css/2.626b7e48.chunk.css.map": "/Movie-Bazzar/static/css/2.626b7e48.chunk.css.map",
-  "static/css/main.05c66a11.chunk.css.map": "/Movie-Bazzar/static/css/main.05c66a11.chunk.css.map",
+  "static/css/main.48640bdf.chunk.css.map": "/Movie-Bazzar/static/css/main.48640bdf.chunk.css.map",
   "static/media/logotipo.gif": "/Movie-Bazzar/static/media/logotipo.c71eb7c3.gif"
 }

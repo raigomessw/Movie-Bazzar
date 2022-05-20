@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "861507b338f299192404",
-    "url": "/Movie-Bazzar/static/css/main.05c66a11.chunk.css"
+    "revision": "2f74b349522bd35ad451",
+    "url": "/Movie-Bazzar/static/css/main.48640bdf.chunk.css"
   },
   {
-    "revision": "861507b338f299192404",
+    "revision": "2f74b349522bd35ad451",
     "url": "/Movie-Bazzar/static/js/main.3e3f46f7.chunk.js"
   },
   {
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/Movie-Bazzar/static/media/logotipo.c71eb7c3.gif"
   },
   {
-    "revision": "873e0673144c290a5f5f14e8073a2b17",
+    "revision": "33b8809dddbf9a3e8651191c50c16739",
     "url": "/Movie-Bazzar/index.html"
   }
 ];

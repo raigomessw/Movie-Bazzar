@@ -32,8 +32,8 @@ function Navbar() {
     //  <div className={color ? "navbar-home navbar-bg-home" : "navbar-home"}>
     <div className="navbar-home">
         <div name="home" className={nav ? "navbar-home navbar-bg-home" : "navbar-home"}>
-            <div className={nav ? "logo-home darkk" : "logo-home"}>
-               <img src={Logotipo} alt="Logo" width="20" height="20"/>
+            <div className="logo">
+               <img src={Logotipo} alt="Logo"/>
             </div>
             <div className="nav-menu">
                 <NavLink to="/" className="link-home" smooth="true" duration={500}> <AiFillHome/></NavLink>

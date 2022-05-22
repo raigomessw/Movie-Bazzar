@@ -48,7 +48,6 @@
     width: 100%;
     margin-top: 2.5rem;
     min-height: auto;
-    overflow-y: scroll;
     justify-content: flex-start;
     border-bottom: 1px double darkgrey;
     align-content: center;

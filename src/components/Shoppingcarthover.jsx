@@ -42,16 +42,8 @@ const Shoppincarthover = () => {
       </div>
     </div>
 
-    /*<div class="dropdown">
-    <button class="dropbtn">Dropdown</button>
-     <div class="dropdown-content">
-    <div class="dropdown-childtop"><p className='titletext'>Title</p> <p className='titletextright'>Qty</p> </div>
-    <div class="dropdown-child"> <p className='titletext'>{movieTitle}</p> <p className='titletextright'>{qty}</p> </div>
-    <div class="dropdown-child"> <p className='titletext'>{movieTitle}</p> <p className='titletextright'>{qty}</p> </div>
-    </div>
-    </div>*/
   );
-  //<button className='btnplus'>+</button> <button className='btnminus'>-</button>
+
 };
 
 export default Shoppincarthover;

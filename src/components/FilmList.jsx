@@ -87,8 +87,7 @@ async function fetchList(dispatch , gen )  {
 
 
 
- //const url = 'https://imdb-api.com/en/API/Top250Movies/k_09fl5jeb'; API begränsat till 100 portar per dag.
- // const url = 'https://api.themoviedb.org/3/movie/popular?api_key=298722d66314704d61c48e8fe9330363';
+ 
  const url = `https://api.themoviedb.org/3/discover/movie?api_key=298722d66314704d61c48e8fe9330363&with_genres=${gen}`;
 
  try {

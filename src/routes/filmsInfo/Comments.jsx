@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../filmsInfo/Comments.css";
 import { saveComm } from "../../features/firebaseFunctions";
 import db from "../../features/firebaseConfig";
-//import firebase from 'firebase/app';
+
 
 
 
@@ -19,7 +19,7 @@ const Comments = ({ film }) => {
       saveComm(data)
       cleardata()
     } catch (error) {
-      // console.log(error)
+     
     }
   }
 

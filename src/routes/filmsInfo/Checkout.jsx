@@ -20,7 +20,7 @@ const Checkout = () => {
 
   /* Functions for selected movie */
 
-  
+
 
   const IncreaseOne = (index) => {
     let movieTitle = (shoppingCartObjects[index].product.name);
@@ -145,13 +145,6 @@ const Checkout = () => {
       errors.ccv = "CCV is required!";
     }
 
-    /* For presentation */
-
-    // else if (values.ccv.length < 3) {
-    //   errors.ccv = "Invalid CCV"
-    // } else if(values.ccv.length > 3) {
-    //   errors.ccv = "Can't exceed more than 3 digit"
-    // }
     return errors;
   }
 

@@ -6,9 +6,7 @@ import { Link } from "react-scroll/";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 import { AiFillHome } from "react-icons/ai";
-//import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
-//import { NavLink } from "react-router-dom";
 import Shoppincarthover from "../../../../../components/Shoppingcarthover";
 
 function Navbar() {
@@ -43,7 +41,7 @@ function Navbar() {
             <AiFillHome/>
           </Link>
         </ul>
-       
+
         <div className="">
           <div className="kart">
             <Shoppincarthover />

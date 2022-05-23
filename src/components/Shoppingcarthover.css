@@ -29,21 +29,7 @@
 
   }
 
-  /* Dropdown Content (Hidden by Default) */
-
-
-   /* .dropdown-content {
-    display: flex;
-    position: absolute;
-    min-width: 300px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    top: 4rem;
-    right:3rem;
-  } */
-  /*display: flex;
-  justify-content: space-between;
-   Links inside the dropdown */
+  
 
    .cart-icon{
      display: flex;

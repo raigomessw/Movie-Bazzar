@@ -202,6 +202,7 @@ img {
     color: #ffe7c8;
     font-size: 0.95rem;
     padding: 4rem;
+    justify-content: center;
   }
 
   .card {

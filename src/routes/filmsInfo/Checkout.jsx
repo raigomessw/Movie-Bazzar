@@ -1,65 +1,72 @@
 import { useNavigate } from "react-router-dom";
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 //import { Link } from 'react-router-dom'
-import { actions } from '../../features/shoppingCart';
-import '../filmsInfo/checkout.css';
+import { actions } from "../../features/shoppingCart";
+import "../filmsInfo/checkout.css";
 
 import { toast } from "react-toastify";
 
 const Checkout = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const shoppingCartObjects = useSelector((state) => state.shoppingCart);
 
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const shoppingCartObjects = useSelector(state => state.shoppingCart);
+  let counter = 0;
 
-  let counter = 0
-
-
-  const imagePath = 'https://image.tmdb.org/t/p/';
+  const imagePath = "https://image.tmdb.org/t/p/";
 
   /* Functions for selected movie */
 
   const IncreaseOne = (index) => {
-    let movieTitle = (shoppingCartObjects[index].product.name);
-    let moviePrice = (shoppingCartObjects[index].product.price);
+    let movieTitle = shoppingCartObjects[index].product.name;
+    let moviePrice = shoppingCartObjects[index].product.price;
 
     const movieToDelete = {
       name: movieTitle,
-      price: moviePrice
-    }
-    dispatch(actions.increaseAmount(movieToDelete))
-  }
+      price: moviePrice,
+    };
+    dispatch(actions.increaseAmount(movieToDelete));
+  };
 
   const DecreaseOne = (index) => {
-    let movieTitle = (shoppingCartObjects[index].product.name);
-    let moviePrice = (shoppingCartObjects[index].product.price);
+    let movieTitle = shoppingCartObjects[index].product.name;
+    let moviePrice = shoppingCartObjects[index].product.price;
     const movieToDelete = {
       name: movieTitle,
-      price: moviePrice
-    }
+      price: moviePrice,
+    };
     if (shoppingCartObjects[index].count === 1) {
-      dispatch(actions.removeFromCart(movieToDelete))
-    } else
-      dispatch(actions.decreaseAmount(movieToDelete))
-  }
+      dispatch(actions.removeFromCart(movieToDelete));
+    } else dispatch(actions.decreaseAmount(movieToDelete));
+  };
 
   const DeleteMovie = (index) => {
-    let movieTitle = (shoppingCartObjects[index].product.name);
-    let moviePrice = (shoppingCartObjects[index].product.price);
+    let movieTitle = shoppingCartObjects[index].product.name;
+    let moviePrice = shoppingCartObjects[index].product.price;
     const movieToDelete = {
       name: movieTitle,
-      price: moviePrice
-    }
-    toast.error(`${movieTitle} has been deleted`, { position: "bottom-center" });
-    dispatch(actions.removeFromCart(movieToDelete))
-  }
+      price: moviePrice,
+    };
+    toast.error(`${movieTitle} has been deleted`, {
+      position: "bottom-center",
+    });
+    dispatch(actions.removeFromCart(movieToDelete));
+  };
 
-  const initialValues =
-  {
-    name: "", surename: "",
-    adress: "", zipcode: "",
-    city: "", country: "", phone: "", email: "", creditcard: "", expDate: "", cardName: "", ccv: ""
+  const initialValues = {
+    name: "",
+    surename: "",
+    adress: "",
+    zipcode: "",
+    city: "",
+    country: "",
+    phone: "",
+    email: "",
+    creditcard: "",
+    expDate: "",
+    cardName: "",
+    ccv: "",
   };
 
   const [formValues, setFormValues] = useState(initialValues);
@@ -77,13 +84,15 @@ const Checkout = () => {
     setIsSubmit(true);
   };
 
-
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       if (shoppingCartObjects.length >= 1) {
         navigate("/thankyou");
       } else {
-        toast.warn("Woops! You can't pay an empty cart. Please add at least 1 movie.", {position: "top-center"});
+        toast.warn(
+          "Woops! You can't pay an empty cart. Please add at least 1 movie.",
+          { position: "top-center" }
+        );
       }
     }
   }, [formErrors]);
@@ -143,15 +152,8 @@ const Checkout = () => {
       errors.ccv = "CCV is required!";
     }
 
-    /* For presentation */
-
-    // else if (values.ccv.length < 3) {
-    //   errors.ccv = "Invalid CCV"
-    // } else if(values.ccv.length > 3) {
-    //   errors.ccv = "Can't exceed more than 3 digit"
-    // }
     return errors;
-  }
+  };
 
   return (
     <div className="checkout-container">
@@ -159,145 +161,241 @@ const Checkout = () => {
         <div className="checkout-information">
           <div>
             <h1 className="title">Checkout</h1>
-            <h2 className='order'>Order</h2>
+            <h2 className="order">Order</h2>
           </div>
-
           {shoppingCartObjects.map((item, index) => {
-            counter = item.count + counter
+            counter = item.count + counter;
             return (
               <div className="movie-list" key={index}>
-                <div className='movie-title'>
+                <div className="movie-title">
                   <p>{item.product.name}</p>
                 </div>
-                <div className='selected-container'>
+                <div className="selected-container">
                   <div className="img-movie">
-                    <img src={`${imagePath}/w500/${item.product.poster}`} alt="" />
+                    <img
+                      src={`${imagePath}/w500/${item.product.poster}`}
+                      alt=""
+                    />
                   </div>
-                  <div className='counter'>
+                  <div className="counter">
                     <p>Item: {item.count}</p>
                   </div>
-                  <div className='items'>
-                    <button onClick={() => { IncreaseOne(index) }} className='addCount'>+</button>
-                    <button onClick={() => { DecreaseOne(index) }} className='deleteCount'>-</button>
-                    <button onClick={() => { DeleteMovie(index) }} className='deleteMovie'>X</button>
+                  <div className="items">
+                    <button
+                      onClick={() => {
+                        IncreaseOne(index);
+                      }}
+                      className="addCount"
+                    >
+                      +
+                    </button>
+                    <button
+                      onClick={() => {
+                        DecreaseOne(index);
+                      }}
+                      className="deleteCount"
+                    >
+                      -
+                    </button>
+                    <button
+                      onClick={() => {
+                        DeleteMovie(index);
+                      }}
+                      className="deleteMovie"
+                    >
+                      X
+                    </button>
                   </div>
-                  <div className='total'>
-                    <span className='total_price'>{item.count * 20}$</span>
+                  <div className="total">
+                    <span className="total_price">{item.count * 20}$</span>
                   </div>
                 </div>
               </div>
             );
           })}
-
-          <div className='subTotal'>
-            <span className='totalText'>Total Amount: </span>
-            <span className='totalAll'>{counter * 20}USD</span>
+          <div className="subTotal">
+            <span className="totalText">Total Amount: </span>
+            <span className="totalAll">{counter * 20}USD</span>
           </div>
-
-          <h3 className='customer-information'>Customer information</h3>
-
+          <h3 className="customer-information">Customer information</h3>
           <form onSubmit={handleSubmit}>
-            <div className='input-2'>
+            <div className="input-2">
               <div>
                 <span>Name: </span>
-                <input type="text" name='name' value={formValues.name} onChange={handleChange} />
-                <div className='err-div'>
-                  <p className='err-msg'>{formErrors.name}</p>
+                <input
+                  type="text"
+                  name="name"
+                  value={formValues.name}
+                  onChange={handleChange}
+                />
+                <div className="err-div">
+                  <p className="err-msg">{formErrors.name}</p>
                 </div>
                 <span>Surename: </span>
-                <input type="text" name='surename' value={formValues.surename} onChange={handleChange} />
-                <div className='err-div'>
-                  <p className='err-msg'>{formErrors.surename}</p>
+                <input
+                  type="text"
+                  name="surename"
+                  value={formValues.surename}
+                  onChange={handleChange}
+                />
+                <div className="err-div">
+                  <p className="err-msg">{formErrors.surename}</p>
                 </div>
               </div>
               <div>
                 <span>Adress: </span>
-                <input type="text" name='adress' value={formValues.adress} onChange={handleChange} />
-                <div className='err-div'>
-                  <p className='err-msg'>{formErrors.adress}</p>
+                <input
+                  type="text"
+                  name="adress"
+                  value={formValues.adress}
+                  onChange={handleChange}
+                />
+                <div className="err-div">
+                  <p className="err-msg">{formErrors.adress}</p>
                 </div>
                 <span>Zip Code: </span>
-                <input type="text" name='zipcode' value={formValues.zipcode} onChange={handleChange} />
-                <div className='err-div'>
-                  <p className='err-msg'>{formErrors.zipcode}</p>
+                <input
+                  type="text"
+                  name="zipcode"
+                  value={formValues.zipcode}
+                  onChange={handleChange}
+                />
+                <div className="err-div">
+                  <p className="err-msg">{formErrors.zipcode}</p>
                 </div>
               </div>
               <div>
                 <span>City: </span>
-                <input type="text" name='city' value={formValues.city} onChange={handleChange} />
-                <div className='err-div'>
-                  <p className='err-msg'>{formErrors.city}</p>
+                <input
+                  type="text"
+                  name="city"
+                  value={formValues.city}
+                  onChange={handleChange}
+                />
+                <div className="err-div">
+                  <p className="err-msg">{formErrors.city}</p>
                 </div>
                 <span>Country: </span>
-                <input type="text" name='country' value={formValues.country} onChange={handleChange} />
-                <div className='err-div'>
-                  <p className='err-msg'>{formErrors.country}</p>
+                <input
+                  type="text"
+                  name="country"
+                  value={formValues.country}
+                  onChange={handleChange}
+                />
+                <div className="err-div">
+                  <p className="err-msg">{formErrors.country}</p>
                 </div>
               </div>
               <div>
                 <span>Phone: </span>
-                <input type="text" name='phone' value={formValues.phone} onChange={handleChange} />
-                <div className='err-div'>
-                  <p className='err-msg'>{formErrors.phone}</p>
+                <input
+                  type="text"
+                  name="phone"
+                  value={formValues.phone}
+                  onChange={handleChange}
+                />
+                <div className="err-div">
+                  <p className="err-msg">{formErrors.phone}</p>
                 </div>
                 <span>Email: </span>
-                <input type="text" name='email' value={formValues.email} onChange={handleChange} />
-                <div className='err-div'>
-                  <p className='err-msg'>{formErrors.email}</p>
+                <input
+                  type="text"
+                  name="email"
+                  value={formValues.email}
+                  onChange={handleChange}
+                />
+                <div className="err-div">
+                  <p className="err-msg">{formErrors.email}</p>
                 </div>
               </div>
             </div>
 
-
-            <div className='creditcard'>
-              <img className="img3" src={`https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png`} alt="" />
-              <img className="img3" src={`https://cdn2.downdetector.com/static/uploads/logo/mastercard.jpg`} alt="" />
-              <img className="img3" src={`https://logowik.com/content/uploads/images/amex-card1708.jpg`} alt="" />
-              <img className="img3" src={`https://www.retailbankerinternational.com/wp-content/uploads/sites/2/2020/02/JCBI.png`} alt="" />
-              <img className="img3" src={`https://i.pcmag.com/imagery/reviews/068BjcjwBw0snwHIq0KNo5m-15..v1602794215.png`} alt="" />
+            <div className="creditcard">
+              <img
+                className="img3"
+                src={`https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png`}
+                alt=""
+              />
+              <img
+                className="img3"
+                src={`https://cdn2.downdetector.com/static/uploads/logo/mastercard.jpg`}
+                alt=""
+              />
+              <img
+                className="img3"
+                src={`https://logowik.com/content/uploads/images/amex-card1708.jpg`}
+                alt=""
+              />
+              <img
+                className="img3"
+                src={`https://www.retailbankerinternational.com/wp-content/uploads/sites/2/2020/02/JCBI.png`}
+                alt=""
+              />
+              <img
+                className="img3"
+                src={`https://i.pcmag.com/imagery/reviews/068BjcjwBw0snwHIq0KNo5m-15..v1602794215.png`}
+                alt=""
+              />
             </div>
 
-            <div className='creditcard-inputs'>
+            <div className="creditcard-inputs">
               <div>
                 <span>Creditcard: </span>
-                <input type="text" name='creditcard' value={formValues.creditcard} onChange={handleChange} />
-                <div className='err-div'>
-                  <p className='err-msg'>{formErrors.creditcard}</p>
+                <input
+                  type="text"
+                  name="creditcard"
+                  value={formValues.creditcard}
+                  onChange={handleChange}
+                />
+                <div className="err-div">
+                  <p className="err-msg">{formErrors.creditcard}</p>
                 </div>
                 <span>Expire date: </span>
-                <input type="text" name='expDate' value={formValues.expDate} onChange={handleChange} />
-                <div className='err-div'>
-                  <p className='err-msg'>{formErrors.expDate}</p>
+                <input
+                  type="text"
+                  name="expDate"
+                  value={formValues.expDate}
+                  onChange={handleChange}
+                />
+                <div className="err-div">
+                  <p className="err-msg">{formErrors.expDate}</p>
                 </div>
               </div>
               <div>
                 <span>Name on card: </span>
-                <input type="text" name='cardName' value={formValues.cardName} onChange={handleChange} />
-                <div className='err-div'>
-                  <p className='err-msg'>{formErrors.cardName}</p>
+                <input
+                  type="text"
+                  name="cardName"
+                  value={formValues.cardName}
+                  onChange={handleChange}
+                />
+                <div className="err-div">
+                  <p className="err-msg">{formErrors.cardName}</p>
                 </div>
                 <span>CCV: </span>
-                <input type="text" name='ccv' value={formValues.ccv} onChange={handleChange} />
-                <div className='err-div'>
-                  <p className='err-msg'>{formErrors.ccv}</p>
+                <input
+                  type="text"
+                  name="ccv"
+                  value={formValues.ccv}
+                  onChange={handleChange}
+                />
+                <div className="err-div">
+                  <p className="err-msg">{formErrors.ccv}</p>
                 </div>
               </div>
             </div>
 
             <div className="actions">
               {/* <Link to="/thankyou"> */}
-              <button id="pay">
-                Pay
-              </button>
+              <button id="pay">Pay</button>
               {/* </Link> */}
             </div>
-          </form> {/*  change to form end */}
+          </form>{" "}
+          {/*  change to form end */}
         </div>
       </div>
     </div>
   );
-
-}
-
+};
 
 export default Checkout;

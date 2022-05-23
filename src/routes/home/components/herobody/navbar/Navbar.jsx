@@ -6,9 +6,7 @@ import { Link } from "react-scroll/";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 import { AiFillHome } from "react-icons/ai";
-//import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
-//import { NavLink } from "react-router-dom";
 import Shoppincarthover from "../../../../../components/Shoppingcarthover";
 
 function Navbar() {
@@ -36,11 +34,14 @@ function Navbar() {
         <div className={nav ? "logo-home darkk" : "logo-home"}>
           <img src={Logotipo} alt="Logo" width="20" height="20" />
         </div>
+
+        <div  className={nav ? "type-home darkk" : "type-home"}>  Best quality Blue Ray Movies, Delivered to your door within 2 working days </div>
         <ul className="nav-menu">
           <Link to="home" className="link-home" smooth="true" duration={500}>
             <AiFillHome/>
           </Link>
         </ul>
+
         <div className="">
           <div className="kart">
             <Shoppincarthover />

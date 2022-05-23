@@ -20,6 +20,8 @@ const Checkout = () => {
 
   /* Functions for selected movie */
 
+  
+
   const IncreaseOne = (index) => {
     let movieTitle = (shoppingCartObjects[index].product.name);
     let moviePrice = (shoppingCartObjects[index].product.price);
@@ -286,7 +288,7 @@ const Checkout = () => {
 
             <div className="actions">
               {/* <Link to="/thankyou"> */}
-              <button id="pay">
+              <button id="pay"  >
                 Pay
               </button>
               {/* </Link> */}

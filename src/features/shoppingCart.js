@@ -5,9 +5,10 @@ const addToCart = createAction('add to cart');
 const removeFromCart = createAction('remove from cart');
 const increaseAmount = createAction('increase amount');
 const decreaseAmount = createAction('decrease amount'); 
+const emptycart = createAction('empty cart'); 
 
 
-const actions = { addToCart, removeFromCart, increaseAmount, decreaseAmount};
+const actions = { addToCart, removeFromCart, increaseAmount, decreaseAmount , emptycart};
     
 const initialState = []; 
 
@@ -71,9 +72,14 @@ const reducer = createReducer(initialState, {
         
     [removeFromCart] : (state, action ) => (
         
-        state.filter(cartItem => cartItem.product.name !== action.payload.name)
-    )    
+        state.filter(cartItem => "all" !== action.payload )
+    )   , 
 
+    [emptycart] : (state, action ) => (
+
+        state.filter(cartItem => cartItem.product.name === action.payload.name)
+    )     
+    
 });
 
 export { actions, reducer };

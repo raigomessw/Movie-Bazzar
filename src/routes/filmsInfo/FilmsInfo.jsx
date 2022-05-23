@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Navbar from "./navBarFilms/NavbarFilmInfo";
 import "../filmsInfo/FilmsInfo.css";
 import { actions } from "../../features/shoppingCart";
@@ -8,14 +9,26 @@ import Comments from "./Comments";
 
 const FilmsInfo = () => {
   const dispatch = useDispatch();
+  const navi = useNavigate()
   const listObject = useSelector((state) => state.filmList);
   const list = listObject.list;
 
   const params = useParams();
   const imagePath = "https://image.tmdb.org/t/p/";
   const movieSelected = list.find((movie) => movie.id == params.id);
+  // if(movieSelected !== undefined) {
+  //   console.log("working");
+  // } else {
+  //   navi("/failure");
+  // }
+
+  // const [checkMovie, useCheckMovie] = useState();
+
+
 
   let movieTitle = movieSelected.title;
+
+
   let movieImg = movieSelected.poster_path;
   let moviePrice = 20;
 
@@ -75,7 +88,7 @@ const FilmsInfo = () => {
                   </div>
                   <div className="movie-buttons">
                     <button onClick={AddShoppingCart} className="buy">
-                      Add to cart
+                      Add Blue-ray to cart
                     </button>
                   </div>
                 </div>

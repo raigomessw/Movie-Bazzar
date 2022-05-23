@@ -30,8 +30,7 @@ const Thankyou = () => {
         </div>
         <div className="customer-text">
           <p>
-            Your purchase has been successful. You are now able to watch your
-            purchased movies.
+            Your purchase has been successful. You will recieve your purschased movies coming 2 days.
           </p>
           <p>Our developers would like to thank you shopping with us.</p>
         </div>

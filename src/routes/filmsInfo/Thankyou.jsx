@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import "../filmsInfo/Thankyou.css";
+import { actions } from '../../features/shoppingCart';
 
 const Thankyou = () => {
 
   function randomNumber(min, max){
     return Math.floor(Math.random() * (max-min)) + min;
   }
+
+  const dispatch = useDispatch()
+  const Emptycart = () => {
+    
+    dispatch(actions.emptycart("all"))
+  }
+
+
+  useEffect(() => {
+   
+    Emptycart()
+  }, []);
+
+
 
   return (
 

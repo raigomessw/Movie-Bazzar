@@ -69,6 +69,8 @@ background-color:rgb(65, 16, 16);
 .image-container :hover{
   cursor: pointer;
 	transform: scale(1.1);
+  box-shadow: 2px 2px 15px rgb(255, 122, 122);
+  transition-duration: 0.5s;
 }
 
 @media screen and (max-width: 940px) {

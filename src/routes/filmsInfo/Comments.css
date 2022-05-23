@@ -1,106 +1,107 @@
 .comment-body {
-    display: flex;
-    flex-direction: column;
-    min-height: fit-content;
-    margin-top: 6rem;
-    padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  min-height: fit-content;
+  margin-top: 6rem;
+  padding: 1.5rem;
 }
 
 .comment-container {
-    border-radius: 1rem;
-    box-shadow: 0 0 0.6rem white;
-    width: fit-content;
-    padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.6rem white;
+  width: fit-content;
+  padding: 1rem;
 }
 
 .com-h2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 1rem;
 }
 
 .com-h2 h2 {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .comment-index {
-    min-width: fit-content;
-    height: 200px;
-    overflow-y: auto;
-    overflow-x: auto;
+  min-width: fit-content;
+  height: 200px;
+  overflow-y: auto;
+  overflow-x: auto;
 
 }
 
 .comment-index div {
-    margin-left: 1px;
-    margin-right:1rem;
-    margin-top: 12px;
-    margin-bottom: 12px;
-    padding: 1px;
+  margin-left: 1px;
+  margin-right: 1rem;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 1px;
 
 }
 
 .comment-div {
-    display: flex;
-    width: 100%;
-    margin-top: 2.5rem;
-    min-height: auto;
-    justify-content: flex-start;
-    border-bottom: 1px double darkgrey;
-    align-content: center;
+  display: flex;
+  width: 100%;
+  margin-top: 2.5rem;
+  min-height: auto;
+  justify-content: flex-start;
+  border-bottom: 1px double darkgrey;
+  align-content: center;
 }
 
 .user {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-left: 4px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 4px;
 }
 
 .user-comment {
-    font-size: 1rem;
-    position: relative;
-    display: flex;
-    margin-left: 5px;
+  font-size: 1rem;
+  position: relative;
+  display: flex;
+  margin-left: 5px;
 }
 
 .input-container {
-    padding: 0.2rem;
+  padding: 0.2rem;
 }
 
 .input-div input {
-    border: none;
-    border-radius: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    height: 40px;
+  border: none;
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  height: 40px;
 }
 
-.comment-button{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0.7rem;
+.comment-button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.7rem;
 }
 
 .comment-button button {
-    font-size: 1rem;
-    text-align: center;
-    min-width: fit-content;
-    box-shadow: 0 0 0.6rem white;
+  font-size: 1rem;
+  text-align: center;
+  min-width: fit-content;
+  box-shadow: 0 0 0.6rem white;
 }
 
-.comment-button button:hover{
-    background: #f87000;
-    transition-duration: 0.5s;
+.comment-button button:hover {
+  background: #f87000;
+  transition-duration: 0.5s;
 }
 
-.comment-button button:active{
-    background: #fbc598;
+.comment-button button:active {
+  background: #fbc598;
 }
+
 @media screen and (max-width: 940px) {
   .comment-index {
     min-width: 250px;

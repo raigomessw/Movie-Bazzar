@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Navbar from "./navBarFilms/NavbarFilmInfo";
@@ -7,7 +7,6 @@ import { actions } from "../../features/shoppingCart";
 import Comments from "./Comments";
 
 const FilmsInfo = () => {
-
   const dispatch = useDispatch();
   const listObject = useSelector((state) => state.filmList);
   const list = listObject.list;
@@ -16,20 +15,19 @@ const FilmsInfo = () => {
   const imagePath = "https://image.tmdb.org/t/p/";
   const movieSelected = list.find((movie) => movie.id == params.id);
 
-  let movieTitle = (movieSelected.title)
-  let movieImg = (movieSelected.poster_path)
+  let movieTitle = movieSelected.title;
+  let movieImg = movieSelected.poster_path;
   let moviePrice = 20;
-
 
   const movieToAdd = {
     name: movieTitle,
     price: moviePrice,
-    poster: movieImg
-  }
+    poster: movieImg,
+  };
 
   const AddShoppingCart = () => {
     dispatch(actions.addToCart(movieToAdd));
-  }
+  };
 
   return (
     <div>
@@ -40,7 +38,10 @@ const FilmsInfo = () => {
             <div className="movie-info-container">
               <div className="top">
                 <div className="img-1">
-                  <img src={`${imagePath}/w500/${movieSelected.poster_path}`} alt="" />
+                  <img
+                    src={`${imagePath}/w500/${movieSelected.poster_path}`}
+                    alt=""
+                  />
                 </div>
                 <div className="general-info">
                   <div className="title_movie">

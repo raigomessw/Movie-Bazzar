@@ -36,11 +36,14 @@ function Navbar() {
         <div className={nav ? "logo-home darkk" : "logo-home"}>
           <img src={Logotipo} alt="Logo" width="20" height="20" />
         </div>
+
+        <div  className={nav ? "type-home darkk" : "type-home"}>  Best quality Blue Ray Movies, Delivered to your door within 2 working days </div>
         <ul className="nav-menu">
           <Link to="home" className="link-home" smooth="true" duration={500}>
             <AiFillHome/>
           </Link>
         </ul>
+       
         <div className="">
           <div className="kart">
             <Shoppincarthover />

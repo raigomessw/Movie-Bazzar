@@ -1,16 +1,16 @@
 {
-  "main.css": "/Movie-Bazzar/static/css/main.48640bdf.chunk.css",
-  "main.js": "/Movie-Bazzar/static/js/main.3e3f46f7.chunk.js",
-  "main.js.map": "/Movie-Bazzar/static/js/main.3e3f46f7.chunk.js.map",
+  "main.css": "/Movie-Bazzar/static/css/main.285e73ce.chunk.css",
+  "main.js": "/Movie-Bazzar/static/js/main.1cd39cc7.chunk.js",
+  "main.js.map": "/Movie-Bazzar/static/js/main.1cd39cc7.chunk.js.map",
   "runtime~main.js": "/Movie-Bazzar/static/js/runtime~main.37b062ad.js",
   "runtime~main.js.map": "/Movie-Bazzar/static/js/runtime~main.37b062ad.js.map",
   "static/css/2.626b7e48.chunk.css": "/Movie-Bazzar/static/css/2.626b7e48.chunk.css",
-  "static/js/2.a563fd0d.chunk.js": "/Movie-Bazzar/static/js/2.a563fd0d.chunk.js",
-  "static/js/2.a563fd0d.chunk.js.map": "/Movie-Bazzar/static/js/2.a563fd0d.chunk.js.map",
+  "static/js/2.3536de3c.chunk.js": "/Movie-Bazzar/static/js/2.3536de3c.chunk.js",
+  "static/js/2.3536de3c.chunk.js.map": "/Movie-Bazzar/static/js/2.3536de3c.chunk.js.map",
   "index.html": "/Movie-Bazzar/index.html",
-  "precache-manifest.532a56ff7bc90c092d2c45f6a57fe867.js": "/Movie-Bazzar/precache-manifest.532a56ff7bc90c092d2c45f6a57fe867.js",
+  "precache-manifest.f4f3c0a0d75c176b694e13807d88a48f.js": "/Movie-Bazzar/precache-manifest.f4f3c0a0d75c176b694e13807d88a48f.js",
   "service-worker.js": "/Movie-Bazzar/service-worker.js",
   "static/css/2.626b7e48.chunk.css.map": "/Movie-Bazzar/static/css/2.626b7e48.chunk.css.map",
-  "static/css/main.48640bdf.chunk.css.map": "/Movie-Bazzar/static/css/main.48640bdf.chunk.css.map",
+  "static/css/main.285e73ce.chunk.css.map": "/Movie-Bazzar/static/css/main.285e73ce.chunk.css.map",
   "static/media/logotipo.gif": "/Movie-Bazzar/static/media/logotipo.c71eb7c3.gif"
 }

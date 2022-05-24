@@ -1,7 +1,6 @@
-import React, { useLayoutEffect, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Navbar from "./navBarFilms/NavbarFilmInfo";
 import "../filmsInfo/FilmsInfo.css";
 import { actions } from "../../features/shoppingCart";
@@ -10,8 +9,7 @@ import Failure from "./Failure";
 
 const FilmsInfo = () => {
   const dispatch = useDispatch();
-  const nav = useNavigate()
-  const { state } = useLocation();
+
 
   const listObject = useSelector((state) => state.filmList);
   const list = listObject.list;
@@ -28,7 +26,7 @@ const FilmsInfo = () => {
       </div>
     );
   } else {
-    console.log("working"); 
+    console.log("working");
   }
 
   // const [checkMovie, useCheckMovie] = useState();

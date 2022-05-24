@@ -8,12 +8,29 @@ import Comments from "./Comments";
 
 const FilmsInfo = () => {
   const dispatch = useDispatch();
+
   const listObject = useSelector((state) => state.filmList);
   const list = listObject.list;
 
   const params = useParams();
   const imagePath = "https://image.tmdb.org/t/p/";
   const movieSelected = list.find((movie) => movie.id == params.id);
+
+
+
+  if(movieSelected == null) {
+    return(
+      <div>
+        <Failure></Failure>
+      </div>
+    );
+  } else {
+    console.log("working");
+  }
+
+  // const [checkMovie, useCheckMovie] = useState();
+
+
 
   let movieTitle = movieSelected.title;
   let movieImg = movieSelected.poster_path;

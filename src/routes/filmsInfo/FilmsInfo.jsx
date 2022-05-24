@@ -10,8 +10,6 @@ import Failure from "./Failure";
 
 const FilmsInfo = () => {
   const dispatch = useDispatch();
-  const nav = useNavigate()
-  const { state } = useLocation();
 
   const listObject = useSelector((state) => state.filmList);
   const list = listObject.list;
@@ -20,7 +18,6 @@ const FilmsInfo = () => {
   const imagePath = "https://image.tmdb.org/t/p/";
   const movieSelected = list.find((movie) => movie.id == params.id);
 
-
   if(movieSelected == null) {
     return(
       <div>
@@ -28,7 +25,7 @@ const FilmsInfo = () => {
       </div>
     );
   } else {
-    console.log("working"); 
+    console.log("working");
   }
 
   // const [checkMovie, useCheckMovie] = useState();

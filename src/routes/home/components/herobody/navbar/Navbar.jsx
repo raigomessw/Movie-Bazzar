@@ -36,7 +36,7 @@ function Navbar() {
         </div>
 
         <div className={nav ? "type-home darkk" : "type-home"}>  
-        <p>Best quality Blue Ray Movies, Delivered to your door within 2 working days</p> 
+        <p className="home-message">Best quality blue-ray movies, delivered to your door within 2 working days</p> 
         </div>
         <ul className="nav-menu">
           <Link to="home" className="link-home" smooth="true" duration={500}>

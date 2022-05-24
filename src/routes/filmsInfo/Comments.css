@@ -9,7 +9,7 @@
 .comment-container {
   border-radius: 1rem;
   box-shadow: 0 0 0.6rem white;
-  width: 500px;
+  width: fit-content;
   padding: 1rem;
 }
 
@@ -139,7 +139,7 @@
 
 
   .comment-index {
-    width: 250px;
+    min-width: fit-content;
     height: 250px;
     overflow-y: scroll;
     justify-content: center;

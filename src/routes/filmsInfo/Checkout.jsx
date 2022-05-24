@@ -227,6 +227,7 @@ const Checkout = () => {
                   name="name"
                   value={formValues.name}
                   onChange={handleChange}
+                  placeholder="Name"
                 />
                 <div className="err-div">
                   <p className="err-msg">{formErrors.name}</p>
@@ -237,6 +238,7 @@ const Checkout = () => {
                   name="surename"
                   value={formValues.surename}
                   onChange={handleChange}
+                  placeholder="Surename"
                 />
                 <div className="err-div">
                   <p className="err-msg">{formErrors.surename}</p>
@@ -249,6 +251,7 @@ const Checkout = () => {
                   name="adress"
                   value={formValues.adress}
                   onChange={handleChange}
+                  placeholder="Adress"
                 />
                 <div className="err-div">
                   <p className="err-msg">{formErrors.adress}</p>
@@ -259,6 +262,7 @@ const Checkout = () => {
                   name="zipcode"
                   value={formValues.zipcode}
                   onChange={handleChange}
+                  placeholder="Zipcode"
                 />
                 <div className="err-div">
                   <p className="err-msg">{formErrors.zipcode}</p>
@@ -271,6 +275,7 @@ const Checkout = () => {
                   name="city"
                   value={formValues.city}
                   onChange={handleChange}
+                  placeholder="City"
                 />
                 <div className="err-div">
                   <p className="err-msg">{formErrors.city}</p>
@@ -281,6 +286,7 @@ const Checkout = () => {
                   name="country"
                   value={formValues.country}
                   onChange={handleChange}
+                  placeholder="Country"
                 />
                 <div className="err-div">
                   <p className="err-msg">{formErrors.country}</p>
@@ -293,6 +299,7 @@ const Checkout = () => {
                   name="phone"
                   value={formValues.phone}
                   onChange={handleChange}
+                  placeholder="Phone"
                 />
                 <div className="err-div">
                   <p className="err-msg">{formErrors.phone}</p>
@@ -303,6 +310,7 @@ const Checkout = () => {
                   name="email"
                   value={formValues.email}
                   onChange={handleChange}
+                  placeholder="Email"
                 />
                 <div className="err-div">
                   <p className="err-msg">{formErrors.email}</p>
@@ -346,6 +354,7 @@ const Checkout = () => {
                   name="creditcard"
                   value={formValues.creditcard}
                   onChange={handleChange}
+                  placeholder="**** **** **** ****"
                 />
                 <div className="err-div">
                   <p className="err-msg">{formErrors.creditcard}</p>
@@ -356,6 +365,7 @@ const Checkout = () => {
                   name="expDate"
                   value={formValues.expDate}
                   onChange={handleChange}
+                  placeholder="**/**"
                 />
                 <div className="err-div">
                   <p className="err-msg">{formErrors.expDate}</p>
@@ -368,6 +378,7 @@ const Checkout = () => {
                   name="cardName"
                   value={formValues.cardName}
                   onChange={handleChange}
+                  placeholder="Owner name"
                 />
                 <div className="err-div">
                   <p className="err-msg">{formErrors.cardName}</p>
@@ -378,6 +389,7 @@ const Checkout = () => {
                   name="ccv"
                   value={formValues.ccv}
                   onChange={handleChange}
+                  placeholder="***"
                 />
                 <div className="err-div">
                   <p className="err-msg">{formErrors.ccv}</p>

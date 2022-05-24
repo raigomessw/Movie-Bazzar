@@ -15,12 +15,14 @@
   font-size: 1.8rem;
   cursor: pointer;
   color: #fff;
+  
 }
 .search-iconn{
   display: absolute;
   position: relative;
   top: 2.6rem;
   right: 5rem;
+  
 }
 /* .shoppingKart-container{
   top: 0rem;
@@ -57,6 +59,7 @@
 .link-info {
     color: rgba(255, 255, 255, 0.979);
     cursor: pointer;
+    
 }
 
 .link-home:hover {
@@ -92,6 +95,8 @@ li {
   padding: 20px;
   font-size: 1.8rem;
   cursor: pointer;
+  border: 3px green solid;
+
   position: relative;
 }
 .bg-transparent {

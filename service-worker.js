@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Movie-Bazzar/precache-manifest.f4f3c0a0d75c176b694e13807d88a48f.js"
+  "/Movie-Bazzar/precache-manifest.5bc9b0b743d72c091648aa7f100f751b.js"
 );
 
 workbox.clientsClaim();

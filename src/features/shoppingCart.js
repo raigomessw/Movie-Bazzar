@@ -72,12 +72,12 @@ const reducer = createReducer(initialState, {
         
     [removeFromCart] : (state, action ) => (
         
-        state.filter(cartItem => cartItem.product.name !== action.payload.name )
+        state.filter(cartItem => "all" !== action.payload )
     )   , 
 
     [emptycart] : (state, action ) => (
 
-        state.filter(cartItem => cartItem.product.name === action.payload.name) 
+        state.filter(cartItem => cartItem.product.name === action.payload.name)
     )     
     
 });

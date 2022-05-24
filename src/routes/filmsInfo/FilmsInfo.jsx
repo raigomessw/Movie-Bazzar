@@ -5,11 +5,9 @@ import Navbar from "./navBarFilms/NavbarFilmInfo";
 import "../filmsInfo/FilmsInfo.css";
 import { actions } from "../../features/shoppingCart";
 import Comments from "./Comments";
-import Failure from "./Failure";
 
 const FilmsInfo = () => {
   const dispatch = useDispatch();
-
 
   const listObject = useSelector((state) => state.filmList);
   const list = listObject.list;
@@ -17,6 +15,7 @@ const FilmsInfo = () => {
   const params = useParams();
   const imagePath = "https://image.tmdb.org/t/p/";
   const movieSelected = list.find((movie) => movie.id == params.id);
+
 
 
   if(movieSelected == null) {
@@ -35,7 +34,6 @@ const FilmsInfo = () => {
 
   let movieTitle = movieSelected.title;
   let movieImg = movieSelected.poster_path;
-
   let moviePrice = 20;
 
   const movieToAdd = {
@@ -94,7 +92,7 @@ const FilmsInfo = () => {
                   </div>
                   <div className="movie-buttons">
                     <button onClick={AddShoppingCart} className="buy">
-                      Add Blue-ray to cart
+                      Add to cart
                     </button>
                   </div>
                 </div>

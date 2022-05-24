@@ -16,7 +16,7 @@ const FilmList = () => {
   if (status === STATUS.NORMAL) {
     content = "Redo for lite films!";
   } else if (status === STATUS.FETCHING) {
-    content = "Loading...";
+    content = "Väntar på films...";
   } else if (status === STATUS.SUCCESS) {
     content = list.map((films, index) => {
       return (

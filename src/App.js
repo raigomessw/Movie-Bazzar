@@ -9,21 +9,23 @@ import Failure from './routes/filmsInfo/Failure';
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ScrollTop from './features/ScrollTop';
 
 
 function App() {
 
   return (
     <main>
-        <ToastContainer/>  
-        <Routes >      
-          <Route exact path="/"element={< Home />}/>
-          <Route path="/filmsInfo/:id" element={<FilmsInfo/>}/>
-          <Route path="/checkout" element={<Checkout />}/>
-          <Route path="/thankyou" element={<Thankyou />}/>
-          <Route path='/error' element={<Failure />}/>
-        </Routes >
-      </main>
-    );
+      <ScrollTop />
+      <ToastContainer />
+      <Routes >
+        <Route exact path="/" element={< Home />} />
+        <Route path="/filmsInfo/:id" element={<FilmsInfo />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/thankyou" element={<Thankyou />} />
+        <Route path='/error' element={<Failure />} />
+      </Routes >
+    </main>
+  );
 }
 export default App;

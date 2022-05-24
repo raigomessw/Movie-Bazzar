@@ -11,6 +11,11 @@
     color: rgb(247, 247, 247);
 }
 
+.home-message {
+    font-weight: bold;
+    color: #ffe7c8;
+}
+
 
 .general-info {
     font-size: 1.3rem;

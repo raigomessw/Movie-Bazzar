@@ -6,9 +6,7 @@ import { Link } from "react-scroll/";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 import { AiFillHome } from "react-icons/ai";
-//import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
-//import { NavLink } from "react-router-dom";
 import Shoppincarthover from "../../../../../components/Shoppingcarthover";
 
 function Navbar() {
@@ -37,13 +35,15 @@ function Navbar() {
           <img src={Logotipo} alt="Logo" width="20" height="20" />
         </div>
 
-        <div  className={nav ? "type-home darkk" : "type-home"}>  Best quality Blue Ray Movies, Delivered to your door within 2 working days </div>
+        <div className={nav ? "type-home darkk" : "type-home"}>  
+        <p className="home-message">Best quality blue-ray movies, delivered to your door within 2 working days</p> 
+        </div>
         <ul className="nav-menu">
           <Link to="home" className="link-home" smooth="true" duration={500}>
-            <AiFillHome/>
+            <AiFillHome />
           </Link>
         </ul>
-       
+
         <div className="">
           <div className="kart">
             <Shoppincarthover />
@@ -66,9 +66,9 @@ function Navbar() {
           </ul>
           <div className="mobile-menu-botton">
             <div className="menu-cart">
-               <div className="nav-menu" style={{ color: "#050404" }}>
-                 <Shoppincarthover />
-               </div>
+              <div className="nav-menu" style={{ color: "#050404" }}>
+                <Shoppincarthover />
+              </div>
             </div>
             <div className="social-icons-home">
               <FaFacebook className="iconSocial" />

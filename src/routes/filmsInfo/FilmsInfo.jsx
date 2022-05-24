@@ -1,40 +1,46 @@
-import React from 'react'
-//import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Navbar from "./navBarFilms/NavbarFilmInfo";
 import "../filmsInfo/FilmsInfo.css";
 import { actions } from "../../features/shoppingCart";
 import Comments from "./Comments";
 
 const FilmsInfo = () => {
-
   const dispatch = useDispatch();
-  //const nav = useNavigate()
+  const navi = useNavigate()
   const listObject = useSelector((state) => state.filmList);
   const list = listObject.list;
 
   const params = useParams();
   const imagePath = "https://image.tmdb.org/t/p/";
   const movieSelected = list.find((movie) => movie.id == params.id);
-
-  let movieTitle = (movieSelected.title)
-  let movieImg = (movieSelected.poster_path)
-  let moviePrice = 20;
-
-  // if(!movieTitle) {
-  //   nav("/error");
+  // if(movieSelected !== undefined) {
+  //   console.log("working");
+  // } else {
+  //   navi("/failure");
   // }
+
+  // const [checkMovie, useCheckMovie] = useState();
+
+
+
+  let movieTitle = movieSelected.title;
+
+
+  let movieImg = movieSelected.poster_path;
+  let moviePrice = 20;
 
   const movieToAdd = {
     name: movieTitle,
     price: moviePrice,
-    poster: movieImg
-  }
+    poster: movieImg,
+  };
 
   const AddShoppingCart = () => {
     dispatch(actions.addToCart(movieToAdd));
-  }
+  };
 
   return (
     <div>
@@ -45,7 +51,10 @@ const FilmsInfo = () => {
             <div className="movie-info-container">
               <div className="top">
                 <div className="img-1">
-                  <img src={`${imagePath}/w500/${movieSelected.poster_path}`} alt="" />
+                  <img
+                    src={`${imagePath}/w500/${movieSelected.poster_path}`}
+                    alt=""
+                  />
                 </div>
                 <div className="general-info">
                   <div className="title_movie">
@@ -79,7 +88,7 @@ const FilmsInfo = () => {
                   </div>
                   <div className="movie-buttons">
                     <button onClick={AddShoppingCart} className="buy">
-                      Add to cart
+                      Add Blue-ray to cart
                     </button>
                   </div>
                 </div>

@@ -75,6 +75,7 @@ img {
 .buy:hover {
   background: #ff3939;
   transition-duration: 0.5s;
+  transform: scale(0.99);
 }
 
 /* .wish {

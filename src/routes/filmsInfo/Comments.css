@@ -65,7 +65,7 @@
   /* margin-top: 2.5rem; */
   /* min-height: auto; */
   justify-content: flex-start;
-  border-bottom: 1px double darkgrey;
+   border-bottom: 1px double darkgrey;
   /* align-content: center; */
 }
 
@@ -135,14 +135,42 @@
 
   .user-comment {
     font-size: 14px;
-  }
+    min-height: 20px;
+    max-width: 100%;
 
+    text-overflow: ellipsis;
+
+
+  }
 
   .comment-index {
     min-width: fit-content;
     height: 250px;
     overflow-y: scroll;
-    justify-content: center;
+    display:grid;
+    word-wrap: normal
+
+
+  }
+
+  .comment-div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px double darkgrey;
+    width: 100%;
+    min-height: auto;
+    /* align-content: center; */
+  }
+  .input-div input {
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    height: 40px;
   }
 
 
